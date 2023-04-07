@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.orange {
+  color: #FF3C00;
+}
+
+.shadowed {
+  box-shadow:5px 5px 20px rgba(0,0,0,0.6)
+}
+
+.heading {
+  font-family: 'Orbitron', sans-serif;
+}
+
+.text {
+  font-family: 'Roboto', sans-serif;
+}
+
+.filter-nav-1 {
+  width : 300px; 
+}
