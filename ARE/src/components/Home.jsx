@@ -8,20 +8,20 @@ const Home = () => {
                 <img className="w-full" src="./home_img.png" />
             </div>
             {/*Discover ARE*/}
-            <div class="spacer spacer-bottom">
-                <h1 className="orange text-8xl py-24 heading">Discover ARE</h1>
+            <div class="py-32">
+                <h1 className="orange text-8xl heading mb-20">Discover ARE</h1>
                 <div className="flex justify-around">
-                    <div className="w-3/12 border border-black p-4 shadowed">
+                    <div className="w-3/12 rounded-md bg-neutral-100 p-4 shadowed">
                         <img src="./mana_8.JPG" alt="outrigger-1" className="h-[85%] w-full" />
-                        <button type="submit" className="text" to={'/canoes'}><Link>Get An Outrigger</Link></button>
+                        <button type="submit" className="text orange orange-border mt-4 px-6 rounded-md orange-button transition-color ease-in-out duration-200" to={'/canoes'}><Link>Get An Outrigger</Link></button>
                     </div>
-                    <div className="w-3/12 border border-black p-4 shadowed">
+                    <div className="w-3/12 rounded-md bg-neutral-100 p-4 shadowed">
                         <img src="./marara_6.JPG" alt="outrigger-2" className="h-[85%] w-full" />
-                        <button type="submit" className="text"><Link to={"https://www.youtube.com/channel/UCX1yW5NSmLIGCmXhaD4A98Q"} target="_blank">See Them In Action</Link></button>
+                        <button type="submit" className="text orange orange-border mt-4 px-6 rounded-md orange-button transition-color ease-in-out duration-200"><Link to={"https://www.youtube.com/channel/UCX1yW5NSmLIGCmXhaD4A98Q"} target="_blank">See Them In Action</Link></button>
                     </div>
-                    <div className="w-3/12 border border-black p-4 shadowed">
-                        <img src="./matahina_8.jpg" alt="outrigger-3" class="discover-img" /> 
-                        <button type="submit" className="text"><Link to={'/order'}>Ordering A Canoe</Link></button>
+                    <div className="w-3/12 rounded-md bg-neutral-100 p-4 shadowed">
+                        <img src="./matahina_8.jpg" alt="outrigger-3" className="h-[85%] w-full" /> 
+                        <button type="submit" className="text orange orange-border mt-4 px-6 rounded-md orange-button transition-color ease-in-out duration-200"><Link to={'/order'}>Ordering A Canoe</Link></button>
                     </div>
                 </div>
             </div>
@@ -29,56 +29,55 @@ const Home = () => {
 
             {/*introduction*/}
 
-            <div className="py-16">
-                <h1 class="medium-heading spacer white spacer-bottom-small">ARE Tahiti - Born For The Water</h1>
-                <div class="container container-row spacer-bottom" >
-                    <img src="./marara_7.JPG" alt='Outrigger Paddler' id="intro-pic" />
-                    <div class="container" id="intro-container">
-                        <p class="t4 white spacer">A lot more goes into an ARE Tahiti va’a, or outrigger, than meets the eye. 
+            <div className="py-32 bg-grad-grey">
+                <h1 class="text-7xl heading text-white mb-16">ARE Tahiti - Born For The Water</h1>    
+                <div className="flex justify-around px-20">
+                    <img className="w-[30%]" src="./marara_7.JPG" alt='Outrigger Paddler' id="intro-pic" />
+                    <div className="w-5/12 pt-8">
+                        <p className="text-white text text-lg text-left mb-12">A lot more goes into an ARE Tahiti va’a, or outrigger, than meets the eye. 
                             To improve your speed and performance on the water, we take painstaking time and effort to perfect every last detail. 
                             Our quest for perfection steers everything we do, including refining the design, engineering and construction of our canoes. 
                             Plus we never lose sight of our customers, building a canoe that’s super-fast and super-fun. </p>
 
-                        <ul class="spacer-small white" id="list-2">
-                            <li>
-                                <p class="t4 white">
+                        <ul className="text-left list-disc text-white ml-5 text-lg" id="list-2">
+                            <li> 
+                                <p className="text-white text mb-8">
                                     Unrelenting R&D – factoring in all the variables of water, wind, weight, and balance
                                 </p>
                             </li>
                             <li>
-                                <p class="t4 white">
+                                <p className="text-white text mb-8">
                                     Uncompromising craftsmanship – because every little detail influences speed and performance 
                                 </p>
                             </li>
                             <li>
-                                <p class="t4 white">
+                                <p className="text-white text mb-8">
                                     Unparalleled performance – exhilarating speed, effortless glide, and pure enjoyment! 
                                 </p>
                             </li>
                         </ul> 
                     </div>
-                </div> 
-                <h1 class="medium-heading spacer white">Get In Touch</h1>
-                <p class="t2 white spacer">ARE TAHITI designs and builds va’a, or outrigger canoes, for Tahiti and the Pacific islands, Australia, 
+                </div>
+            </div> 
+                    
+            <div className="py-20 flex items-center flex-col">
+            
+                <h1 className="text-7xl heading mb-16">Get In Touch</h1>
+                <p className="text-xl text w-9/12 mb-10">ARE TAHITI designs and builds va’a, or outrigger canoes, for Tahiti and the Pacific islands, Australia, 
                     Hawaii, the mainland United States and Canada. Once you've ordered a canoe, get in touch with the 
                     nearest ARE representative for more information
                     on the shipping and pickup process</p>
-                <div class="container container-row spacer-small spacer-bottom" id="list-container">
-                    <div class="container"  id="l1">
-                        <ul class="list">
-                            <a class="t3 white" href="/">United States</a>
-                            <a class="t3 white" href="/">Canada</a>
-                            <a class="t3 white" href="/">Hawaii</a> 
-                        </ul>
-                    </div>
-                    <div class="container" id="l2">
-                        <ul class="list" id="list-2">
-                            <a class="t3 white" href="/">Tahiti</a>
-                            <a class="t3 white" href="/">Australia</a>
-                            <a class="t3 white" href="/">Pacific Islands</a> 
-                        </ul>
-                    </div>
-                    
+                <div className="flex w-5/12 justify-around">
+                    <ul className="flex flex-col">
+                        <Link className="text text-left text-2xl mb-2 font-semibold hover:underline" to="/">United States</Link>
+                        <Link className="text text-left text-2xl mb-2 font-semibold hover:underline" to="/">Canada</Link>
+                        <Link className="text text-left text-2xl mb-2 font-semibold hover:underline" href="/">Hawaii</Link> 
+                    </ul>
+                    <ul className="flex flex-col">
+                        <Link className="text text-left text-2xl mb-2 font-semibold hover:underline" to="/">Tahiti</Link>
+                        <Link className="text text-left text-2xl mb-2 font-semibold hover:underline" to="/">Australia</Link>
+                        <Link className="text text-left text-2xl mb-2 font-semibold hover:underline" to="/">Pacific Islands</Link> 
+                    </ul>
                 </div>
             </div>
         </div>

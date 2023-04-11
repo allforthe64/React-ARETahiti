@@ -6,8 +6,28 @@
   color: #FF3C00;
 }
 
+.orange-background {
+  background-color: #FF3C00;
+}
+
+
+.orange-border {
+  border: 3px solid #FF3C00;
+}
+
+.orange-button:hover {
+  background-color: #FF3C00;
+  color: white
+}
+
+
+
 .shadowed {
-  box-shadow:5px 5px 20px rgba(0,0,0,0.6)
+  box-shadow:5px 5px 20px rgba(0,0,0,0.4)
+}
+
+.bg-grad-grey {
+  background: linear-gradient(#696969, #1f1f1f)
 }
 
 .heading {
@@ -20,4 +40,8 @@
 
 .filter-nav-1 {
   width : 300px; 
+}
+
+.nav-link:hover {
+  color: #FF3C00;
 }
