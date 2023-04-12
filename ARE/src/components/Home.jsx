@@ -8,7 +8,7 @@ const Home = () => {
                 <img className="w-full" src="./home_img.png" />
             </div>
             {/*Discover ARE*/}
-            <div class="py-32">
+            <div className="py-32">
                 <h1 className="orange text-8xl heading mb-20">Discover ARE</h1>
                 <div className="flex justify-around">
                     <div className="w-3/12 rounded-md bg-neutral-100 p-4 shadowed">
@@ -26,11 +26,10 @@ const Home = () => {
                 </div>
             </div>
 
-
             {/*introduction*/}
 
             <div className="py-32 bg-grad-grey">
-                <h1 class="text-7xl heading text-white mb-16">ARE Tahiti - Born For The Water</h1>    
+                <h1 className="text-7xl heading text-white mb-16">ARE Tahiti - Born For The Water</h1>    
                 <div className="flex justify-around px-20">
                     <img className="w-[30%]" src="./marara_7.JPG" alt='Outrigger Paddler' id="intro-pic" />
                     <div className="w-5/12 pt-8">

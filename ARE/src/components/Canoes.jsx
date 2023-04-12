@@ -21,7 +21,7 @@ const Canoes = () => {
                                 V6 Matahina is a superb competetive outrigger. Built for the surf,
                                 the Matahina is the perfect boat to launch your racing tradition from.
                             </p>
-                            <Link to={'/'} className="orange orange-border rounded-3xl headings text-3xl px-16 py-2 orange-button transition-color duration-200 ease-in-out">See More</Link>
+                            <Link to={'/matahina'} className="orange orange-border rounded-3xl headings text-3xl px-16 py-2 orange-button transition-color duration-200 ease-in-out">See More</Link>
                         </div>
                     </div>
                 </div>

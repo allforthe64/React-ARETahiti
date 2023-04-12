@@ -7,6 +7,7 @@ import {Routes, Route} from 'react-router-dom'
 //pages
 import Home from './components/Home'
 import Canoes from './components/Canoes'
+import Matahina from './components/canoe_pages/Matahina'
 
 //layout components
 import Nav from './components/Nav'
@@ -22,6 +23,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path='/canoes' element={<Canoes />} />
+        <Route path='/matahina' element={<Matahina />} />
       </Routes>
       <Footer />
     </div>
