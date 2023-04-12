@@ -16,7 +16,7 @@ const Nav = () => {
                     <Link className="nav-link text-white text nav-link transition-color ease-in-out duration-200" href="{% url 'about' %}">About Us</Link>
                 </li>
                 <li className="nav-item">
-                    <Link className="nav-link text-white text nav-link transition-color ease-in-out duration-200" href="{% url 'canoes' %}">The Canoes</Link>
+                    <Link to={'/canoes'} className="nav-link text-white text nav-link transition-color ease-in-out duration-200">The Canoes</Link>
                 </li>
                 <li className="nav-item">
                     <Link className="nav-link text-white text nav-link transition-color ease-in-out duration-200" href="{% url 'reps' %}">Our Representatives</Link>

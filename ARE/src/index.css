@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.grey {
+  color: #515151;
+}
+
 .orange {
   color: #FF3C00;
 }
@@ -18,6 +22,11 @@
 .orange-button:hover {
   background-color: #FF3C00;
   color: white
+}
+
+.orange-bg-button:hover {
+  background-color: white;
+  color: #FF3C00;
 }
 
 
