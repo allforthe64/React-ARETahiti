@@ -57,14 +57,14 @@ const Mana = () => {
             </div>
             <div className="flex justify-between py-12">
                 <div className="w-6/12 pl-20">
-                    <p className="heading grey text-6xl text-left mb-10">Features</p>
+                    <p className="heading grey text-6xl text-left mb-10">Specifications</p>
                     <ul className="text text-left list-disc pl-10 grey text-2xl">
-                        <li className="mb-5">Length: 42.8 ft.</li>
-                        <li className="mb-5">Beam: 22.08 in.</li>
-                        <li className="mb-5">Hull Weight: Approx. 220 lbs.</li>
-                        <li className="mb-5">Ama Weight: 18 lbs. (Carbon) / 28 lbs. (Fiber Glass)</li>
-                        <li className="mb-5">Iakos Weight: 16 lbs. (Carbon) / 18 lbs. (Wooden)</li>
-                        <li className="mb-5">Total Weight Rigged: 250 lbs. (Carbon) / 270 lbs. (Wooden)</li>
+                        <li className="mb-5">Length: 20.76 ft.</li>
+                        <li className="mb-5">Beam: 15.15 in.</li>
+                        <li className="mb-5">Hull Weight: 19 lbs. (pro-carbon) / 25 lbs. (hybrid)</li>
+                        <li className="mb-5">Ama Weight: 3 lbs. (pro-carbon) / 4 lbs. (hybrid)</li>
+                        <li className="mb-5">Iakos Weight: 2 lbs. (pro-carbon) / 2 lbs. (hybrid)</li>
+                        <li className="mb-5">Total Weight Rigged: 24-25 lbs. (pro-carbon) / 28-30 lbs. (hybrid)</li>
                     </ul>
                 </div>
                 <img className="w-5/12 pr-10" alt="Canoe" src="./mana_4.JPG" />

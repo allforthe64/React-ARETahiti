@@ -35,7 +35,7 @@ const Canoes = () => {
                                 outriggers, the Marara V1 is the ultimate solo outrigger
                                 experience. Are you ready to be "at one"?
                             </p>
-                            <Link to={'/'} className="orange orange-border rounded-3xl headings text-3xl px-16 py-2 orange-button transition-color duration-200 ease-in-out">See More</Link>
+                            <Link to={'/marara'} className="orange orange-border rounded-3xl headings text-3xl px-16 py-2 orange-button transition-color duration-200 ease-in-out">See More</Link>
                         </div>
                     </div>
                     <img src="./marara_1.JPG" alt="Marara Canoe" className="w-5/12" />

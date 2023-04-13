@@ -3,12 +3,12 @@ import { Link } from "react-router-dom"
 import Slider from 'react-animated-slider';
 import 'react-animated-slider/build/horizontal.css';
 
-const Matahina = () => {
+const Marara = () => {
 
     const slides = [
-        { title: 'Secret Formula', description: 'The Matahina features the handling of a carbon ultralight OC6 with a polyester-fiberglass build. This means you can skip the hastle of finding a carbon repair specialist if you encounter any accidents on your quest for victory.', imgURL: './matahina_4.jpg' },
-        { title: 'Built For Racing', description: 'Used by competetive outrigger teams everywhere, the Matahina OC6 is the ultimate racing weapon. Designed to be fast in all conditions, the Matahina is ready to lead your team to victory.', imgURL: './matahina_6.jpg'},
-        { title: 'Adjustable Rigging', description: "The Matahina's rigging is adjustable, allowing for infinite customization to meet your needs. Whether you're rigging for flatwater or rough ocean, the Matahina's adjustable rigging allows you to set yourself up for success.", imgURL: './matahina_7.jpg'}
+        { title: 'Superior Craftsmanship', description: "Designed and tested by some of the best canoe builders in the business, the Marara's build quality is unmatched. Whether you choose the all carbon or the hybrid build, each of our canoes is rigorously tested to ensure a premium canoe build, everytime.", imgURL: './marara_2.JPG' },
+        { title: 'Clip In Assembly', description: "Snap to assemble Iakos make it easy to assembly your boat and hit the surf. You'll be ready to go in no time at all, giving you more time to enjoy being on the water.", imgURL: './marara_3.JPG'},
+        { title: 'Comfortable Ergonomics', description: "Nobody like an uncomfortable boat. That's why we've built the Marara to be as comfortable as possible, even when you're paddling for long periods of time.", imgURL: './marara_4.JPG'}
       ];
        
       const slider = (
@@ -34,18 +34,18 @@ const Matahina = () => {
         <div id="en">
             <div className="flex flex-col items-center py-12">
                 <div className="w-8/12 mb-8">
-                    <h1 className="heading text-6xl grey mb-8">V6 Matahina - <span className="orange">King Of The Waves</span></h1>
-                    <p className="heading text-2xl grey">USD $19,000 (Wood Iakos/Fiber Glass Ama) / USD $21,000 (Carbon Iakos/Carbon Ama)</p>
+                    <h1 className="heading text-6xl grey mb-8">V1 Marara - <span className="orange">Be At One</span></h1>
+                    <p className="heading text-2xl grey">USD $4,750 (pro-carbon) / USD 3,750 (hybrid)</p>
                 </div>
-                <img src="./matahina_1.png" alt="Matahina Canoe" className="w-7/12 mb-12"/>
+                <img src="./marara_2.JPG" alt="Matahina Canoe" className="w-7/12 mb-12"/>
                 <hr className="orange-background w-5/12 h-[5px]" />
             </div>
             <div className="flex flex-col items-center mb-16">
-                <p className="w-10/12 text text-2xl mb-10">Meet the master of rough ocean waters: the ARE Tahiti Matahina V6.
-                    Built for the surf, this fast sleek canoe is guaranteed to leave the competition
-                    in your wake. With it's unrivaled racing record, the Matahina is used by winning teams 
-                    in both Australia and Tahiti, including Shell Va'a. If you're looking for a boat 
-                    to build your teams legacy with, then look no further than the Matahina V6.
+                <p className="w-10/12 text text-2xl mb-10">A new generation of outrigger canoe has been born: introducing the 
+                    ARE Tahiti Marara V1. The Marara is at the forefront of single man outrigger canoes, effortlessly combining 
+                    top of the line engineering and superb craftsmanship. With its smooth glide and responsive steering, the 
+                    Marara delivers top notch water feel giving the feeling of being "at one" with the water. So what are you 
+                    waiting for? Order your Marara today and take paddling to the next level!
                 </p>
                 <Link to={'/order'} className="orange orange-border rounded-3xl headings text-3xl px-16 py-2 orange-button transition-color duration-200 ease-in-out">Order Now</Link>
             </div>
@@ -59,19 +59,19 @@ const Matahina = () => {
                 <div className="w-6/12 pl-20">
                     <p className="heading grey text-6xl text-left mb-10">Specifications</p>
                     <ul className="text text-left list-disc pl-10 grey text-2xl">
-                        <li className="mb-5">Length: 42.8 ft.</li>
-                        <li className="mb-5">Beam: 22.08 in.</li>
-                        <li className="mb-5">Hull Weight: Approx. 220 lbs.</li>
-                        <li className="mb-5">Ama Weight: 18 lbs. (Carbon) / 28 lbs. (Fiber Glass)</li>
-                        <li className="mb-5">Iakos Weight: 16 lbs. (Carbon) / 18 lbs. (Wooden)</li>
-                        <li className="mb-5">Total Weight Rigged: 250 lbs. (Carbon) / 270 lbs. (Wooden)</li>
+                        <li className="mb-5">Length: 24.18 ft.</li>
+                        <li className="mb-5">Beam: 13.39 in.</li>
+                        <li className="mb-5">Hull Weight: 18 lbs. (pro-carbon) / 20 lbs. (hybrid)</li>
+                        <li className="mb-5">Ama Weight: 4 lbs. (pro-carbon) / 5 lbs. (hybrid)</li>
+                        <li className="mb-5">Iakos Weight: 2 lbs. (pro-carbon) / 3 lbs. (hybrid)</li>
+                        <li className="mb-5">Total Weight Rigged: 24-26 lbs. / 28-30 lbs. (hybrid)</li>
                     </ul>
                 </div>
-                <img className="w-5/12 pr-10" alt="Canoe" src="./matahina_3.jpg" />
+                <img className="w-5/12 pr-10" alt="Canoe" src="./marara_3.JPG" />
             </div>
             <div className="flex flex-col items-center py-12">
                 <p className="heading text-6xl grey mb-10">See It In Action</p>
-                <iframe className="w-7/12 h-[465px]" src="https://www.youtube.com/embed/9Myqm1k2UNs"></iframe>
+                <iframe className="w-7/12 h-[465px]" src="https://www.youtube.com/embed/l451UCFvCWQ"></iframe>
             </div>
             <div className="flex flex-col items-center py-12">
                 <p className="heading text-6xl grey mb-10 w-10/12">Ready To <span className="orange">Crush Some Waves?</span></p>
@@ -85,4 +85,4 @@ const Matahina = () => {
     )
 }
 
-export default Matahina
+export default Marara
