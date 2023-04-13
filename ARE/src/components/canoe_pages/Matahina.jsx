@@ -47,41 +47,39 @@ const Matahina = () => {
                     in both Australia and Tahiti, including Shell Va'a. If you're looking for a boat 
                     to build your teams legacy with, then look no further than the Matahina V6.
                 </p>
-                <Link to={'/order'} className="orange orange-border rounded-3xl headings text-3xl px-16 py-2 orange-button transition-color duration-200 ease-in-out">See More</Link>
+                <Link to={'/order'} className="orange orange-border rounded-3xl headings text-3xl px-16 py-2 orange-button transition-color duration-200 ease-in-out">Order Now</Link>
             </div>
             <div className="py-20 flex flex-col items-center">
-                <h2 className="heading text-6xl grey mb-10">Highlights</h2>
+                <p className="heading text-6xl grey mb-10">Highlights</p>
                 <div className="w-10/12">
                     {slider}
                 </div>
             </div>
-            <div className="flex justify-between border py-12">
-                <div className="border w-6/12 pl-20">
+            <div className="flex justify-between py-12">
+                <div className="w-6/12 pl-20">
                     <p className="heading grey text-6xl text-left mb-10">Features</p>
-                    <ul className="text text-left list-disc pl-10 grey">
-                        <li className="text mb-3 text-2xl">Length: 42.8 ft.</li>
-                        <li className="text mb-3 text-2xl">Beam: 22.08 in.</li>
-                        <li className="text mb-3 text-2xl">Hull Weight: Approx. 220 lbs.</li>
-                        <li className="text mb-3 text-2xl">Ama Weight: 18 lbs. (Carbon) / 28 lbs. (Fiber Glass)(</li>
-                        <li className="text mb-3 text-2xl">Iakos Weight: 16 lbs. (Carbon) / 18 lbs. (Wooden)</li>
-                        <li className="text mb-3 text-2xl">Total Weight Rigged: 250 lbs. (Carbon) / 270 lbs. (Wooden)</li>
+                    <ul className="text text-left list-disc pl-10 grey text-2xl">
+                        <li className="mb-5">Length: 42.8 ft.</li>
+                        <li className="mb-5">Beam: 22.08 in.</li>
+                        <li className="mb-5">Hull Weight: Approx. 220 lbs.</li>
+                        <li className="mb-5">Ama Weight: 18 lbs. (Carbon) / 28 lbs. (Fiber Glass)</li>
+                        <li className="mb-5">Iakos Weight: 16 lbs. (Carbon) / 18 lbs. (Wooden)</li>
+                        <li className="mb-5">Total Weight Rigged: 250 lbs. (Carbon) / 270 lbs. (Wooden)</li>
                     </ul>
                 </div>
                 <img className="w-5/12 pr-10" alt="Canoe" src="./matahina_3.jpg" />
             </div>
-            <div className="container spacer-2">
-                <h2 className="medium-heading">See It In Action</h2>
-                <iframe className="canoe-frame spacer-small" src="https://www.youtube.com/embed/9Myqm1k2UNs"></iframe>
+            <div className="flex flex-col items-center py-12">
+                <p className="heading text-6xl grey mb-10">See It In Action</p>
+                <iframe className="w-7/12 h-[465px]" src="https://www.youtube.com/embed/9Myqm1k2UNs"></iframe>
             </div>
-            <div className="container-2 spacer-2 spacer-bottom">
-                <h2 className="medium-heading">Ready To <span className="orange-1">Crush Some Waves?</span></h2>
-                <p className="t2 spacer-small">
+            <div className="flex flex-col items-center py-12">
+                <p className="heading text-6xl grey mb-10 w-10/12">Ready To <span className="orange">Crush Some Waves?</span></p>
+                <p className="text text-2xl w-10/12 mb-10">
                     Time to get your hands on an ARE canoe. You'll be surfing waves and winning races in no time!
                     Click the button to order your canoe!
                 </p>
-                <form method="get" action="{% url 'order' %}" className="content-form">
-                    <button type="submit" className="disc-button spacer-small" id="canoe-button-4">Order Now</button>
-                </form>
+                <Link to={'/order'} className="orange orange-border rounded-3xl headings text-3xl px-16 py-2 orange-button transition-color duration-200 ease-in-out">Order Now</Link>
             </div>
         </div>
     )
