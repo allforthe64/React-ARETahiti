@@ -8,6 +8,7 @@ import {Routes, Route} from 'react-router-dom'
 import Home from './components/Home'
 import Canoes from './components/Canoes'
 import Matahina from './components/canoe_pages/Matahina'
+import Mana from './components/canoe_pages/Mana'
 
 //layout components
 import Nav from './components/Nav'
@@ -24,6 +25,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path='/canoes' element={<Canoes />} />
         <Route path='/matahina' element={<Matahina />} />
+        <Route path='/mana' element={<Mana />} />
       </Routes>
       <Footer />
     </div>

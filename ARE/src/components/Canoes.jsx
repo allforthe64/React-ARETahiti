@@ -52,7 +52,7 @@ const Canoes = () => {
                                 Mana OC1. Balancing craftsmanship and accessability with performance,
                                 the Mana OC1 is ready to take on whatever awaits.
                             </p>
-                            <Link to={'/'} className="orange orange-border rounded-3xl headings text-3xl px-16 py-2 orange-button transition-color duration-200 ease-in-out">See More</Link>
+                            <Link to={'/mana'} className="orange orange-border rounded-3xl headings text-3xl px-16 py-2 orange-button transition-color duration-200 ease-in-out">See More</Link>
                         </div>
                     </div>
                 </div>
