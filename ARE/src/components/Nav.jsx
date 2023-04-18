@@ -10,7 +10,7 @@ const Nav = () => {
 
             <ul className="flex w-[70%] justify-around ml-[3%]">
                 <li className="nav-item active">
-                    <Link className="nav-link text-white text text-base nav-link transition-color ease-in-out duration-200" href="{% url 'order' %}" >Order A Canoe <span className="sr-only">(current)</span></Link>
+                    <Link to={'/order'} className="nav-link text-white text text-base nav-link transition-color ease-in-out duration-200" >Order A Canoe <span className="sr-only">(current)</span></Link>
                 </li>
                 <li className="nav-item">
                     <Link to={'/about'} className="nav-link text-white text nav-link transition-color ease-in-out duration-200">About Us</Link>

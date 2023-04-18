@@ -14,6 +14,7 @@ import Marara from './components/canoe_pages/Marara'
 //layout components
 import Nav from './components/Nav'
 import Footer from './components/Footer'
+import Order from './components/Order'
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path='/about' element={<About />} />
+        <Route path='/order' element={<Order />} />
         <Route path='/canoes' element={<Canoes />} />
         <Route path='/matahina' element={<Matahina />} />
         <Route path='/mana' element={<Mana />} />

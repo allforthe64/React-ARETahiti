@@ -54,3 +54,13 @@
 .nav-link:hover {
   color: #FF3C00;
 }
+
+.order-card:hover {
+  border: 2px solid #FF3C00;
+  padding: 4px;
+}
+
+.order-card-bordered {
+  border: 2px solid #FF3C00;
+  padding: 4px;
+}
