@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 const Nav = () => {
     return (
         <nav className="text-white flex bg-neutral-900 h-14 pt-4" id="nav">
-            <Link className="navbar-brand text-white text text-xl pl-[3%] nav-link transition-color ease-in-out duration-200" href="/">ARE Tahiti</Link>
+            <Link className="navbar-brand text-white text text-xl pl-[3%] nav-link transition-color ease-in-out duration-200" to={"/"}>ARE Tahiti</Link>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>
             </button>
