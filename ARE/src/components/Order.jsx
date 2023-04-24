@@ -6,10 +6,14 @@ const Order = () => {
     const [openPanel, setOpenPanel] = useState(false)
     const [custom, setCustom] = useState(true)
     const [custColor, setCustColor] = useState()
+    const [preColor, setPreColor] = useState()
     const [model, setModel] = useState()
     const [c1, setC1] = useState()
     const [c2, setC2] = useState()
     const [c3, setC3] = useState()
+    const [preC1, setPreC1] = useState()
+    const [preC2, setPreC2] = useState()
+    const [preC3, setPreC3] = useState()
 
     const colorsObj = {
         "White": "#FFFFFF",
@@ -28,6 +32,10 @@ const Order = () => {
         setC1([])
         setC2([])
         setC3([])
+        setPreC1([])
+        setPreC2([])
+        setPreC3([])
+
 
         if (openPanel === false) setOpenPanel(true)
     }
@@ -50,6 +58,19 @@ const Order = () => {
         setC1([colors[0], colorsObj[colors[0]]])
         setC2([colors[1], colorsObj[colors[1]]])
         setC3([colors[2], colorsObj[colors[2]]])
+          
+    }
+
+    const preColorSelect = (e) => {
+
+        if (e.target.value === 'Select a color scheme') return
+
+        setPreColor(e.target.value)
+        const colors = e.target.value.split('/')
+        
+        setPreC1([colors[0], colorsObj[colors[0]]])
+        setPreC2([colors[1], colorsObj[colors[1]]])
+        setPreC3([colors[2], colorsObj[colors[2]]])
           
     }
 
@@ -98,7 +119,7 @@ const Order = () => {
                                 <p className={custom ? "orange heading text-2xl text-left mb-2 underline hover:cursor-pointer" : "grey heading text-2xl text-left mb-2 custom-select"} onClick={() => customClick('cust')}>Custom</p>
                                 <p className={custom === false ? "orange heading text-2xl text-left mb-2 underline hover:cursor-pointer" : "grey heading text-2xl text-left mb-2 custom-select"} onClick={() => customClick('preb')}>Prebuilt</p>
                             </div>
-                            {custom === true &&
+                            {custom === true ?
                                 <>
                                     <div className="flex flex-col items-left mb-14">
                                         <p className="orange heading text-2xl text-left mb-2">Select a model</p>
@@ -132,19 +153,56 @@ const Order = () => {
                                         </select>
                                     </div>
                                 </>
+                            :
+                                <>
+                                    <div className="flex flex-col items-left mb-14">
+                                        <p className="orange heading text-2xl text-left mb-2">Select a model</p>
+                                        {canoe === 0 || canoe === 1 ? 
+                                            <select className="text-2xl bg-neutral-100 border w-10/12 grey" onChange={modelSelect} value={model ? model : 0}>
+                                                <option>Select a model</option>
+                                                <option>Pro Carbon</option>
+                                                <option>Hybrid Carbon</option>
+                                            </select>
+                                        : 
+                                            <select className="text-2xl bg-neutral-100 border w-10/12 grey" onChange={modelSelect} value={model ? model : 0}>
+                                                <option>Select a model</option>
+                                                <option>Wood Iakos/Fiber Glass Ama</option>
+                                                <option>Carbon Iakos/Carbon Ama</option>
+                                            </select>
+                                        }
+                                    </div>
+                                    <div className="flex flex-col items-left mb-14">
+                                        <p className="orange heading text-2xl text-left mb-2">Canoes in stock</p>
+                                        <select className="text-2xl bg-neutral-100 border w-10/12 grey" onChange={preColorSelect} value={preColor ? preColor : 0}>
+                                            <option>Select a color scheme</option>
+                                            <option>Isn't/Anything/Here</option>
+                                        </select>
+                                    </div>
+                                </>
                             }
                         </div>
                     </div>
-                    {(c1 && c2 && c3 && c1.length > 0 && c2.length > 0 && c3.length > 0 && custom === true) && 
-                        <div className="flex justify-around text text-xl grey">
-                            <p className="heading">Hull Color: {c1[0]}</p>
-                            <div className={(c1 && c1.length > 0) ? 'w-[30px] h-[30px] border-black border' : 'hidden'} style={{backgroundColor: c1[1]}}></div>
-                            <p className="heading">Ama Color: {c2[0]}</p>
-                            <div className={(c2 && c2.length > 0) ? 'w-[30px] h-[30px] border-black border' : 'hidden'} style={{backgroundColor: c2[1]}}></div>
-                            <p className="heading">Cockpit Color: {c3[0]}</p>
-                            <div className={(c3 && c3.length > 0) ? 'w-[30px] h-[30px] border-black border' : 'hidden'} style={{backgroundColor: c3[1]}}></div>
-                        </div>    
-                    }
+                    {custom === true ? 
+                                (c1 && c2 && c3 && c1.length > 0 && c2.length > 0 && c3.length > 0 && custom === true) && 
+                                    <div className="flex justify-around text text-xl grey">
+                                        <p className="heading">Hull Color: {c1[0]}</p>
+                                        <div className={(c1 && c1.length > 0) ? 'w-[30px] h-[30px] border-black border' : 'hidden'} style={{backgroundColor: c1[1]}}></div>
+                                        <p className="heading">Ama Color: {c2[0]}</p>
+                                        <div className={(c2 && c2.length > 0) ? 'w-[30px] h-[30px] border-black border' : 'hidden'} style={{backgroundColor: c2[1]}}></div>
+                                        <p className="heading">Cockpit Color: {c3[0]}</p>
+                                        <div className={(c3 && c3.length > 0) ? 'w-[30px] h-[30px] border-black border' : 'hidden'} style={{backgroundColor: c3[1]}}></div>
+                                    </div>      
+                            :
+                                (preC1 && preC2 && preC3 && preC1.length > 0 && preC2.length > 0 && preC3.length > 0 && custom === false) && 
+                                    <div className="flex justify-around text text-xl grey">
+                                        <p className="heading">Hull Color: {preC1[0]}</p>
+                                        <div className={(preC1 && preC1.length > 0) ? 'w-[30px] h-[30px] border-black border' : 'hidden'} style={{backgroundColor: preC1[1]}}></div>
+                                        <p className="heading">Ama Color: {preC2[0]}</p>
+                                        <div className={(preC2 && preC2.length > 0) ? 'w-[30px] h-[30px] border-black border' : 'hidden'} style={{backgroundColor: preC2[1]}}></div>
+                                        <p className="heading">Cockpit Color: {c3[0]}</p>
+                                        <div className={(preC3 && preC3.length > 0) ? 'w-[30px] h-[30px] border-black border' : 'hidden'} style={{backgroundColor: preC3[1]}}></div>
+                                    </div>    
+                            }
                 </div>
             </div>
         </div>
