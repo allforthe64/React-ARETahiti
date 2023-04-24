@@ -34,18 +34,15 @@ const Order = () => {
     const customClick = (category) => {
         if (category === 'cust') {
             setCustom(true)
-            setCustColor(null)
-
         } else {
             setCustom(false)
-            setCustColor(null)
-            setC1([])
-            setC2([])
-            setC3([]) 
         }
     }
 
     const colorSelect = (e) => {
+
+        if (e.target.value === 'Select a color scheme') return
+
         setCustColor(e.target.value)
         const colors = e.target.value.split('/')
 
@@ -95,8 +92,8 @@ const Order = () => {
                             {custom === true &&
                                 <div className="flex flex-col items-left mb-14">
                                     <p className="orange heading text-2xl text-left mb-2">Select a color scheme</p>
-                                    <select className="text-2xl bg-neutral-100 border w-10/12 grey" onChange={colorSelect} >
-                                        <option disabled={true} selected={true}>Select a color scheme</option>
+                                    <select className="text-2xl bg-neutral-100 border w-10/12 grey" onChange={colorSelect} value={custColor ? custColor : 0}>
+                                        <option>Select a color scheme</option>
                                         <option>White/White/Yellow</option>
                                         <option>Blue/Blue/Red</option>
                                         <option>Dark Blue/Dark Blue/Dark Blue</option>
