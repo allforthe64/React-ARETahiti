@@ -1,4 +1,4 @@
-const OrderPanel = ({canoe, custom, modelSelect, model, colorSelect, custColor, c1, c2, c3, preC1, preC2, preC3, func, preColorSelect, preColor}) => {
+const OrderPanel = ({canoe, custom, modelSelect, model, colorSelect, custColor, c1, c2, c3, preC1, preC2, preC3, func, preColorSelect, preColor, setRegion}) => {
     return (
         <>
             <div className="border-2 w-9/12 bg-neutral-100 px-3 pt-8 h-[675px] rounded-xl">
@@ -8,8 +8,8 @@ const OrderPanel = ({canoe, custom, modelSelect, model, colorSelect, custColor, 
                         <div className="w-5/12">
                             <div className="flex flex-col items-left mb-14">
                                 <p className="orange heading text-2xl text-left mb-2">Select your region</p>
-                                <select className="text-2xl bg-neutral-100 border w-10/12 grey">
-                                    <option disabled={true} selected={true} hidden={true}>Select a country</option>
+                                <select className="text-2xl bg-neutral-100 border w-10/12 grey" onChange={setRegion}>
+                                    <option>Select a country</option>
                                     <option>United States</option>
                                     <option>Hawaii</option>
                                     <option>Canada</option>

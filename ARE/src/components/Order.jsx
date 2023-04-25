@@ -1,4 +1,5 @@
-import { useState } from "react"
+import { useState, useRef } from "react"
+import 'animate.css';
 import OrderHeader from "./OrderHeader"
 import OrderPanel from "./OrderPanel"
 
@@ -16,6 +17,8 @@ const Order = () => {
     const [preC1, setPreC1] = useState()
     const [preC2, setPreC2] = useState()
     const [preC3, setPreC3] = useState()
+    const [region, setRegion] = useState()
+    let formValid = useRef(false)
 
     const colorsObj = {
         "White": "#FFFFFF",
@@ -84,7 +87,20 @@ const Order = () => {
 
     }
 
-    console.log(model)
+    const regionSelect = (e) => {
+
+        if (e.target.value === 'Select a country') return
+
+        setRegion(e.target.value)
+    }
+
+    if ((custom && model && region && custColor) || (!custom && model && region && preColor)) {
+        formValid = true
+    } else {
+        formValid = false
+    }
+
+    console.log(formValid)
 
     return (
         <div className="py-20">
@@ -92,7 +108,10 @@ const Order = () => {
             <div className={openPanel ? "block flex justify-center" : "hidden"}>
                 <OrderPanel canoe={canoe} custom={custom} modelSelect={modelSelect} model={model} 
                     colorSelect={colorSelect} custColor={custColor} c1={c1} c2={c2} c3={c3} preC1={preC1} preC2={preC2} preC3={preC3} func={customClick}
-                    preColorSelect={preColorSelect} preColor={preColor}/>
+                    preColorSelect={preColorSelect} preColor={preColor} setRegion={regionSelect}/>
+            </div>
+            <div className={formValid ? "block flex justify-center" : "hidden"}>
+                <div className="animate__animated animate__fadeInDown">This is the final form</div>
             </div>
         </div>
     )
