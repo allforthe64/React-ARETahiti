@@ -2,6 +2,7 @@ import { useState, useRef } from "react"
 import 'animate.css';
 import OrderHeader from "./OrderHeader"
 import OrderPanel from "./OrderPanel"
+import getStripe from "../../lib/getStripe";
 
 const Order = () => {
 
@@ -100,10 +101,46 @@ const Order = () => {
         formValid = false
     }
 
-    console.log(formValid)
+    async function handleCheckout() {
+        console.log(import.meta.env.VITE_REACT_PUBLIC_STRIPE_PUBLISHABLE_KEY)
+        const stripe = await getStripe();
+        let product
+        
+        if (canoe === 0 && model === 'Pro Carbon') {
+            product = import.meta.env.VITE_REACT_PUBLIC_STRIPE_PRICE_ID_V1CARBON
+        }
+        else if (canoe === 0 && model === 'Hybrid Carbon') {
+            product = import.meta.env.VITE_REACT_PUBLIC_STRIPE_PRICE_ID_V1HYBRID
+        } else if (canoe === 1 && model === 'Pro Carbon') {
+            canoe = import.meta.env.VITE_REACT_PUBLIC_STRIPE_PRICE_ID_OC1CARBON
+        }
+        else if (canoe === 1 && model === 'Hybrid Carbon') {
+            product = import.meta.env.VITE_REACT_PUBLIC_STRIPE_PRICE_ID_OC1HYBRID
+        } else if (canoe === 2 && model === 'Wood Iakos/Fiber Glass Ama') {
+            product = import.meta.env.VITE_REACT_PUBLIC_STRIPE_PRICE_ID_V6WOODFIBER
+        } else {
+            product = import.meta.env.VITE_REACT_PUBLIC_STRIPE_PRICE_ID_V6CARBON
+        }
+
+        const { error } = await stripe.redirectToCheckout({
+          lineItems: [
+            {
+              price: product,
+              quantity: 1,
+            },
+          ],
+          mode: 'payment',
+          successUrl: `http://localhost:5173/`,
+          cancelUrl: `http://localhost:5173/order`,
+          customerEmail: 'customer@email.com',
+        });
+        console.warn(error.message);
+    }
+
+    console.log(model)
 
     return (
-        <div className="py-20">
+        <div className="pt-20">
             <OrderHeader canoe={canoe} func={click}/>
             <div className={openPanel ? "block flex justify-center" : "hidden"}>
                 <OrderPanel canoe={canoe} custom={custom} modelSelect={modelSelect} model={model} 
@@ -111,7 +148,9 @@ const Order = () => {
                     preColorSelect={preColorSelect} preColor={preColor} setRegion={regionSelect}/>
             </div>
             <div className={formValid ? "block flex justify-center" : "hidden"}>
-                <div className="animate__animated animate__fadeInDown">This is the final form</div>
+                <div className="animate__animated animate__fadeInDown py-20">
+                    <button className="orange orange-border rounded-3xl headings text-3xl px-16 py-2 orange-button transition-color duration-200 ease-in-out" onClick={handleCheckout}>Checkout</button>
+                </div>
             </div>
         </div>
     )
