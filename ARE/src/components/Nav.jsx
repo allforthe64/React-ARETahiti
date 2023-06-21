@@ -20,8 +20,9 @@ const Nav = () => {
                 </li>
                 <li className="nav-item">
                     <Link className="nav-link text-white text nav-link transition-color ease-in-out duration-200" href="{% url 'reps' %}">Our Representatives</Link>
-                    </li>
-                <li className="nav-item dropdown">
+                </li>
+                <li className="nav-item">
+                    <Link to={'/login'} className="nav-link text-white text nav-link transition-color ease-in-out duration-200">Rep Login</Link>
                 </li>
             </ul>
         </nav>

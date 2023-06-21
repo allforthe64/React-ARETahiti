@@ -15,6 +15,7 @@ import Marara from './components/canoe_pages/Marara'
 import Nav from './components/Nav'
 import Footer from './components/Footer'
 import Order from './components/Order'
+import { Login } from './components/Login'
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
         <Route path='/matahina' element={<Matahina />} />
         <Route path='/mana' element={<Mana />} />
         <Route path='/marara' element={<Marara />} />
+        <Route path='/login' element={<Login />} />
       </Routes>
       <Footer />
     </div>

@@ -112,7 +112,7 @@ const Order = () => {
         else if (canoe === 0 && model === 'Hybrid Carbon') {
             product = import.meta.env.VITE_REACT_PUBLIC_STRIPE_PRICE_ID_V1HYBRID
         } else if (canoe === 1 && model === 'Pro Carbon') {
-            canoe = import.meta.env.VITE_REACT_PUBLIC_STRIPE_PRICE_ID_OC1CARBON
+            product = import.meta.env.VITE_REACT_PUBLIC_STRIPE_PRICE_ID_OC1CARBON
         }
         else if (canoe === 1 && model === 'Hybrid Carbon') {
             product = import.meta.env.VITE_REACT_PUBLIC_STRIPE_PRICE_ID_OC1HYBRID
