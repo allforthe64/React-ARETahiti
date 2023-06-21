@@ -1,19 +1,25 @@
-import { useRef, useState, useEffect, useContext } from 'react'
-import AuthContext from '../context/authProvider'
+import { useRef, useState, useEffect } from 'react'
+import useAuth from '../hooks/useAuth'
+
+import {Link, useNavigate, useLocation} from 'react-router-dom'
 
 import axios from '../api/axios'
 const LOGIN_URL = '/login'
 
 export const Login = () => {
 
-    const { setAuth } = useContext(AuthContext)
+    const navigate = useNavigate() // establish routing values
+    const location = useLocation()
+    const from = '/admin'
+
+    //get the auth context/initialize refs and state
+    const { setAuth } = useAuth()
     const userRef = useRef()
     const errRef = useRef()
 
     const [user, setUser] = useState('')
     const [pwd, setPwd] = useState('')
     const [errMsg, setErrMsg] = useState('')
-    const [success, setSuccess] = useState(false)
 
     //focus on the username input field
     useEffect(() => {
@@ -40,15 +46,17 @@ export const Login = () => {
             )
             console.log(JSON.stringify(response?.data))
 
-            //taken data from response and put it into the auth object
-            /* const accessToken = response?.data?.accessToken */
+            //take data from response and put it into the auth object
+            const accessToken = response?.data?.accessToken
             const region = response?.data?.region
-            setAuth({ user, pwd, region/* , accessToken */ })
+            setAuth({ user, pwd, region, accessToken })
             
             //clear out form
             setUser('')
             setPwd('')
-            setSuccess(true)
+
+            //navigate to admin page
+            navigate(from, {replace: true})
         } catch(err) {
             console.log(err)
             //capture errors and display them
@@ -63,12 +71,6 @@ export const Login = () => {
             }
             errRef.current.focus()
         }
-    }
-
-
-    if (success) {
-        alert('login was successful')
-        setSuccess(false)
     }
 
   return (
