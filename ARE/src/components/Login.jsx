@@ -1,6 +1,9 @@
 import { useRef, useState, useEffect, useContext } from 'react'
 import AuthContext from '../context/authProvider'
 
+import axios from '../api/axios'
+const LOGIN_URL = '/login'
+
 export const Login = () => {
 
     const { setAuth } = useContext(AuthContext)
@@ -24,8 +27,49 @@ export const Login = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
+        
+        //try to make login request to backend
+        try {
+            
+            const response = await axios.post(LOGIN_URL, 
+                JSON.stringify({"username": user, pwd}),
+                {
+                    headers: { 'Content-Type': 'application/json'},
+                    withCredentials: true
+                }
+            )
+            console.log(JSON.stringify(response?.data))
+
+            //taken data from response and put it into the auth object
+            /* const accessToken = response?.data?.accessToken */
+            const region = response?.data?.region
+            setAuth({ user, pwd, region/* , accessToken */ })
+            
+            //clear out form
+            setUser('')
+            setPwd('')
+            setSuccess(true)
+        } catch(err) {
+            console.log(err)
+            //capture errors and display them
+            if (!err?.response) {
+                setErrMsg('No Server Response')
+            } else if (err.response?.status === 400) {
+                setErrMsg('Missing Username or Password')
+            } else if (err.response?.status === 401) {
+                setErrMsg('Unauthorized')
+            } else {
+                setErrMsg('Login Failed')
+            }
+            errRef.current.focus()
+        }
     }
 
+
+    if (success) {
+        alert('login was successful')
+        setSuccess(false)
+    }
 
   return (
     <section className='py-20 flex justify-center'>

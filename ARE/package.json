@@ -11,6 +11,7 @@
   "dependencies": {
     "@stripe/stripe-js": "^1.52.1",
     "animate.css": "^4.1.1",
+    "axios": "^1.4.0",
     "env-cmd": "^10.1.0",
     "react": "^18.2.0",
     "react-animated-slider": "^1.1.4",
