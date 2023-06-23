@@ -1,11 +1,17 @@
 import { useState, useEffect } from "react"
-import axios from "../api/axios"
+import useAxiosPrivate from "../hooks/useAxiosPrivate"
 import useRefreshToken from '../hooks/useRefreshToken'
+import { useNavigate, useLocation } from 'react-router-dom'
 
 export const Users = () => {
   
     const [users, setUsers] = useState()
     const refresh = useRefreshToken()
+
+    const axiosPrivate = useAxiosPrivate()
+
+    const navigate = useNavigate()
+    const location = useLocation()
 
     //get all users from backend when component mounts
     useEffect(() => {
@@ -14,13 +20,14 @@ export const Users = () => {
 
         const getUsers = async () => {
             try {
-                const response = await axios.get('/admin', {
+                const response = await axiosPrivate.get('/admin', {
                     signal: controller.signal
                 })
                 console.log(response.data)
                 isMounted && setUsers(response.data)
             } catch (err) {
                 console.log(err)
+                navigate('/login', { state: { from: location }, replace: true})
             }
         }
 
