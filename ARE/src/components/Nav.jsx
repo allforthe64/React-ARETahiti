@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom"
+import useAuth from "../hooks/useAuth"
 
 const Nav = () => {
+
+    const { auth } = useAuth()
+
     return (
         <nav className="text-white flex bg-neutral-900 h-14 pt-4" id="nav">
             <Link className="navbar-brand text-white text text-xl pl-[3%] nav-link transition-color ease-in-out duration-200" to={"/"}>ARE Tahiti</Link>
@@ -24,6 +28,11 @@ const Nav = () => {
                 <li className="nav-item">
                     <Link to={'/login'} className="nav-link text-white text nav-link transition-color ease-in-out duration-200">Rep Login</Link>
                 </li>
+                {auth?.accessToken && 
+                    <li className="nav-item">
+                        <Link to={'/admin'} className="nav-link text-white text nav-link transition-color ease-in-out duration-200">Admin Page</Link>
+                    </li>
+                }
             </ul>
         </nav>
     )

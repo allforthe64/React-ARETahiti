@@ -5,12 +5,12 @@ const RequireAuth = () => {
     const { auth } = useAuth()
     const location = useLocation()
 
-    console.log(auth)
+    console.log('Da Auth: ', auth)
 
-    if (!auth?.user) alert("Oops! Looks like you tried to go to a page you don't have access to! Redirecting you now...")
+    if (!auth?.accessToken) alert("Oops! Looks like you tried to go to a page you don't have access to! Redirecting you now...")
      
     return (
-        auth?.user
+        auth?.accessToken
             ? <Outlet />
             : <Navigate to='/' state={{ from: location}} replace/>
     )

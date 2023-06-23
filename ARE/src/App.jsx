@@ -17,6 +17,7 @@ import Order from './components/Order'
 import { Login } from './components/Login'
 import Admin from './components/Admin'
 import Layout from './components/Layout'
+import PersistLogin from './components/PersistLogin'
 
 
 function App() {
@@ -37,8 +38,10 @@ function App() {
           <Route path='login' element={<Login />} />
           
           {/*Private routes */}
-          <Route element={<RequireAuth />}>
-            <Route path='/admin' element={<Admin />} />
+          <Route element={<PersistLogin />}>
+            <Route element={<RequireAuth />}>
+              <Route path='/admin' element={<Admin />} />
+            </Route>
           </Route>
         </Route>
       </Routes>
