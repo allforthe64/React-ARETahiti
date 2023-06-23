@@ -3,6 +3,8 @@ import AuthContext from '../context/authProvider'
 import { useContext, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 
+import { Users } from './Users'
+
 const Admin = () => {
 
     //create the navigate hook
@@ -22,7 +24,9 @@ const Admin = () => {
     console.log(auth)
 
   return (
-    <div>Admin</div>
+    <div>
+        <Users />
+    </div>
   )
 }
 
