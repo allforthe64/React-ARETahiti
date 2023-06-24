@@ -13,7 +13,7 @@ export const Login = () => {
     const from = '/admin'
 
     //get the auth context/initialize refs and state
-    const { setAuth } = useAuth()
+    const { setAuth, persist, setPersist } = useAuth()
     const userRef = useRef()
     const errRef = useRef()
 
@@ -31,6 +31,17 @@ export const Login = () => {
         setErrMsg('')
     }, [user, pwd])
 
+    //toggle the persist login function
+    const togglePersist = () => {
+        setPersist(prev => !prev)
+    }
+
+    //set persist 
+    useEffect(() => {
+        localStorage.setItem('persist', persist)
+    }, [persist])
+
+    //submit the form
     const handleSubmit = async (e) => {
         e.preventDefault()
         
@@ -91,6 +102,13 @@ export const Login = () => {
                 required
                 className='border-b bg-transparent border-black text-xl w-[50%] pl-2 py-px focus:outline-none focus:bg-white mb-12'/>
                 <button type='submit' className='text text-2xl orange orange-border mt-4 px-6 rounded-lg orange-button transition-color ease-in-out duration-200'>Login</button>
+                <div className='w-6/12 flex justify-start mt-4'>
+                    <input type={'checkbox'}
+                        id={'persist'}
+                        onChange={togglePersist}
+                        checked={persist} className='w-[18px] h-[18px]'/>
+                    <label htmlFor='persist' className='leading-4 ml-2'>Trust This Device</label>
+                </div>
             </form>
         </div>  
     </section>
