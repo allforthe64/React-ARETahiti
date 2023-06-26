@@ -18,6 +18,7 @@ import { Login } from './components/Login'
 import Admin from './components/Admin'
 import Layout from './components/Layout'
 import PersistLogin from './components/PersistLogin'
+import CustomOrder from './components/CustomOrder'
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path='about' element={<About />} />
           <Route path='order' element={<Order />} />
+          <Route path='order-custom' element={<CustomOrder />} />
           <Route path='canoes' element={<Canoes />} />
           <Route path='matahina' element={<Matahina />} />
           <Route path='mana' element={<Mana />} />

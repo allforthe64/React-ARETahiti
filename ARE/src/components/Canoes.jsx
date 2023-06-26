@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom"
+import { motion } from 'framer-motion'
 
 const Canoes = () => {
     return (
         <div id="en">
-            <div className="pt-20 flex flex-col items-center mb-10">
+            <div className="flex flex-col items-center py-20">
                 <h1 className="orange text-8xl heading mb-20">Canoes</h1>
                 <p className="text text-xl w-9/12">Ready to take the next step on your outrigger journey?
                     Well, you're in the right place! Athletes from around the world have 
@@ -11,7 +12,7 @@ const Canoes = () => {
                     below.
                 </p>
             </div>
-            <div className="flex items-center flex-col py-20">
+            <motion.div className="flex items-center flex-col py-20" initial={{ opacity: 0, x:-200 }} whileInView={{ opacity: 1, x:0 }} transition={{ duration: 1, delay: .25}} viewport={{ amount: .5, once: true}}>
                 <h2 className="heading text-6xl grey w-8/12">V6 Matahina - <span className="orange">King Of The Waves</span> </h2>
                 <div className="flex py-10 justify-around">
                     <img src="./matahina_2.jpg" alt="Matahina Canoe" className="w-5/12" />
@@ -25,8 +26,8 @@ const Canoes = () => {
                         </div>
                     </div>
                 </div>
-            </div>
-            <div className="flex items-center flex-col py-20">
+            </motion.div>
+            <motion.div className="flex items-center flex-col py-20" initial={{ opacity: 0, x:200 }} whileInView={{ opacity: 1, x:0 }} transition={{ duration: 1, delay: .25}} viewport={{ amount: .5, once: true}}>
                 <h2 className="heading text-6xl grey w-8/12">V1 Marara - <span className="orange">Be At 1</span> </h2>
                 <div className="flex py-10 justify-around">
                     <div className="w-4/12 flex items-center">
@@ -40,8 +41,8 @@ const Canoes = () => {
                     </div>
                     <img src="./marara_1.JPG" alt="Marara Canoe" className="w-5/12" />
                 </div>
-            </div>
-            <div className="flex items-center flex-col py-20">
+            </motion.div>
+            <motion.div className="flex items-center flex-col py-20" initial={{ opacity: 0, x:-200 }} whileInView={{ opacity: 1, x:0 }} transition={{ duration: 1, delay: .25}} viewport={{ amount: .4, once: true}}>
                 <h2 className="heading text-6xl grey w-8/12">OC1 Mana - <span className="orange">Raising The Standard</span> </h2>
                 <div className="flex py-10 justify-around">
                     <img src="./mana_1.JPG" alt="Mana OC1" className="w-5/12" />
@@ -56,15 +57,15 @@ const Canoes = () => {
                         </div>
                     </div>
                 </div>
-            </div>
-            <div className="py-20 flex flex-col items-center">
+            </motion.div>
+            <motion.div className="py-20 flex flex-col items-center" initial={{opacity: 0, y: 200}} whileInView={{opacity: 1, y: 0}} transition={{duration: .5, delay:.25, type:'spring'}} viewport={{amount: .4}}>
                 <h1 className="grey text-6xl heading mb-10">Next Steps</h1>
                 <p className="text text-2xl w-8/12 mb-10">Now that you've chosen the perfect canoe,
                     it's time to order it! Click the button below for more information
                     on our ordering process.
                 </p>
                 <Link to={'/'} className="orange-background orange-bg-button orange-border text-white rounded-3xl headings text-3xl px-16 py-2 transition-color duration-200 ease-in-out">See More</Link>
-            </div>
+            </motion.div>
         </div> 
 
     )

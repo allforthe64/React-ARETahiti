@@ -1,6 +1,54 @@
 import { Link } from "react-router-dom"
+import { motion } from 'framer-motion'
 
 const Home = () => {
+
+    const discoverVariant = {
+        hidden: {
+            opacity: 0,
+            x: -200
+        },
+        show: {
+            opacity: 1,
+            x: 0,
+            transition: {
+                type: "spring",
+                duration: .75,
+                delay: .25,
+            }
+        }
+    }
+
+    const containerVariant = {
+        hidden: {
+            opacity: 1,
+            transition: {
+                duration: 0
+            }
+        },
+        show: {
+            opacity: 1,
+            transition: {
+                when: 'beforChildren',
+                staggerChildren: 0.75
+            }
+        }
+    }
+
+    const cardVariant = {
+        hidden: {
+            opacity: 0,
+            y: 200,
+        },
+        show: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                type: "spring",
+                duration: 1
+            }
+        }
+    }
 
     return (
         <div id="en">
@@ -9,21 +57,21 @@ const Home = () => {
             </div>
             {/*Discover ARE*/}
             <div className="py-32">
-                <h1 className="orange text-8xl heading mb-20">Discover ARE</h1>
-                <div className="flex justify-around">
-                    <div className="w-3/12 rounded-md bg-neutral-100 p-4 shadowed">
+                <motion.h1 className="orange text-8xl heading mb-20" variants={discoverVariant} initial='hidden' whileInView='show' viewport={{amount: 0.4, once: true}}>Discover ARE</motion.h1>
+                <motion.div className="flex justify-around" variants={containerVariant} initial='hidden' whileInView='show' viewport={{amount: 0.4, once: true}}>
+                    <motion.div className="w-3/12 rounded-md bg-neutral-100 p-4 shadowed" variants={cardVariant}>
                         <img src="./mana_8.JPG" alt="outrigger-1" className="h-[85%] w-full" />
                         <button type="submit" className="text orange orange-border mt-4 px-6 rounded-md orange-button transition-color ease-in-out duration-200" to={'/canoes'}><Link>Get An Outrigger</Link></button>
-                    </div>
-                    <div className="w-3/12 rounded-md bg-neutral-100 p-4 shadowed">
+                    </motion.div>
+                    <motion.div className="w-3/12 rounded-md bg-neutral-100 p-4 shadowed" variants={cardVariant}>
                         <img src="./marara_6.JPG" alt="outrigger-2" className="h-[85%] w-full" />
                         <button type="submit" className="text orange orange-border mt-4 px-6 rounded-md orange-button transition-color ease-in-out duration-200"><Link to={"https://www.youtube.com/channel/UCX1yW5NSmLIGCmXhaD4A98Q"} target="_blank">See Them In Action</Link></button>
-                    </div>
-                    <div className="w-3/12 rounded-md bg-neutral-100 p-4 shadowed">
+                    </motion.div>
+                    <motion.div className="w-3/12 rounded-md bg-neutral-100 p-4 shadowed" variants={cardVariant}>
                         <img src="./matahina_8.jpg" alt="outrigger-3" className="h-[85%] w-full" /> 
                         <button type="submit" className="text orange orange-border mt-4 px-6 rounded-md orange-button transition-color ease-in-out duration-200"><Link to={'/order'}>Ordering A Canoe</Link></button>
-                    </div>
-                </div>
+                    </motion.div>
+                </motion.div>
             </div>
 
             {/*introduction*/}
