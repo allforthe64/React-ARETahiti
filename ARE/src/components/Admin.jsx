@@ -4,6 +4,7 @@ import { useContext, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import { Users } from './Users'
+import Orders from './Orders'
 
 const Admin = () => {
 
@@ -24,8 +25,10 @@ const Admin = () => {
     console.log(auth)
 
   return (
-    <div>
+    <div className='py-10'>
+      <h1 className='heading text-8xl grey mb-10'>Admin Page</h1>
         <Users />
+        <Orders />
     </div>
   )
 }
