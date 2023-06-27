@@ -27,7 +27,6 @@ const Admin = () => {
   return (
     <div className='py-10'>
       <h1 className='heading text-8xl grey mb-10'>Admin Page</h1>
-        <Users />
         <Orders />
     </div>
   )

@@ -39,9 +39,24 @@ const Orders = () => {
 
   return (
     <div>
-        <div className='flex flex-col items-center h-[50vh] border-2 border-black space-y-4 overflow-auto py-4'>
-            {orderCards}
-        </div> 
+        <div className='bg-neutral-200 py-10 flex flex-col items-center'>
+            <h2 className='text-left w-[90%] heading grey text-6xl pl-[4%] mb-10'>Currently placed orders:</h2>
+            <div className='flex flex-col items-start w-[90%] pl-[4%] mb-10'>
+                <label htmlFor='region' className='text-2xl mb-3 heading grey'>Filter by region:</label>
+                <select id='region' className='w-[30%] text-xl border-b bg-transparent border-black text-xl pl-2 py-px focus:outline-none focus:bg-white grey order-select'>
+                    <option>No Region</option>
+                    <option>United States</option>
+                    <option>Hawaii</option>
+                    <option>Canada</option>
+                    <option>Tahiti</option>
+                    <option>Pacific Islands</option>
+                    <option>Australia</option>
+                </select>
+            </div>
+            <div className='flex flex-col items-center h-[50vh] w-[90%] border-b-2 border-black space-y-6 overflow-auto py-4'>
+                {orderCards}
+            </div> 
+        </div>
     </div>
   )
 }

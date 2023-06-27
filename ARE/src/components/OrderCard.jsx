@@ -2,7 +2,7 @@ import React from 'react'
 
 const OrderCard = ({id, fName, lName, boat, email, phone, region}) => {
   return (
-    <div className='bg-neutral-200 border-2 border-black rounded-2xl w-11/12 py-8'>
+    <div className='bg-white border-2 border-black rounded-2xl w-11/12 py-8'>
         <div className='flex justify-around w-10/12'>
             <p className='heading grey text-xl '>Order Id: {id}</p>
             <p className='heading grey text-lg'>First Name: {fName}</p>
