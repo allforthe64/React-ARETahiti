@@ -13,9 +13,20 @@ const CustomOrder = () => {
     const [email, setEmail] = useState('')
     const [phone, setPhone] = useState('')
     const [region, setRegion] = useState('')
-    const [boat, setBoat] = useState('')
+    const [boat, setBoat] = useState('Marara V1 Pro Carbon')
     const [validEmail, setValidEmail] = useState()
     const [validPhone, setValidPhone] = useState()
+
+    const boatImgs = {
+        'Marara V1 Pro Carbon': 'marara_1.JPG',
+        'Marara V1 Hybrid Carbon': 'marara_5.jpg',
+        'Mako V1 Pro Carbon': 'mako_1.jpg',
+        'Mako V1 Hybrid Carbon': 'mako_2.jpg',
+        'Mana OC1 Pro Carbon': 'mana_1.JPG',
+        'Mana OC1 Hybrid Carbon': 'mana_11.jpg',
+        'Matahina V6 Carbon Iakos/Carbon Ama': 'matahina_11.jpg',
+        'Matahina V6 Wood Iakos/Fiberglass Ama': 'matahina_1.png'
+    }
 
     useEffect(() => {
         const result = EMAIL_REGEX.test(email)
@@ -81,25 +92,29 @@ const CustomOrder = () => {
         }
     }
 
-    console.log(validPhone)
+    console.log(boat)
 
   return (
     <div className='py-20 flex flex-col items-center'>
         <h1 className='heading text-8xl grey mb-10'>Place a custom order</h1>
         <form onSubmit={handleSubmit} className='bg-neutral-200 border-2 border-black rounded-2xl w-[80%] py-10 flex flex-col items-center px-[2%]'>
-            <div className='w-full flex flex-col items-start'>
-                <label className='text-2xl mb-3 heading grey'>Please Select A Boat Type</label>
-                <select id='boatType' className='border-b bg-transparent border-black text-xl w-full mb-10 pl-2 py-px focus:outline-none focus:bg-white grey order-select' onChange={(e) => handleSelectBoat(e)} value={boat} required>
-                        <option>Select One...</option>
-                        <option>Marara V1 Pro Carbon</option>
-                        <option>Marara V1 Hybrid Carbon</option>
-                        <option>Mako V1 Pro Carbon</option>
-                        <option>Mako V1 Hybrid Carbon</option>
-                        <option>Mana OC1 Pro Carbon</option>
-                        <option>Mana OC1 Hybrid Carbon</option>
-                        <option>Matahina V6 Carbon Iakos/Carbon Ama</option>
-                        <option>Matahina V6 Wood Iakos/Fiberglass Ama</option>
-                    </select>
+            <div className='w-full flex justify-between mb-10 items-end'>
+                <div className='w-[45%] flex flex-col items-start'>
+                    <label className='text-2xl mb-3 heading grey'>Please Select A Boat Type</label>
+                    <select id='boatType' className='border-b bg-transparent border-black text-xl w-full mb-10 pl-2 py-px focus:outline-none focus:bg-white grey order-select' onChange={(e) => handleSelectBoat(e)} value={boat} required>
+                            <option selected>Marara V1 Pro Carbon</option>
+                            <option>Marara V1 Hybrid Carbon</option>
+                            <option>Mako V1 Pro Carbon</option>
+                            <option>Mako V1 Hybrid Carbon</option>
+                            <option>Mana OC1 Pro Carbon</option>
+                            <option>Mana OC1 Hybrid Carbon</option>
+                            <option>Matahina V6 Carbon Iakos/Carbon Ama</option>
+                            <option>Matahina V6 Wood Iakos/Fiberglass Ama</option>
+                        </select>
+                </div>
+                <div className='w-[40%] h-[250px]' style={{backgroundImage: `url(${boatImgs[`${boat}`]})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat'}}>
+{/*                     <img src={boatImgs[`${boat}`]} className='h-full'/> */}
+                </div>
             </div>
             <div className='flex justify-between w-full'>
                 <div className='w-[40%] flex flex-col items-start'>
