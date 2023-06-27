@@ -6,6 +6,7 @@ const Orders = () => {
 
     const axiosPrivate = useAxiosPrivate()
     const [orders, setOrders] = useState([])
+    const [filteredOrders, setFilteredOrders] = useState([])
 
     useEffect(() => {
 
@@ -33,9 +34,20 @@ const Orders = () => {
         }
     }, [])
 
-    const orderCards = orders.map((order, i) => <OrderCard key={i} id={order._id} fName={order.customerFName} lName={order.customerLName} boat={order.boatType} email={order.customerEmail} phone={order.customerPhone} region={order.region}/>)
+    const handleChange = (region) => {
+        region === 'No Region' ? setFilteredOrders([]) : setFilteredOrders(orders.filter(el => el.region === region)) 
+    }
+
+    let orderCards 
     
-    console.log('orders', orders)
+    if (filteredOrders.length !== 0) {
+        orderCards = filteredOrders.map((order, i) => <OrderCard key={i} id={order._id} fName={order.customerFName} lName={order.customerLName} boat={order.boatType} email={order.customerEmail} phone={order.customerPhone} region={order.region}/>)
+    } else {
+        orderCards = orders.map((order, i) => <OrderCard key={i} id={order._id} fName={order.customerFName} lName={order.customerLName} boat={order.boatType} email={order.customerEmail} phone={order.customerPhone} region={order.region}/>)
+    }
+       
+    
+    console.log('filtered orders: ', filteredOrders)
 
   return (
     <div>
@@ -43,7 +55,7 @@ const Orders = () => {
             <h2 className='text-left w-[90%] heading grey text-6xl pl-[4%] mb-10'>Currently placed orders:</h2>
             <div className='flex flex-col items-start w-[90%] pl-[4%] mb-10'>
                 <label htmlFor='region' className='text-2xl mb-3 heading grey'>Filter by region:</label>
-                <select id='region' className='w-[30%] text-xl border-b bg-transparent border-black text-xl pl-2 py-px focus:outline-none focus:bg-white grey order-select'>
+                <select id='region' className='w-[30%] text-xl border-b bg-transparent border-black text-xl pl-2 py-px focus:outline-none focus:bg-white grey order-select' onChange={(e) => handleChange(e.target.value)}>
                     <option>No Region</option>
                     <option>United States</option>
                     <option>Hawaii</option>
