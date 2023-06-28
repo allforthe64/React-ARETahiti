@@ -7,6 +7,7 @@ const Orders = () => {
     const axiosPrivate = useAxiosPrivate()
     const [orders, setOrders] = useState([])
     const [filteredOrders, setFilteredOrders] = useState([])
+    const [fetched, setFetched] = useState(false)
 
     useEffect(() => {
 
@@ -32,18 +33,40 @@ const Orders = () => {
             isMounted = false
             controller.abort()
         }
-    }, [])
+    }, [fetched])
 
     const handleChange = (region) => {
         region === 'No Region' ? setFilteredOrders([]) : setFilteredOrders(orders.filter(el => el.region === region)) 
     }
 
+    const deleteOrder = async (id) => {
+
+        try {
+            const response = await axiosPrivate.delete('/order', {
+                headers: { 
+                    'Content-Type': 'application/json' 
+                },
+                withCredentials: true,
+                    data: {
+                    id: id
+                    }
+                    
+            })
+            console.log(response?.data)
+            alert(`deleted order: ${id}`)
+            setFetched(prev => !prev)
+        } catch (err) {
+            console.log(err)
+        }
+        
+    }
+
     let orderCards 
     
     if (filteredOrders.length !== 0) {
-        orderCards = filteredOrders.map((order, i) => <OrderCard key={i} id={order._id} fName={order.customerFName} lName={order.customerLName} boat={order.boatType} email={order.customerEmail} phone={order.customerPhone} region={order.region}/>)
+        orderCards = filteredOrders.map((order, i) => <OrderCard key={i} id={order._id} fName={order.customerFName} lName={order.customerLName} boat={order.boatType} email={order.customerEmail} phone={order.customerPhone} region={order.region} deleteOrder={deleteOrder}/>)
     } else {
-        orderCards = orders.map((order, i) => <OrderCard key={i} id={order._id} fName={order.customerFName} lName={order.customerLName} boat={order.boatType} email={order.customerEmail} phone={order.customerPhone} region={order.region}/>)
+        orderCards = orders.map((order, i) => <OrderCard key={i} id={order._id} fName={order.customerFName} lName={order.customerLName} boat={order.boatType} email={order.customerEmail} phone={order.customerPhone} region={order.region} deleteOrder={deleteOrder}/>)
     }
        
     
