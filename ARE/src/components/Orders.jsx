@@ -8,6 +8,7 @@ const Orders = () => {
     const [orders, setOrders] = useState([])
     const [filteredOrders, setFilteredOrders] = useState([])
     const [fetched, setFetched] = useState(false)
+    const [noFiltered, setNoFiltered] = useState(false)
 
     useEffect(() => {
 
@@ -36,7 +37,14 @@ const Orders = () => {
     }, [fetched])
 
     const handleChange = (region) => {
-        region === 'No Region' ? setFilteredOrders([]) : setFilteredOrders(orders.filter(el => el.region === region)) 
+        setNoFiltered(false)
+        if (region === 'No Region') {
+            setFilteredOrders([])
+        } else {
+            const filtered = orders.filter(el => el.region === region)
+            if (filtered.length === 0) setNoFiltered(true)
+            setFilteredOrders(filtered) 
+        }
     }
 
     const deleteOrder = async (id) => {
@@ -70,7 +78,7 @@ const Orders = () => {
     }
        
     
-    console.log('filtered orders: ', filteredOrders)
+    console.log('there are not any filtered orders: ', noFiltered)
 
   return (
     <div>
@@ -89,7 +97,11 @@ const Orders = () => {
                 </select>
             </div>
             <div className='flex flex-col items-center h-[50vh] w-[90%] border-b-2 border-black space-y-6 overflow-auto py-4'>
-                {orderCards}
+                {!noFiltered ? (
+                    [orderCards]
+                )
+                : <p className='heading grey text-4xl'>No Orders In That Region!</p>}
+                
             </div> 
         </div>
     </div>
