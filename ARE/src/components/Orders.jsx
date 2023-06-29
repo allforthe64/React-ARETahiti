@@ -12,6 +12,7 @@ const Orders = () => {
 
     useEffect(() => {
 
+        console.log('rendered')
         let isMounted = true
         const controller = new AbortController()
 
@@ -37,6 +38,7 @@ const Orders = () => {
     }, [fetched])
 
     const handleChange = (region) => {
+        console.log(region)
         setNoFiltered(false)
         if (region === 'No Region') {
             setFilteredOrders([])
@@ -72,13 +74,11 @@ const Orders = () => {
     let orderCards 
     
     if (filteredOrders.length !== 0) {
-        orderCards = filteredOrders.map((order, i) => <OrderCard key={i} id={order._id} fName={order.customerFName} lName={order.customerLName} boat={order.boatType} email={order.customerEmail} phone={order.customerPhone} region={order.region} deleteOrder={deleteOrder}/>)
+        orderCards = filteredOrders.map((order, i) => <OrderCard key={i} id={order._id} fName={order.customerFName} lName={order.customerLName} boat={order.boatType} email={order.customerEmail} phone={order.customerPhone} region={order.region} deleteOrder={deleteOrder} setFetched={setFetched}/>)
     } else {
-        orderCards = orders.map((order, i) => <OrderCard key={i} id={order._id} fName={order.customerFName} lName={order.customerLName} boat={order.boatType} email={order.customerEmail} phone={order.customerPhone} region={order.region} deleteOrder={deleteOrder}/>)
+        orderCards = orders.map((order, i) => <OrderCard key={i} id={order._id} fName={order.customerFName} lName={order.customerLName} boat={order.boatType} email={order.customerEmail} phone={order.customerPhone} region={order.region} deleteOrder={deleteOrder} setFetched={setFetched}/>)
     }
        
-    
-    console.log('there are not any filtered orders: ', noFiltered)
 
   return (
     <div>
