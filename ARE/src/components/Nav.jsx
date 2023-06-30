@@ -36,7 +36,7 @@ const Nav = () => {
                 <li className="nav-item">
                     <Link className="nav-link text-white text nav-link transition-color ease-in-out duration-200" href="{% url 'reps' %}">Our Representatives</Link>
                 </li>
-                {auth?.accessToken ? (
+                {/* {auth?.accessToken ? (
                     <li className="nav-link text-white text nav-link transition-color ease-in-out duration-200 hover:cursor-pointer" onClick={() => handleLogout()}>
                     Logout
                     </li>
@@ -51,7 +51,7 @@ const Nav = () => {
                     <li className="nav-item">
                         <Link to={'/admin'} className="nav-link text-white text nav-link transition-color ease-in-out duration-200">Admin Page</Link>
                     </li>
-                }
+                } */}
             </ul>
         </nav>
     )
