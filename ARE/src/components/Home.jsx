@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 import { motion } from 'framer-motion'
+import ContactForm from "./ContactForm"
 
 const Home = () => {
 
@@ -114,17 +115,8 @@ const Home = () => {
                     Hawaii, the mainland United States and Canada. Once you've ordered a canoe, get in touch with the 
                     nearest ARE representative for more information
                     on the shipping and pickup process</p>
-                <div className="flex w-5/12 justify-around">
-                    <ul className="flex flex-col">
-                        <Link className="text text-left text-2xl mb-2 font-semibold hover:underline" to="/">United States</Link>
-                        <Link className="text text-left text-2xl mb-2 font-semibold hover:underline" to="/">Canada</Link>
-                        <Link className="text text-left text-2xl mb-2 font-semibold hover:underline" href="/">Hawaii</Link> 
-                    </ul>
-                    <ul className="flex flex-col">
-                        <Link className="text text-left text-2xl mb-2 font-semibold hover:underline" to="/">Tahiti</Link>
-                        <Link className="text text-left text-2xl mb-2 font-semibold hover:underline" to="/">Australia</Link>
-                        <Link className="text text-left text-2xl mb-2 font-semibold hover:underline" to="/">Pacific Islands</Link> 
-                    </ul>
+                <div className="w-full">
+                    <ContactForm />
                 </div>
             </div>
         </div>
