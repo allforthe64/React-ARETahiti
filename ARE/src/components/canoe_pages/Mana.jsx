@@ -1,9 +1,15 @@
 import { Link } from "react-router-dom"
+import { useEffect } from "react"
+
 
 import Slider from 'react-animated-slider';
 import 'react-animated-slider/build/horizontal.css';
 
 const Mana = () => {
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
 
     const slides = [
         { title: 'Superior Stability', description: 'Stable and smooth, the Mana OC1 is designed to be the ultimate beginner canoe. Whether your just learning how to paddle, or getting ready to practice surfing, the Mana is a perfect paddling companion.', imgURL: './mana_5.JPG' },

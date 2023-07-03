@@ -1,6 +1,13 @@
 import { Link } from "react-router-dom"
+import { useEffect } from "react"
 
 const About = () => {
+
+    
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
+
     return (
         <div id="en" className="py-20">
             <h1 className="grey text-8xl heading mb-20">About Us</h1>

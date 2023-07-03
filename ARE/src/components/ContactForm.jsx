@@ -4,8 +4,6 @@ import emailjs from '@emailjs/browser';
 import { useNavigate } from 'react-router-dom';
 
 
-
-
 const EMAIL_REGEX = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
 const PHONE_REGEX = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/
 

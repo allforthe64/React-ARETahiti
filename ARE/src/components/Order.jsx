@@ -1,10 +1,15 @@
-import { useState, useRef } from "react"
+import { useState, useRef, useEffect } from "react"
 import 'animate.css';
 import OrderHeader from "./OrderHeader"
 import OrderPanel from "./OrderPanel"
 import getStripe from "../../lib/getStripe";
 
 const Order = () => {
+
+    
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
 
     const [canoe, setCanoe] = useState()
     const [openPanel, setOpenPanel] = useState(false)

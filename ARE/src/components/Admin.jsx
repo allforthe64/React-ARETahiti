@@ -8,6 +8,10 @@ import Orders from './Orders'
 
 const Admin = () => {
 
+    useEffect(() => {
+      window.scrollTo(0, 0)
+    }, [])
+
     //create the navigate hook
     const navigate = useNavigate()
 

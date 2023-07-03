@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 import { motion } from 'framer-motion'
+import { useEffect } from "react"
 import ContactForm from "./ContactForm"
 
 const Home = () => {
@@ -50,6 +51,10 @@ const Home = () => {
             }
         }
     }
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
 
     return (
         <div id="en">

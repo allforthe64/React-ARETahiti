@@ -1,7 +1,13 @@
 import { Link } from "react-router-dom"
 import { motion } from 'framer-motion'
+import { useEffect } from "react"
 
 const Canoes = () => {
+    
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
+
     return (
         <div id="en">
             <div className="flex flex-col items-center py-20">
@@ -42,7 +48,21 @@ const Canoes = () => {
                     <img src="./marara_1.JPG" alt="Marara Canoe" className="w-5/12" />
                 </div>
             </motion.div>
-            <motion.div className="flex items-center flex-col py-20" initial={{ opacity: 0, x:-200 }} whileInView={{ opacity: 1, x:0 }} transition={{ duration: 1, delay: .25}} viewport={{ amount: .4, once: true}}>
+            <motion.div className="flex items-center flex-col py-20" initial={{ opacity: 0, x:-200 }} whileInView={{ opacity: 1, x:0 }} transition={{ duration: 1, delay: .25}} viewport={{ amount: .5, once: true}}>
+                <h2 className="heading text-6xl grey w-8/12">V1 Mako - <span className="orange">More of the best</span> </h2>
+                <div className="flex py-10 justify-around">
+                    <img src="./mako_2.jpg" alt="Matahina Canoe" className="w-5/12" />
+                    <div className="w-4/12 flex items-center">
+                        <div>
+                            <p className="text text-2xl text-left mb-10" id="canoe-text-1">Designed for paddlers 180 pounds plus,
+                            the Mako V1 has the same features you love about the Marara, but in a larger, more ergonomic package.
+                            </p>
+                            <Link to={'/mako'} className="orange orange-border rounded-3xl headings text-3xl px-16 py-2 orange-button transition-color duration-200 ease-in-out">See More</Link>
+                        </div>
+                    </div>
+                </div>
+            </motion.div>
+            <motion.div className="flex items-center flex-col py-20" initial={{ opacity: 0, x:200 }} whileInView={{ opacity: 1, x:0 }} transition={{ duration: 1, delay: .25}} viewport={{ amount: .4, once: true}}>
                 <h2 className="heading text-6xl grey w-8/12">OC1 Mana - <span className="orange">Raising The Standard</span> </h2>
                 <div className="flex py-10 justify-around">
                     <img src="./mana_1.JPG" alt="Mana OC1" className="w-5/12" />

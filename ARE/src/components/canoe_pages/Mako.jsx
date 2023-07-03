@@ -1,20 +1,19 @@
 import { Link } from "react-router-dom"
 import { useEffect } from "react"
 
-
 import Slider from 'react-animated-slider';
 import 'react-animated-slider/build/horizontal.css';
 
-const Marara = () => {
+const Mako = () => {
 
     useEffect(() => {
         window.scrollTo(0, 0)
     }, [])
 
     const slides = [
-        { title: 'Superior Craftsmanship', description: "Designed and tested by some of the best canoe builders in the business, the Marara's build quality is unmatched. Whether you choose the all carbon or the hybrid build, each of our canoes is rigorously tested to ensure a premium canoe build, everytime.", imgURL: './marara_2.JPG' },
-        { title: 'Clip In Assembly', description: "Snap to assemble Iakos make it easy to assemble your boat and hit the surf. You'll be ready to go in no time at all, giving you more time to enjoy being on the water.", imgURL: './marara_3.JPG'},
-        { title: 'Comfortable Ergonomics', description: "Nobody likes an uncomfortable boat. That's why we've built the Marara to be as comfortable as possible, even when you're paddling for long periods of time.", imgURL: './marara_4.JPG'}
+        { title: 'Superior Craftsmanship', description: "Designed and tested by some of the best canoe builders in the business, the Marara's build quality is unmatched. The new Mako hull is lighter than any design we've built previously, bringing the absolute best performance ARE Tahiti can provide to a body of water near you.", imgURL: './mako_1.jpg' },
+        { title: 'Clip In Assembly', description: "Snap to assemble Iakos make it easy to assemble your boat and hit the surf. You'll be ready to go in no time at all, giving you more time to enjoy being on the water.", imgURL: './mako_2.jpg'},
+        { title: 'Wider hull and a redesigned cockpit', description: "A new and improved hull and cockpit design give you a more comfortable ride while still maintaining the aspects that you love from the Marara", imgURL: './mako_5.jpg'}
       ];
        
       const slider = (
@@ -40,18 +39,17 @@ const Marara = () => {
         <div id="en">
             <div className="flex flex-col items-center py-12">
                 <div className="w-8/12 mb-8">
-                    <h1 className="heading text-6xl grey mb-8">V1 Marara - <span className="orange">Be At One</span></h1>
+                    <h1 className="heading text-6xl grey mb-8">V1 Mako - <span className="orange">Be At One</span></h1>
                     <p className="heading text-2xl grey">USD $4,750 (pro-carbon) / USD 3,750 (hybrid)</p>
                 </div>
-                <img src="./marara_2.JPG" alt="Matahina Canoe" className="w-7/12 mb-12"/>
+                <img src="./mako_3.jpg" alt="Matahina Canoe" className="w-7/12 mb-12"/>
                 <hr className="orange-background w-5/12 h-[5px]" />
             </div>
             <div className="flex flex-col items-center mb-16">
-                <p className="w-10/12 text text-2xl mb-10">A new generation of outrigger canoe has been born: introducing the 
-                    ARE Tahiti Marara V1. The Marara is at the forefront of single man outrigger canoes, effortlessly combining 
-                    top of the line engineering and superb craftsmanship. With its smooth glide and responsive steering, the 
-                    Marara delivers top notch water feel giving the feeling of being "at one" with the water. So what are you 
-                    waiting for? Order your Marara today and take paddling to the next level!
+                <p className="w-10/12 text text-2xl mb-10"> Meet the newest member of the ARE Tahiti family: 
+                the ARE Tahiti Mako V1. The Mako has everything you love about the Marara V1: excellent craftsmanship,
+                responsive steering, pristine glide, and top of the line craftsmanship, but in a more approachable package.
+                With a slightly wider hull and a more comfortable cockpit, the Mako is perfect for paddlers who are over 180 pounds, or if you're looking to go on a longer paddling excursion. 
                 </p>
                 <Link to={'/order'} className="orange orange-border rounded-3xl headings text-3xl px-16 py-2 orange-button transition-color duration-200 ease-in-out">Order Now</Link>
             </div>
@@ -67,17 +65,13 @@ const Marara = () => {
                     <ul className="text text-left list-disc pl-10 grey text-2xl">
                         <li className="mb-5">Length: 24.18 ft.</li>
                         <li className="mb-5">Beam: 13.39 in.</li>
-                        <li className="mb-5">Hull Weight: 18 lbs. (pro-carbon) / 20 lbs. (hybrid)</li>
-                        <li className="mb-5">Ama Weight: 4 lbs. (pro-carbon) / 5 lbs. (hybrid)</li>
-                        <li className="mb-5">Iakos Weight: 2 lbs. (pro-carbon) / 3 lbs. (hybrid)</li>
-                        <li className="mb-5">Total Weight Rigged: 24-26 lbs. / 28-30 lbs. (hybrid)</li>
+                        <li className="mb-5">Hull Weight: 18 lbs. (pro-carbon) / 22 lbs. (hybrid)</li>
+                        <li className="mb-5">Ama Weight: 2 lbs. (pro-carbon) / 3 lbs. (hybrid)</li>
+                        <li className="mb-5">Iakos Weight: 1 lbs. (pro-carbon) / 2 lbs. (hybrid)</li>
+                        <li className="mb-5">Total Weight Rigged: 21 lbs. / 27 lbs. (hybrid)</li>
                     </ul>
                 </div>
-                <img className="w-5/12 pr-10" alt="Canoe" src="./marara_3.JPG" />
-            </div>
-            <div className="flex flex-col items-center py-12">
-                <p className="heading text-6xl grey mb-10">See It In Action</p>
-                <iframe className="w-7/12 h-[465px]" src="https://www.youtube.com/embed/l451UCFvCWQ"></iframe>
+                <img className="w-5/12 pr-10" alt="Canoe" src="./mako_6.jpg" />
             </div>
             <div className="flex flex-col items-center py-12">
                 <p className="heading text-6xl grey mb-10 w-10/12">Ready To <span className="orange">Crush Some Waves?</span></p>
@@ -91,4 +85,4 @@ const Marara = () => {
     )
 }
 
-export default Marara
+export default Mako
