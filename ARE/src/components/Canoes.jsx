@@ -84,7 +84,7 @@ const Canoes = () => {
                     it's time to order it! Click the button below for more information
                     on our ordering process.
                 </p>
-                <Link to={'/'} className="orange-background orange-bg-button orange-border text-white rounded-3xl headings text-3xl px-16 py-2 transition-color duration-200 ease-in-out">See More</Link>
+                <Link to={'/order'} className="orange-background orange-bg-button orange-border text-white rounded-3xl headings text-3xl px-16 py-2 transition-color duration-200 ease-in-out">See More</Link>
             </motion.div>
         </div> 
 

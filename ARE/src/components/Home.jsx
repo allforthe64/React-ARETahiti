@@ -16,7 +16,7 @@ const Home = () => {
             transition: {
                 type: "spring",
                 duration: .75,
-                delay: .25,
+                delay: 1,
             }
         }
     }
@@ -31,8 +31,9 @@ const Home = () => {
         show: {
             opacity: 1,
             transition: {
+                delay: 1,
                 when: 'beforChildren',
-                staggerChildren: 0.75
+                staggerChildren: 1
             }
         }
     }
@@ -47,7 +48,7 @@ const Home = () => {
             y: 0,
             transition: {
                 type: "spring",
-                duration: 1
+                duration: 1,
             }
         }
     }
@@ -63,8 +64,8 @@ const Home = () => {
             </div>
             {/*Discover ARE*/}
             <div className="py-32">
-                <motion.h1 className="orange text-8xl heading mb-20" variants={discoverVariant} initial='hidden' whileInView='show' viewport={{amount: 0.4, once: true}}>Discover ARE</motion.h1>
-                <motion.div className="flex justify-around" variants={containerVariant} initial='hidden' whileInView='show' viewport={{amount: 0.4, once: true}}>
+                <motion.h1 className="orange text-8xl heading mb-20" variants={discoverVariant} initial='hidden' whileInView='show' viewport={{amount: .2, once: true}}>Discover ARE</motion.h1>
+                <motion.div className="flex justify-around" variants={containerVariant} initial='hidden' whileInView='show' viewport={{amount: 'all', once: true}}>
                     <motion.div className="w-3/12 rounded-md bg-neutral-100 p-4 shadowed" variants={cardVariant}>
                         <img src="./mana_8.JPG" alt="outrigger-1" className="h-[85%] w-full" />
                         <button type="submit" className="text orange orange-border mt-4 px-6 rounded-md orange-button transition-color ease-in-out duration-200" to={'/canoes'}><Link>Get An Outrigger</Link></button>
@@ -117,9 +118,9 @@ const Home = () => {
             
                 <h1 className="text-7xl heading mb-16">Get In Touch</h1>
                 <p className="text-xl text w-9/12 mb-10">ARE TAHITI designs and builds va’a, or outrigger canoes, for Tahiti and the Pacific islands, Australia, 
-                    Hawaii, the mainland United States and Canada. Once you've ordered a canoe, get in touch with the 
+                    Hawaii, the mainland United States and Canada. If you're interested in ordering a canoe, get in touch with the 
                     nearest ARE representative for more information
-                    on the shipping and pickup process</p>
+                    on the purchasing, shipping, and pickup process</p>
                 <div className="w-full">
                     <ContactForm />
                 </div>

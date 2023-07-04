@@ -39,7 +39,7 @@ const Mako = () => {
         <div id="en">
             <div className="flex flex-col items-center py-12">
                 <div className="w-8/12 mb-8">
-                    <h1 className="heading text-6xl grey mb-8">V1 Mako - <span className="orange">Be At One</span></h1>
+                    <h1 className="heading text-6xl grey mb-8">V1 Mako - <span className="orange">More of the best</span></h1>
                     <p className="heading text-2xl grey">USD $4,750 (pro-carbon) / USD 3,750 (hybrid)</p>
                 </div>
                 <img src="./mako_3.jpg" alt="Matahina Canoe" className="w-7/12 mb-12"/>
