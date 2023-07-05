@@ -12,53 +12,51 @@ const Matahina = () => {
       ];
        
       const slider = (
-        <Slider>
-            {slides.map((slide, index) => 
-                <div className="flex justify-center" key={index}>
-                    <div className="flex justify-around w-9/12 border-2 p-4 bg-neutral-100 rounded-2xl">
-                        <img src={slide.imgURL} className='w-[45%] rounded-lg'/>
-                        <div className="w-[45%] flex items-center">
-                            <div>
-                                <p className="heading orange text-2xl mb-8">{slide.title}</p>
-                                <p className="text text-lg">{slide.description}</p>
-                            </div>
-                        </div>
-                        
-                    </div>  
-                </div>
-            )}
-        </Slider>
+        <div className="py-10 w-full border-2">
+            
+        </div>
       )
 
     return (
         <div id="en">
             <div className="flex flex-col items-center py-12">
                 <div className="w-8/12 mb-8">
-                    <h1 className="heading text-6xl grey mb-8">V6 Matahina - <span className="orange">King Of The Waves</span></h1>
-                    <p className="heading text-2xl grey">USD $19,000 (Wood Iakos/Fiber Glass Ama) / USD $21,000 (Carbon Iakos/Carbon Ama)</p>
+                    <h1 className="heading text-6xl max-sm:text-2xl sm:max-md:text-4xl grey mb-8">V6 Matahina - <span className="orange">King Of The Waves</span></h1>
+                    <p className="heading text-2xl max-lg:text-lg max-sm:text-base grey">USD $19,000 (Wood Iakos/Fiber Glass Ama) / USD $21,000 (Carbon Iakos/Carbon Ama)</p>
                 </div>
-                <img src="./matahina_1.png" alt="Matahina Canoe" className="w-7/12 mb-12"/>
+                <img src="./matahina_1.png" alt="Matahina Canoe" className="w-7/12 mb-12 max-lg:w-9/12"/>
                 <hr className="orange-background w-5/12 h-[5px]" />
             </div>
-            <div className="flex flex-col items-center mb-16">
-                <p className="w-10/12 text text-2xl mb-10">Meet the master of rough ocean waters: the ARE Tahiti Matahina V6.
+            <div className="flex flex-col items-center mb-16 max-lg:mb-10">
+                <p className="w-10/12 text text-2xl mb-10 max-md:text-lg max-lg:w-9/12 max-sm:text-base">Meet the master of rough ocean waters: the ARE Tahiti Matahina V6.
                     Built for the surf, this fast sleek canoe is guaranteed to leave the competition
                     in your wake. With it's unrivaled racing record, the Matahina is used by winning teams 
                     in both Australia and Tahiti, including Shell Va'a. If you're looking for a boat 
                     to build your teams legacy with, then look no further than the Matahina V6.
                 </p>
-                <Link to={'/order'} className="orange orange-border rounded-3xl headings text-3xl px-16 py-2 orange-button transition-color duration-200 ease-in-out">Order Now</Link>
+                <Link to={'/order'} className="orange orange-border rounded-3xl max-md:text-lg max-md:px-10 headings text-3xl px-16 py-2 orange-button transition-color duration-200 ease-in-out">Order Now</Link>
             </div>
-            <div className="py-20 flex flex-col items-center">
-                <p className="heading text-6xl grey mb-10">Highlights</p>
-                <div className="w-10/12">
-                    {slider}
+                <p className="heading text-6xl max-sm:text-2xl sm:max-md:text-4xl grey mb-20 max-lg:mb-10">Highlights</p>
+                <div className="flex flex-col items-center">
+                        {slides.map((slide, index) => 
+                            <div className="flex justify-center py-10 border-2" key={index}>
+                                <div className="flex justify-around max-lg:flex-col w-9/12 max-lg:items-center">
+                                    <img src={slide.imgURL} className='w-[45%] max-lg:w-6/12'/>
+                                    <div className="w-[45%] max-lg:w-10/12 flex items-center">
+                                        <div className="max-lg:pb-[25%]">
+                                            <p className="heading orange text-2xl max-sm:text-base mb-8 max-lg:mb-4">{slide.title}</p>
+                                            <p className="text text-lg max-lg:text-sm">{slide.description}</p>
+                                        </div>
+                                    </div>
+                                    
+                                </div>  
+                            </div>
+                        )}
                 </div>
-            </div>
             <div className="flex justify-between py-12">
                 <div className="w-6/12 pl-20">
-                    <p className="heading grey text-6xl text-left mb-10">Specifications</p>
-                    <ul className="text text-left list-disc pl-10 grey text-2xl">
+                    <p className="heading grey text-6xl max-sm:text-2xl sm:max-md:text-4xl text-left mb-10">Specifications</p>
+                    <ul className="text text-left list-disc pl-10 grey text-2xl max-sm:text-base">
                         <li className="mb-5">Length: 42.8 ft.</li>
                         <li className="mb-5">Beam: 22.08 in.</li>
                         <li className="mb-5">Hull Weight: Approx. 220 lbs.</li>
@@ -70,16 +68,16 @@ const Matahina = () => {
                 <img className="w-5/12 pr-10" alt="Canoe" src="./matahina_3.jpg" />
             </div>
             <div className="flex flex-col items-center py-12">
-                <p className="heading text-6xl grey mb-10">See It In Action</p>
-                <iframe className="w-7/12 h-[465px]" src="https://www.youtube.com/embed/9Myqm1k2UNs"></iframe>
+                <p className="heading text-6xl max-sm:text-2xl sm:max-md:text-4xl grey mb-10">See It In Action</p>
+                <iframe className="w-7/12 h-[465px] max-lg:w-9/12 max-sm:h-[200px] sm:max-md:h-[275px]" src="https://www.youtube.com/embed/9Myqm1k2UNs"></iframe>
             </div>
             <div className="flex flex-col items-center py-12">
-                <p className="heading text-6xl grey mb-10 w-10/12">Ready To <span className="orange">Crush Some Waves?</span></p>
-                <p className="text text-2xl w-10/12 mb-10">
+                <p className="heading text-6xl max-sm:text-2xl sm:max-md:text-4xl grey mb-10 w-10/12">Ready To <span className="orange">Crush Some Waves?</span></p>
+                <p className="text text-2xl w-10/12 mb-10 max-sm:text-base">
                     Time to get your hands on an ARE canoe. You'll be surfing waves and winning races in no time!
                     Click the button to order your canoe!
                 </p>
-                <Link to={'/order'} className="orange orange-border rounded-3xl headings text-3xl px-16 py-2 orange-button transition-color duration-200 ease-in-out">Order Now</Link>
+                <Link to={'/order'} className="orange orange-border rounded-3xl max-md:text-lg max-md:px-10 headings text-3xl px-16 py-2 orange-button transition-color duration-200 ease-in-out">Order Now</Link>
             </div>
         </div>
     )
