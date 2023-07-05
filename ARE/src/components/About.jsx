@@ -1,13 +1,25 @@
 import { Link } from "react-router-dom"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { motion } from 'framer-motion'
 
 const About = () => {
 
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth)
     
     useEffect(() => {
         window.scrollTo(0, 0)
+
+        const handleWindowResize = () => {
+            setWindowWidth(window.innerWidth)
+        }
+
+        window.addEventListener('resize', handleWindowResize)
+
+        return () => {
+            window.removeEventListener('resize', handleWindowResize)
+        }
     }, [])
+
 
     return (
         <div id="en" className="py-[100px]">
@@ -53,7 +65,7 @@ const About = () => {
             </div>
 
             <div className="py-20 max-lg:py-10">
-                <motion.h3 className="grey max-sm:text-4xl sm:max-md:text-6xl text-8xl heading mb-20 sm:max-lg:mb-10 max-sm:mb-6" initial={{y: -300, opacity: 0}} whileInView={{y: 0, opacity: 1}} transition={{duration: .25, delay: .75}} viewport={{once: true}}>The Canoes</motion.h3>
+                <motion.h3 className="grey max-sm:text-4xl sm:max-md:text-6xl text-8xl heading mb-20 sm:max-lg:mb-10 max-sm:mb-6" initial={{y: -200, opacity: 0}} whileInView={{y: 0, opacity: 1}} transition={{duration: .25, delay: .75}} viewport={{once: true}}>The Canoes</motion.h3>
                 <div className="flex justify-around max-lg:flex-col-reverse max-lg:items-center" id="about-con-2">
                     <motion.div className="w-5/12 max-lg:w-9/12 flex flex-col items-center justify-center" initial={{x: -200, opacity: 0}} whileInView={{x: 0, opacity: 1}} transition={{duration: .25, delay: 1}} viewport={{once: true}}>
                         <p className="orange text-4xl heading w-6/12 mb-10 max-lg:mb-6 max-sm:text-2xl max-lg:w-full">The Heart And Soul Of ARE</p>
@@ -62,7 +74,7 @@ const About = () => {
                             outrigger canoes.</p>
                         <Link to={'/canoes'} className="orange orange-border rounded-3xl max-md:text-lg max-md:px-10 headings text-3xl px-16 py-2 orange-button transition-color duration-200 ease-in-out">See the canoes</Link>
                     </motion.div>
-                    <motion.img className="w-[35%] max-lg:w-9/12 max-lg:mb-6" src="./marara_4.JPG" alt="about-img-4" initial={{x: 200, opacity: 0}} whileInView={{x: 0, opacity: 1}} transition={{duration: .25, delay: 1.5}} viewport={{once: true}}/>
+                    <motion.img className="w-[35%] max-lg:w-9/12 max-lg:mb-6" src="./marara_4.JPG" alt="about-img-4" initial={{x: 75, opacity: 0}} whileInView={{x: 0, opacity: 1}} transition={{duration: .25, delay: 1.5}} viewport={{once: true}}/>
                 </div>
             </div>
 
