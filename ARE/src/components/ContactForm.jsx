@@ -82,12 +82,13 @@ const ContactForm = () => {
                     <label htmlFor='region' className='text-2xl mb-3 heading grey max-sm:text-lg'>Select a region:</label>
                     <select id='region' className='border-b bg-transparent border-black text-xl w-full mb-10 pl-2 py-px focus:outline-none focus:bg-white grey order-select' onChange={(e) => handleSelect(e)} value={region} required name='to_email'>
                         <option>Select One...</option>
-                        <option value={'billiamisgoated@gmail.com'}>United States</option>
-                        <option value={'billiamisgoated@gmail.com'}>Hawaii</option>
-                        <option value={'billiamisgoated@gmail.com'}>Canada</option>
-                        <option value={'billiamisgoated@gmail.com'}>Tahiti</option>
-                        <option value={'billiamisgoated@gmail.com'}>Pacific Islands</option>
-                        <option value={'billiamisgoated@gmail.com'}>Australia</option>
+                        <option value={'sales@aretahiti.com'}>United States</option>
+                        <option value={'sales@aretahiti.com'}>Hawaii</option>
+                        <option value={'sales@aretahiti.com'}>California</option>
+                        <option value={'arislan77@gmail.com'}>Canada</option>
+                        <option value={'arislan77@gmail.com'}>Tahiti</option>
+                        <option value={'arislan77@gmail.com'}>Pacific Islands</option>
+                        <option value={'arislan77@gmail.com'}>Australia</option>
                     </select>
                 </div>
                 <div className='flex justify-around w-full mb-4 max-md:flex-col '>
