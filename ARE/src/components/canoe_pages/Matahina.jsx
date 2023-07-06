@@ -2,7 +2,6 @@ import { Link } from "react-router-dom"
 
 import { motion } from 'framer-motion'
 import { useEffect } from "react";
-import 'react-animated-slider/build/horizontal.css';
 
 const Matahina = () => {
 
@@ -32,12 +31,6 @@ const Matahina = () => {
         { title: 'Adjustable Rigging', description: "The Matahina's rigging is adjustable, allowing for infinite customization to meet your needs. Whether you're rigging for flatwater or rough ocean, the Matahina's adjustable rigging allows you to set yourself up for success.", imgURL: './matahina_7.jpg'}
       ];
        
-      const slider = (
-        <div className="py-10 w-full border-2">
-            
-        </div>
-      )
-
     return (
         <div id="en">
             <motion.div className="flex flex-col items-center py-12" initial={{y: 200, opacity: 0}} whileInView={{y: 0, opacity: 1}} transition={{delay: .25}} viewport={{once: true}}>
