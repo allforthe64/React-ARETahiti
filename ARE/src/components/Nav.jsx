@@ -85,6 +85,9 @@ const Nav = () => {
   }, [size.width, menuOpen]);
 
   const menuToggleHandler = () => {
+    if (size.width > 768) {
+        setMenuOpen(true)
+    }
     setMenuOpen((p) => !p);
   };
 

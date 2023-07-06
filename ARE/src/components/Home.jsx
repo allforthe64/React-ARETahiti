@@ -50,17 +50,17 @@ const Home = () => {
             <div className="py-32 max-lg:py-14">
                 <motion.h1 className="orange text-8xl max-sm:text-2xl sm:max-lg:text-4xl heading mb-20 max-lg:mb-10" variants={discoverVariant} initial='hidden' whileInView='show' viewport={{amount: .2, once: true}}>Discover ARE</motion.h1>
                 <motion.div className="flex justify-around max-lg:flex-col max-lg:items-center max-lg:space-y-10" initial={{y: 200, opacity: 0}} whileInView={{y: 0, opacity: 1}} transition={{delay: 1.25, duration: 1}} viewport={{once: true}}>
-                    <motion.div className="w-3/12 rounded-md bg-neutral-100 p-4 shadowed max-lg:w-7/12" >
+                    <motion.div className="w-3/12 rounded-md bg-neutral-100 shadowed max-lg:w-7/12 px-4 pt-4 pb-8" >
                         <img src="./mana_8.JPG" alt="outrigger-1" className="h-[85%] w-full"/>
-                        <button type="submit" className="text orange orange-border mt-4 px-6 rounded-md orange-button transition-color ease-in-out duration-200 max-lg:w-7/12 max-sm:text-xs max-sm:w-full" to={'/canoes'}><Link>Get An Outrigger</Link></button>
+                        <button type="submit" className="text text-xl py-px font-semibold orange orange-border mt-4 px-6 rounded-md orange-button transition-color ease-in-out duration-200 max-lg:w-7/12 max-sm:text-xs max-sm:w-full" to={'/canoes'}><Link>Get An Outrigger</Link></button>
                     </motion.div>
-                    <motion.div className="w-3/12 rounded-md bg-neutral-100 p-4 shadowed max-lg:w-7/12" >
+                    <motion.div className="w-3/12 rounded-md bg-neutral-100 shadowed max-lg:w-7/12 px-4 pt-4 pb-8" >
                         <img src="./marara_6.JPG" alt="outrigger-2" className="h-[85%] w-full" />
-                        <button type="submit" className="text orange orange-border mt-4 px-6 rounded-md orange-button transition-color ease-in-out duration-200 max-lg:w-7/12 max-sm:text-xs max-sm:w-full"><Link to={"https://www.youtube.com/channel/UCX1yW5NSmLIGCmXhaD4A98Q"} target="_blank">See Them In Action</Link></button>
+                        <button type="submit" className="text text-xl font-semibold py-px orange orange-border mt-4 orange orange-border mt-4 px-6 rounded-md orange-button transition-color ease-in-out duration-200 max-lg:w-7/12 max-sm:text-xs max-sm:w-full"><Link to={"https://www.youtube.com/channel/UCX1yW5NSmLIGCmXhaD4A98Q"} target="_blank">See Them In Action</Link></button>
                     </motion.div>
-                    <motion.div className="w-3/12 rounded-md bg-neutral-100 p-4 shadowed max-lg:w-7/12 " >
+                    <motion.div className="w-3/12 rounded-md bg-neutral-100 px-4 pt-4 pb-8 shadowed max-lg:w-7/12" >
                         <img src="./matahina_8.jpg" alt="outrigger-3" className="h-[85%] w-full" /> 
-                        <button type="submit" className="text orange orange-border mt-4 px-6 rounded-md orange-button transition-color ease-in-out duration-200 max-lg:w-7/12 max-sm:text-xs max-sm:w-full"><Link to={'/order'}>Ordering A Canoe</Link></button>
+                        <button type="submit" className="text text-xl font-semibold py-px orange orange-border mt-4 px-6 rounded-md orange-button transition-color ease-in-out duration-200 max-lg:w-7/12 max-sm:text-xs max-sm:w-full"><Link to={'/order'}>Ordering A Canoe</Link></button>
                     </motion.div>
                 </motion.div>
             </div>
