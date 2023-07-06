@@ -118,7 +118,7 @@ const ContactForm = () => {
                     <label className='grey heading text-2xl mb-3 max-sm:text-lg'>Message:</label>
                     <textarea className='w-full p-2 border rounded-xl bg-transparent border-black text-xl w-full mb-10 pl-2 py-2 focus:outline-none focus:bg-white' rows={10} name='message' onChange={(e) => handleChange(e, 'message')}/>
                 </div>
-                <button className={validEmail && fName.length > 0 && lName.length > 0 && region.length > 0 && message.length > 0 ? 'orange-background orange-bg-button orange-border text-white rounded-3xl headings text-3xl px-16 py-2 transition-color duration-200 ease-in-out' : 'orange-background orange-bg-button orange-border text-white rounded-3xl headings text-3xl px-16 py-2 opacity-50'} disabled={validEmail && validPhone ? false : true}>Submit</button>
+                <button className={validEmail && fName.length > 0 && lName.length > 0 && region.length > 0 && message.length > 0 ? 'orange-background orange-bg-button orange-border text-white rounded-3xl max-md:text-lg max-md:px-10 headings text-3xl px-16 py-2 transition-color duration-200 ease-in-out' : 'orange-background orange-bg-button orange-border text-white rounded-3xl max-md:text-lg max-md:px-10 headings text-3xl px-16 py-2 opacity-50'} disabled={validEmail && validPhone ? false : true}>Submit</button>
             </form>
         </div>
   )
