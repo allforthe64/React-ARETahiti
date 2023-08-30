@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 const EMAIL_REGEX = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
 const PHONE_REGEX = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/
 
-const ContactForm = () => {
+const OrderForm = () => {
 
     const [fName, setFName] = useState('')
     const [lName, setLName] = useState('')
@@ -15,6 +15,7 @@ const ContactForm = () => {
     const [phone, setPhone] = useState('')
     const [region, setRegion] = useState('')
     const [message, setMessage] = useState('')
+    const [boat, setBoat] = useState('')
     const [validEmail, setValidEmail] = useState()
     const [validPhone, setValidPhone] = useState()
 
@@ -40,6 +41,7 @@ const ContactForm = () => {
     }
 
     const handleSelectBoat = (e) => {
+        console.log(e.target.value)
         e.target.value === 'Select One...' ? false : setBoat(e.target.value)
     }
 
@@ -66,6 +68,7 @@ const ContactForm = () => {
         setEmail('')
         setPhone('')
         setRegion('')
+        setBoat('')
         setValidEmail(null)
         setValidPhone(null)
         
@@ -73,6 +76,8 @@ const ContactForm = () => {
 
         e.target.reset()
     }
+
+    console.log(boat)
 
   return (
     <div className='flex flex-col items-center py-20 max-lg:py-10'>
@@ -111,14 +116,24 @@ const ContactForm = () => {
                         <p className={!validPhone && phone.length > 0 ? 'block text-red-600 text-left text-2xl' : 'hidden'}>*Please Enter Valid Phone*</p>
                     </div>
                 </div>
-                <div className='w-[90%] mb-10 flex flex-col items-start'>
-                    <label className='grey heading text-2xl mb-3 max-sm:text-lg'>Message:</label>
-                    <textarea className='w-full p-2 border rounded-xl bg-transparent border-black text-xl w-full mb-10 pl-2 py-2 focus:outline-none focus:bg-white' rows={10} name='message' onChange={(e) => handleChange(e, 'message')}/>
+                <div className='w-[90%] flex flex-col items-start mb-4'>
+                    <label htmlFor='region' className='text-2xl mb-3 heading grey max-sm:text-lg'>Select a boat:</label>
+                    <select id='region' className='border-b bg-transparent border-black text-xl w-full mb-10 pl-2 py-px focus:outline-none focus:bg-white grey order-select' onChange={(e) => handleSelectBoat(e)} value={boat} required>
+                        <option>Select One...</option>
+                        <option value={'Marara V1 Pro Carbon'}>Marara V1 Pro Carbon</option>
+                        <option value={'Marara V1 Hybrid'}>Marara V1 Hybrid</option>
+                        <option value={'Mako V1 Pro Carbon'}>Mako V1 Pro Carbon</option>
+                        <option value={'Mako V1 Hybrid'}>Mako V1 Hybrid</option>
+                        <option value={'Mana V1 Pro Carbon'}>Mana V1 Pro Carbon</option>
+                        <option value={'Mana V1 Hybrid'}>Mana V1 Hybrid</option>
+                        <option value={'Matahina V6 Wood Iakos/Fiber Glass Ama'}>Matahina V6 Wood Iakos/Fiber Glass Ama</option>
+                        <option value={'Matahina Hybrid Carbon Iakos/Carbon Ama'}>Matahina Hybrid Carbon Iakos/Carbon Ama</option>
+                    </select>
                 </div>
-                <button className={validEmail && fName.length > 0 && lName.length > 0 && region.length > 0 && message.length > 0 ? 'orange-background orange-bg-button orange-border text-white rounded-3xl max-md:text-lg max-md:px-10 headings text-3xl px-16 py-2 transition-color duration-200 ease-in-out' : 'orange-background orange-bg-button orange-border text-white rounded-3xl max-md:text-lg max-md:px-10 headings text-3xl px-16 py-2 opacity-50'} disabled={validEmail && validPhone ? false : true}>Submit</button>
+                <button className={validEmail && fName.length > 0 && lName.length > 0 && region.length > 0 && boat.length > 0 ? 'orange-background orange-bg-button orange-border text-white rounded-3xl max-md:text-lg max-md:px-10 headings text-3xl px-16 py-2 transition-color duration-200 ease-in-out' : 'orange-background orange-bg-button orange-border text-white rounded-3xl max-md:text-lg max-md:px-10 headings text-3xl px-16 py-2 opacity-50'} disabled={validEmail && validPhone ? false : true}>Submit</button>
             </form>
         </div>
   )
 }
 
-export default ContactForm
+export default OrderForm
