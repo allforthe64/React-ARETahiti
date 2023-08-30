@@ -66,16 +66,16 @@ const Nav = () => {
           }`}
         >
           <ul>
-            <li onClick={size.width < 768 ? () => menuToggleHandler() : false}>
+            <li>
               <Link to="/">Home</Link>
             </li>
-            <li onClick={size.width < 768 ? () => menuToggleHandler() : false}>
+            <li>
               <Link to="/about">About</Link>
             </li>
-            <li onClick={size.width < 768 ? () => menuToggleHandler() : false}>
+            <li>
               <Link to="/canoes">The Canoes</Link>
             </li>
-            <li onClick={size.width < 768 ? () => menuToggleHandler() : false}>
+            <li>
               <Link to="/order">Ordering A Canoe</Link>
             </li>
 

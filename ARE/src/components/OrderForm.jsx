@@ -81,7 +81,7 @@ const OrderForm = () => {
 
   return (
     <div className='flex flex-col items-center py-20 max-lg:py-10'>
-            <p className='heading grey text-6xl mb-14 sm:max-md:text-4xl max-sm:text-3xl max-md:mb-8'>Contact A Rep</p>
+            <p className='heading grey text-6xl mb-14 sm:max-md:text-4xl max-sm:text-3xl max-md:mb-8'>Order A Boat</p>
             <form onSubmit={sendEmail} className='bg-neutral-200 border-2 border-black rounded-2xl w-[80%] py-10 flex flex-col items-center px-[2%]' ref={form}>
                 <div className='w-[90%] flex flex-col items-start mb-4'>
                     <label htmlFor='region' className='text-2xl mb-3 heading grey max-sm:text-lg'>Select a region:</label>
@@ -109,14 +109,14 @@ const OrderForm = () => {
                         <p className={!validEmail && email.length > 0 ? 'block text-red-600 text-left text-2xl' : 'hidden'}>*Please Enter Valid Email*</p>
                     </div>
                 </div>
-                <div className='w-[90%] mb-4'>
+                <div className='w-[90%] mb-4 mt-6'>
                     <div className='w-full flex flex-col items-start'>
                         <label htmlFor='email' className='text-2xl mb-3 heading grey max-sm:text-lg'>Enter Phone:</label>
                         <input id='email' className='border-b bg-transparent border-black text-xl mb-2 pl-2 py-px focus:outline-none focus:bg-white w-full' placeholder='Phone' onChange={(e) => handleChange(e, 'phone')} required name='from_phone'/>
                         <p className={!validPhone && phone.length > 0 ? 'block text-red-600 text-left text-2xl' : 'hidden'}>*Please Enter Valid Phone*</p>
                     </div>
                 </div>
-                <div className='w-[90%] flex flex-col items-start mb-4'>
+                <div className='w-[90%] flex flex-col items-start mb-4 mt-6'>
                     <label htmlFor='region' className='text-2xl mb-3 heading grey max-sm:text-lg'>Select a boat:</label>
                     <select id='region' className='border-b bg-transparent border-black text-xl w-full mb-10 pl-2 py-px focus:outline-none focus:bg-white grey order-select' onChange={(e) => handleSelectBoat(e)} value={boat} required>
                         <option>Select One...</option>
@@ -127,10 +127,20 @@ const OrderForm = () => {
                         <option value={'Mana V1 Pro Carbon'}>Mana V1 Pro Carbon</option>
                         <option value={'Mana V1 Hybrid'}>Mana V1 Hybrid</option>
                         <option value={'Matahina V6 Wood Iakos/Fiber Glass Ama'}>Matahina V6 Wood Iakos/Fiber Glass Ama</option>
-                        <option value={'Matahina Hybrid Carbon Iakos/Carbon Ama'}>Matahina Hybrid Carbon Iakos/Carbon Ama</option>
+                        <option value={'Matahina Hybrid Carbon Iakos/Carbon Ama'}>Matahina V6 Hybrid Carbon Iakos/Carbon Ama</option>
                     </select>
                 </div>
-                <button className={validEmail && fName.length > 0 && lName.length > 0 && region.length > 0 && boat.length > 0 ? 'orange-background orange-bg-button orange-border text-white rounded-3xl max-md:text-lg max-md:px-10 headings text-3xl px-16 py-2 transition-color duration-200 ease-in-out' : 'orange-background orange-bg-button orange-border text-white rounded-3xl max-md:text-lg max-md:px-10 headings text-3xl px-16 py-2 opacity-50'} disabled={validEmail && validPhone ? false : true}>Submit</button>
+                <div className='w-[90%] flex justify-center mb-4'>
+                    {boat === 'Matahina V6 Wood Iakos/Fiber Glass Ama' || boat === 'Matahina Hybrid Carbon Iakos/Carbon Ama' ?
+                        (   
+                            <a className={validEmail && fName.length > 0 && lName.length > 0 && region.length > 0 && boat.length > 0 ? 'orange-background orange-bg-button orange-border text-white rounded-3xl max-md:text-lg max-md:px-10 headings text-3xl px-16 py-2 transition-color duration-200 ease-in-out' : 'orange-background orange-bg-button orange-border text-white rounded-3xl max-md:text-lg max-md:px-10 headings text-3xl px-16 py-2 opacity-50'} disabled={validEmail && validPhone ? false : true} href={'https://buy.stripe.com/test_bIY28A34Nb4OcIUcMT'} target='_blank' onClick={() => navigate('/thank-you')}>Submit</a>
+                        ) :           
+                        (
+                            <a className={validEmail && fName.length > 0 && lName.length > 0 && region.length > 0 && boat.length > 0 ? 'orange-background orange-bg-button orange-border text-white rounded-3xl max-md:text-lg max-md:px-10 headings text-3xl px-16 py-2 transition-color duration-200 ease-in-out' : 'orange-background orange-bg-button orange-border text-white rounded-3xl max-md:text-lg max-md:px-10 headings text-3xl px-16 py-2 opacity-50'} disabled={validEmail && validPhone ? false : true} href={'https://buy.stripe.com/test_9AQ9B2gVD0qa5gs6ou'} target='_blank' onClick={() => navigate('/thank-you')}>Submit</a>
+                        )
+                    }
+                </div>
+                
             </form>
         </div>
   )
