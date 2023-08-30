@@ -79,16 +79,19 @@ const Nav = () => {
   }, []);
 
   useEffect(() => {
-    if (size.width > 768 && menuOpen) {
+    if (size.width < 768 && menuOpen) {
       setMenuOpen(false);
     }
-  }, [size.width, menuOpen]);
+  }, [size.width]);
 
   const menuToggleHandler = () => {
     if (size.width > 768) {
-        setMenuOpen(true)
+        return false
+    } else {
+      console.log(menuOpen)
+      setMenuOpen((p) => !p);
     }
-    setMenuOpen((p) => !p);
+    
   };
 
   return (
@@ -116,12 +119,6 @@ const Nav = () => {
               <Link to="/order">Ordering A Canoe</Link>
             </li>
 
-            {/* <Link to="/register">
-              <button className="btn">Register</button>
-            </Link>
-            <Link to="/login">
-              <button className="btn btn__login">Login</button>
-            </Link> */}
           </ul>
         </nav>
         <div className="header__content__toggle">
