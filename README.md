@@ -1,4 +1,4 @@
-<h1>Lifting Heavy Weights and Writing Lightweight Code</h1>
+<h1>Mixing Paddling With Web Design</h1>
 <br>
 During my travels as a competetive outrigger paddler, I've met some pretty great people and made some pretty dope friends. Fortunately, I was lucky enough to become the close friend of a representative of a canoe building company called ARE Tahiti Outrigger. When he heard that I was working as a developer he asked if I could revamp the company's old website, the old one being a creaky wordpress site on its last legs. I promptly accepted. Any chance to combine my passion for web development and paddling seemed totally golden to me and I got to work right away. I was asked to make the new site load quickly, do a better job of displaying content compared to the old site, and look good on any screen size. Right away, I knew React and Tailwind we're going to be the perfect tools to give ARE Tahiti the ultimate web makeover. Here's what I built:
 <br>
