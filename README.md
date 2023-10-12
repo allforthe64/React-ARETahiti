@@ -6,7 +6,7 @@ During my travels as a competetive outrigger paddler, I've met some pretty great
 <br>
 <br>
 <div align='center'>
-  <img width='50%' src='https://media.giphy.com/media/dsGojGwi8WqIHyYzd8/giphy.gif'/>
+  <img width='50%' src='https://media.giphy.com/media/eYcRRBTGJrU9lX5mYw/giphy.gif'/>
 </div>
 <br>
 <h1>How It's Made:</h1>
