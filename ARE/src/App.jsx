@@ -21,6 +21,7 @@ import Admin from './components/Admin'
 import Layout from './components/Layout'
 import PersistLogin from './components/PersistLogin'
 import Success from './components/Success'
+import Shop from './components/shopComponents/Shop'
 
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
           <Route path='mana' element={<Mana />} />
           <Route path='marara' element={<Marara />} />
           <Route path='mako' element={<Mako />} />
+          <Route path='shop' element={<Shop />} />
           {/* <Route path='login' element={<Login />} /> */}
           
           {/* {/*Private routes

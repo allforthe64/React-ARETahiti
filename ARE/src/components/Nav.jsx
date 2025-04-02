@@ -73,11 +73,14 @@ const Nav = () => {
               <Link to="/about">About</Link>
             </li>
             <li>
+              <Link to={'/shop'}>Shop</Link>
+            </li>
+            {/* <li>
               <Link to="/canoes">The Canoes</Link>
-            </li>
-            <li>
+            </li> */}
+            {/* <li>
               <Link to="/order">Ordering A Canoe</Link>
-            </li>
+            </li> */}
 
           </ul>
         </nav>
