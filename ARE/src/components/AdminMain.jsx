@@ -7,10 +7,12 @@ import AdminDashboard from './adminComponents/AdminDashboard'
 //firebase auth imports
 import { signInWithEmailAndPassword } from 'firebase/auth'
 import { auth } from '../firebase/firebase'
+import { Dialog } from '@mui/material'
+import LoadingIcons from 'react-loading-icons'
 
 const AdminMain = () => {
 
-    const [isAuthUser, setIsAuthUser] = useState(true)
+    const [isAuthUser, setIsAuthUser] = useState(false)
     const [isLoading, setIsLoading] = useState(false)
 
     const handleLogin = async (loginEmail, loginPassword) => {
@@ -20,7 +22,7 @@ const AdminMain = () => {
         signInWithEmailAndPassword(auth, loginEmail, loginPassword)
         .then(() => {
             setIsAuthUser(true)
-            setIsLoading(false)
+            setTimeout(() => setIsLoading(false), 500)
         })
         .catch((error) => {
             setIsLoading(false)
@@ -32,7 +34,12 @@ const AdminMain = () => {
   return (
     <main className='w-full'>
         {isLoading &&
-            <p>insert dialog</p>
+            <Dialog open={isLoading} fullScreen>
+                <div className='w-full h-full bg-white flex justify-center items-center space-x-4'>
+                    <LoadingIcons.TailSpin stroke='#FF3C00' className='w-[50px] h-[50px]'/>
+                    <p className='text-4xl heading text-[#FF3C00] font-semibold'>Loading...</p>
+                </div>
+            </Dialog>
         }
         {!isAuthUser ?
             <AdminAuthComponent handleLogin={handleLogin}/>

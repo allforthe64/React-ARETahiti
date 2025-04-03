@@ -1,10 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
+
+//component imports
+import InventoryButtons from './InventoryButtons'
+
+import { Dialog } from '@mui/material'
 
 const InventoryMain = () => {
+
+    //initialize state
+    const [inventoryViewing, setInventoryViewing] = useState('canoes')
+    const [openAddInventory, setOpenAddInventory] = useState(false)
+
   return (
-    <div className='w-full h-full flex justify-center items-center'>
-        <p className='text-black'>InventoryMain</p>
-    </div>
+    <section className='w-full h-full pt-4'>
+        
+        <Dialog open={openAddInventory} onClose={() => setOpenAddInventory(false)}>
+
+        </Dialog>
+
+        <h1 className='heading text-[#212121] text-3xl font-semibold'>View/Edit <span className='text-[#FF3C00]'>Inventory:</span></h1>
+        <InventoryButtons inventoryViewing={inventoryViewing} setInventoryViewing={setInventoryViewing} setOpenAddInventory={setOpenAddInventory}/>
+    </section>
   )
 }
 
