@@ -17,11 +17,11 @@ import Mako from './components/canoe_pages/Mako'
 import Order from './components/Order'
 import OrderSimple from './components/OrderSimple'
 import { Login } from './components/Login'
-import Admin from './components/Admin'
 import Layout from './components/Layout'
 import PersistLogin from './components/PersistLogin'
 import Success from './components/Success'
 import Shop from './components/shopComponents/Shop'
+import AdminMain from './components/AdminMain'
 
 
 function App() {
@@ -44,14 +44,8 @@ function App() {
           <Route path='marara' element={<Marara />} />
           <Route path='mako' element={<Mako />} />
           <Route path='shop' element={<Shop />} />
+          <Route path='admin' element={<AdminMain />} />
           {/* <Route path='login' element={<Login />} /> */}
-          
-          {/* {/*Private routes
-          <Route element={<PersistLogin />}>
-            <Route element={<RequireAuth />}>
-              <Route path='/admin' element={<Admin />} />
-            </Route>
-          </Route> */}
         </Route>
       </Routes>
 

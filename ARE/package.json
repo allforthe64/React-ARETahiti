@@ -10,11 +10,13 @@
   },
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
+    "@firebase/firestore": "^4.7.10",
     "@stripe/stripe-js": "^1.52.1",
     "animate.css": "^4.1.1",
     "axios": "^1.4.0",
     "emailjs": "^4.0.2",
     "env-cmd": "^10.1.0",
+    "firebase": "^11.6.0",
     "framer-motion": "^10.12.17",
     "react": "^18.2.0",
     "react-animated-slider": "^1.1.4",
