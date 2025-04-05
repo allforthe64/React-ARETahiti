@@ -12,7 +12,7 @@ import LoadingIcons from 'react-loading-icons'
 
 const AdminMain = () => {
 
-    const [isAuthUser, setIsAuthUser] = useState(false)
+    const [isAuthUser, setIsAuthUser] = useState(true)
     const [isLoading, setIsLoading] = useState(false)
 
     const handleLogin = async (loginEmail, loginPassword) => {
