@@ -4,6 +4,10 @@ import React, { useState } from 'react'
 import ChooseAddInventory from './AddInventoryComponents/ChooseAddInventory'
 import AddNewCanoe from './AddInventoryComponents/AddNewCanoe'
 
+//fontAwesome imports
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faXmark } from '@fortawesome/free-solid-svg-icons'
+
 const AddInventory = ({ setOpenAddInventory }) => {
 
     const [mode, setMode] = useState('choose')
@@ -11,8 +15,8 @@ const AddInventory = ({ setOpenAddInventory }) => {
   return (
     <div className='w-[80vw] h-[90vh] bg-[#212121]'>
         <div className='w-full flex justify-end pr-6 pt-4'>
-            <button className='hover:scale-110 transition duration-200 ease-in-out' onClick={() => setOpenAddInventory(false)}>
-                <p className='text-white text-3xl heading'>X</p>
+            <button className='hover:scale-110 transition duration-200 ease-in-out text-white text-3xl' onClick={() => setOpenAddInventory(false)}>
+                <FontAwesomeIcon icon={faXmark}/>
             </button>
         </div>
         {mode !== 'success' ?

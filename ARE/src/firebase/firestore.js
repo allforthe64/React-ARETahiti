@@ -1,4 +1,4 @@
-import { query, collection, getDocs, getDoc, setDoc, doc, onSnapshot} from 'firebase/firestore'
+import { query, collection, getDocs, getDoc, setDoc, doc, onSnapshot, deleteDoc} from 'firebase/firestore'
 import { db } from "./firebase";
 
 //firebase uuidv4 import
@@ -49,6 +49,16 @@ export const addCanoe = async (canoeData) => {
     //generate a customId
     const customId = uuidv4().replace(/-/g, '').substring(0, 20);
 
+    const canoeObj = {
+        ...canoeData,
+        id: customId
+    }
+
     //add the canoe into the database
-    setDoc(doc(db, 'canoes', customId), canoeData)
+    setDoc(doc(db, 'canoes', customId), canoeObj)
+}
+
+//delete the canoe from the inventory
+export const deleteCanoe = async (docId) => {
+    await deleteDoc(doc(db, 'canoes', docId))
 }

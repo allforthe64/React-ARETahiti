@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 
 //component imports
 import InventoryButtons from './InventoryButtons'
+import CanoeInventoryCard from './CanoeInventoryCard'
 
 import { Dialog } from '@mui/material'
 
@@ -39,7 +40,13 @@ const InventoryMain = () => {
         <h1 className='heading text-[#212121] text-3xl font-semibold'>View/Edit <span className='text-[#FF3C00]'>Inventory:</span></h1>
         <InventoryButtons inventoryViewing={inventoryViewing} setInventoryViewing={setInventoryViewing} setOpenAddInventory={setOpenAddInventory}/>
         {inventoryViewing === 'canoes' ?
-            <></>
+            <section className='w-full px-10 pt-4'>
+                {inventory.map((inventoryItem) => {
+                    return (
+                        <CanoeInventoryCard inventoryItem={inventoryItem} />
+                    )
+                })}
+            </section>
         :
             <></>
         }
