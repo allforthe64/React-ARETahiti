@@ -6,11 +6,13 @@ import { faPencil, faTrash, faXmark } from '@fortawesome/free-solid-svg-icons'
 //MUI dialog
 import { Dialog } from '@mui/material'
 import { deleteCanoe } from '../../../firebase/firestore'
+import EditCanoe from './EditInventoryComponents/EditCanoe'
 
 const CanoeInventoryCard = ({inventoryItem}) => {
 
     //initialize state
     const [openDelete, setOpenDelete] = useState(false)
+    const [openEditCanoe, setOpenEditCanoe] = useState(false)
 
     const removeCanoe = async () => {
         await deleteCanoe(inventoryItem.id)
@@ -43,6 +45,10 @@ const CanoeInventoryCard = ({inventoryItem}) => {
             </div>
         </Dialog>
 
+        <Dialog open={openEditCanoe} onClose={() => setOpenEditCanoe(false)} maxWidth='xl'>
+            <EditCanoe setOpenEditCanoe={setOpenEditCanoe} canoeData={inventoryItem}/>
+        </Dialog>
+
         <div className='w-full flex gap-x-4 flex-wrap text font-semibold text-lg text-[#212121] gap-y-3'>
             <p>Model: <span className='text-[#FF3C00] font-bold'>{inventoryItem.model}</span></p>
             <p>Brand: <span className='text-[#FF3C00] font-bold'>{inventoryItem.brand.charAt(0).toUpperCase() + inventoryItem.brand.slice(1)}</span></p>
@@ -62,7 +68,7 @@ const CanoeInventoryCard = ({inventoryItem}) => {
             <p>Deposit: <span className='text-[#FF3C00] font-bold'>${inventoryItem.deposit}</span></p>
         </div>
         <div className='w-full flex justify-start mt-4 gap-x-6'>
-            <button className='px-2 py-px bg-[#FF3C00] rounded-lg heading text-white font-medium hover:scale-110 transition duration-200 ease-in-out hover:cursor-pointer text-lg flex items-center space-x-2'>
+            <button className='px-2 py-px bg-[#FF3C00] rounded-lg heading text-white font-medium hover:scale-110 transition duration-200 ease-in-out hover:cursor-pointer text-lg flex items-center space-x-2' onClick={() => setOpenEditCanoe(true)}>
                 <FontAwesomeIcon icon={faPencil}/> 
                 <span>Edit item</span>
             </button>

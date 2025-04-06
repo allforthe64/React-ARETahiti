@@ -16,3 +16,8 @@ export const uploadCanoeImage = async (image) => {
     const result = uploadBytes(ref(storage, bucket), image)
     return result
 }
+
+//get the downloadable url from incoming path
+export const getDownloadableURL = async (path) => {
+    return await getDownloadURL(ref(storage, path))
+}
