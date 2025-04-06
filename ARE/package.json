@@ -13,6 +13,7 @@
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
     "@firebase/firestore": "^4.7.10",
+    "@firebase/storage": "^0.13.7",
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
     "@fortawesome/free-brands-svg-icons": "^6.7.2",
     "@fortawesome/free-regular-svg-icons": "^6.7.2",
@@ -22,6 +23,7 @@
     "@stripe/stripe-js": "^1.52.1",
     "animate.css": "^4.1.1",
     "axios": "^1.4.0",
+    "date-fns": "^4.1.0",
     "emailjs": "^4.0.2",
     "env-cmd": "^10.1.0",
     "firebase": "^11.6.0",
@@ -35,7 +37,8 @@
     "react-loading-icons": "^1.1.0",
     "react-router-dom": "^6.10.0",
     "react-social-icons": "^5.15.0",
-    "sass": "^1.63.6"
+    "sass": "^1.63.6",
+    "uuid": "^11.1.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",

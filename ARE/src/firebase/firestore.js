@@ -1,13 +1,19 @@
-import { query, collection, getDocs, getDoc} from 'firebase/firestore'
+import { query, collection, getDocs, getDoc, setDoc, doc, onSnapshot} from 'firebase/firestore'
 import { db } from "./firebase";
 
+//firebase uuidv4 import
+import {v4 as uuidv4} from 'uuid'
+
 //query all the canoes in the canoe collection
-export const getAllCanoes = async () => {
-    const canoesQuery = query(collection(db, 'canoes'))
-    const querySnapshot = await getDocs(canoesQuery)
-    let data = []
-    querySnapshot.forEach(doc => data.push({...doc.data(), id: doc.id}))
-    return data
+export const getAllCanoes = async (setCanoeData) => {
+    const q = query(collection(db, 'canoes'))
+    const unsubscribe = onSnapshot(q, (querySnapshot) => {
+        const raceData = []
+        querySnapshot.forEach(snapDoc => raceData.push({...snapDoc.data(), id: snapDoc.id}))
+        setCanoeData(raceData)
+    })
+
+    return unsubscribe
 }
 
 //query all the canoes in the canoe collection
@@ -35,4 +41,14 @@ export const getAllPartsAndAccessories = async () => {
     let data = []
     querySnapshot.forEach(doc => data.push({...doc.data(), id: doc.id}))
     return data
+}
+
+//add the canoe data into inventory
+export const addCanoe = async (canoeData) => {
+
+    //generate a customId
+    const customId = uuidv4().replace(/-/g, '').substring(0, 20);
+
+    //add the canoe into the database
+    setDoc(doc(db, 'canoes', customId), canoeData)
 }
