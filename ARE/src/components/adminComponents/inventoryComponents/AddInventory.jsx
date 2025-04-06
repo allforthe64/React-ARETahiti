@@ -35,7 +35,7 @@ const AddInventory = ({ setOpenAddInventory }) => {
         : mode === 'parts' ?
             <></>
         : 
-            <section className='w-full h-[75vh] pb-10 bg-[#212121] border-2 flex justify-center items-center flex-col space-y-4'>
+            <section className='w-full h-[75vh] pb-10 bg-[#212121] flex justify-center items-center flex-col space-y-4'>
                 <button className='px-2 py-px bg-[#FF3C00] rounded-lg heading text-white font-medium hover:scale-110 transition duration-200 ease-in-out text-2xl' onClick={() => setMode('choose')}>Add another item</button>
                 <button className='px-2 py-px bg-[#FF3C00] rounded-lg heading text-white font-medium hover:scale-110 transition duration-200 ease-in-out text-2xl' onClick={() => setOpenAddInventory(false)}>Exit</button>
             </section>

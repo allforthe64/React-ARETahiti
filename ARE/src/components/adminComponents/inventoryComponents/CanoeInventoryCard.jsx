@@ -57,7 +57,7 @@ const CanoeInventoryCard = ({inventoryItem}) => {
             <p>Physical presence: <span className='text-[#FF3C00] font-bold'>{inventoryItem.physicalPresence}</span></p>
             <p>Location: <span className='text-[#FF3C00] font-bold'>{inventoryItem.location}</span></p>
             <p>Serial number: <span className='text-[#FF3C00] font-bold'>{inventoryItem.serialNumber}</span></p>
-            <p>Canoe condition: <span className='text-[#FF3C00] font-bold'>{inventoryItem.condition}</span></p>
+            <p>Canoe condition: <span className='text-[#FF3C00] font-bold'>{inventoryItem.canoeCondition}</span></p>
             <p>Price: <span className='text-[#FF3C00] font-bold'>${inventoryItem.price}</span></p>
             <p>Deposit: <span className='text-[#FF3C00] font-bold'>${inventoryItem.deposit}</span></p>
         </div>

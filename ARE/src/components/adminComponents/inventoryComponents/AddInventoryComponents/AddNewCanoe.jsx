@@ -30,6 +30,7 @@ const AddNewCanoe = ({ setMode }) => {
     const [physicalPresence, setPhysicalPresence] = useState('')
     const [thumbnail, setThumbnail] = useState()
     const [gallery, setGallery] = useState([])
+    const [canoeCondition, setCanoeCondition] = useState('')
     const [isLoading, setIsLoading] = useState(false)
 
     const models = {
@@ -52,6 +53,12 @@ const AddNewCanoe = ({ setMode }) => {
         e.preventDefault()
 
         setIsLoading(true)
+
+        if (brand === '' || model === '' || hullConstruction === '' || amaConstruction === '' || iakoConstruction === '' || riggingType === '' || hullColor === '' || amaColor === '' || cockpitColor === '' || paintType === '' || serialNumber === '' || price === 0 || deposit === 0 || location === '' || physicalPresence === '' || thumbnail === '' || gallery.length === 0 || canoeCondition === '') {
+            alert('Missing information! Check all fields, ensure images are provided for gallery and thumbnail!')  
+            setIsLoading(false)
+            return false
+        }
 
         //upload the thumbnail image
         let thumbnailResult = await uploadCanoeImage(thumbnail)
@@ -81,7 +88,8 @@ const AddNewCanoe = ({ setMode }) => {
             location: location,
             physicalPresence: physicalPresence,
             thumbnail: thumbnailFinal,
-            gallery: galleryImages
+            gallery: galleryImages,
+            canoeCondition: canoeCondition
         }
 
         //update the canoe inventory
@@ -123,6 +131,7 @@ const AddNewCanoe = ({ setMode }) => {
                                     setDeposit(0)
                                     setLocation('')
                                     setPhysicalPresence('')
+                                    setCanoeCondition('')
                                 } else {
                                     setBrand(e.target.value)
                                     setModel('')
@@ -139,6 +148,7 @@ const AddNewCanoe = ({ setMode }) => {
                                     setDeposit(0)
                                     setLocation('')
                                     setPhysicalPresence('')
+                                    setCanoeCondition('')
                                 }
                             }
                         }}>
@@ -166,6 +176,7 @@ const AddNewCanoe = ({ setMode }) => {
                                     setDeposit(0)
                                     setLocation('')
                                     setPhysicalPresence('')
+                                    setCanoeCondition('')
                                 } else {
                                     setModel(e.target.value)
                                     setHullConstruction('')
@@ -181,6 +192,7 @@ const AddNewCanoe = ({ setMode }) => {
                                     setDeposit(0)
                                     setLocation('')
                                     setPhysicalPresence('')
+                                    setCanoeCondition('')
                                 }
                             }
                         }}>
@@ -354,7 +366,7 @@ const AddNewCanoe = ({ setMode }) => {
                         <input className='w-full border-b-2 border-white text-white bg-transparent focus:outline-none heading  pl-2' value={deposit} placeholder='$ Deposit CAD' onChange={(e) => setDeposit(e.target.value)} type='number'/>
                     </div>
                     <div className='w-[28%] space-y-2'>
-                    <label className='heading text-lg text-white font-medium'>Physical <span className='text-[#FF3C00]'>presence?</span></label>
+                        <label className='heading text-lg text-white font-medium'>Physical <span className='text-[#FF3C00]'>presence?</span></label>
                         <select className='w-full border-b-2 border-white text-white bg-transparent focus:outline-none heading ' value={physicalPresence} onChange={(e) => {
                             if (e.target.value !== '') {
                                 setPhysicalPresence(e.target.value)
@@ -380,6 +392,21 @@ const AddNewCanoe = ({ setMode }) => {
                             <option value={'Toronto'} className='text-[#515151]'>Toronto</option>
                             <option value={'Montreal'} className='text-[#515151]'>Montreal</option>
                             <option value={'Quebec'} className='text-[#515151]'>Quebec</option>
+                        </select>
+                    </div>
+                </div>
+                <div className='w-full pt-2 pl-8'>
+                    <div className='w-[28%] space-y-2'>
+                        <label className='heading text-lg text-white font-medium'>Physical <span className='text-[#FF3C00]'>presence?</span></label>
+                        <select className='w-full border-b-2 border-white text-white bg-transparent focus:outline-none heading ' value={canoeCondition} onChange={(e) => {
+                            if (e.target.value !== '') {
+                                setCanoeCondition(e.target.value)
+                            }
+                        }}>
+                            <option value='' className='text-[#515151]'>Choose one...</option>
+                            <option value={'New'} className='text-[#515151]'>New</option>
+                            <option value={'Used'} className='text-[#515151]'>Used</option>
+                            <option value={'Demo'} className='text-[#515151]'>Demo</option>
                         </select>
                     </div>
                 </div>
