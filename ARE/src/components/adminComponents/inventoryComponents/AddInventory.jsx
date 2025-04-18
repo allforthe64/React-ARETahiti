@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 //component imports
 import ChooseAddInventory from './AddInventoryComponents/ChooseAddInventory'
 import AddNewCanoe from './AddInventoryComponents/AddNewCanoe'
+import AddNewPaddle from './AddInventoryComponents/AddNewPaddle'
 
 //fontAwesome imports
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -29,7 +30,7 @@ const AddInventory = ({ setOpenAddInventory }) => {
         : mode === 'canoe' ? 
             <AddNewCanoe setMode={setMode}/>
         : mode === 'paddles' ?
-            <></>
+            <AddNewPaddle />
         : mode === 'apparel' ? 
             <></>
         : mode === 'parts' ?

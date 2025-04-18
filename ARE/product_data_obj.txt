@@ -1,0 +1,23 @@
+Brand done
+Model done
+Shaft length done
+Shaft material done
+Blade diameter done
+Blade material done
+Blade shape done
+blade bend degree done
+Shaft bend degree done
+Color way 
+
+type shirt, hat, etc
+product name
+shirt type
+gender
+sizing: [
+	{size: sm,
+	 color: 
+	 quantity
+	},
+	md: 8,
+	lg: 2
+]
