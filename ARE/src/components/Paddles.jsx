@@ -53,7 +53,7 @@ const Paddles = () => {
                     <div className="w-4/12 max-lg:w-[90%] flex items-center">
                         <div className="max-md:flex max-md:flex-col max-md:items-center">
                             <p className="text text-2xl max-sm:text-base sm:max-md:text-lg max-lg:text-center text-left max-lg:mb-8 max-md:mb-4 mb-10" id="canoe-text-1">The Hypr Nalu Hawaii Disciplinarian - Our 9.25 Disciplinarian Outrigger Paddle is perfect for novice paddlers; its unique Concave Blade design prevents water from flowing inaccurately...</p>
-                            <Link to={'/liberator'} className="orange orange-border rounded-3xl headings max-md:text-lg max-md:px-10 text-3xl px-16 py-2 orange-button transition-color duration-200 ease-in-out">See More</Link>
+                            <Link to={'/disciplinarian'} className="orange orange-border rounded-3xl headings max-md:text-lg max-md:px-10 text-3xl px-16 py-2 orange-button transition-color duration-200 ease-in-out">See More</Link>
                         </div>
                     </div>
                 </div>
