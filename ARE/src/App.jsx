@@ -31,6 +31,8 @@ import Disciplinarian from './components/paddle_pages/Disciplinarian'
 import DBBlades from './components/paddle_pages/DBBlades'
 import KoaBlade from './components/paddle_pages/KoaBlade'
 
+import ShoppingCart from './components/ShoppingCart'
+
 
 function App() {
 
@@ -61,6 +63,8 @@ function App() {
 
           <Route path='shop' element={<Shop />} />
           <Route path='admin' element={<AdminMain />} />
+
+          <Route path='shoppingCart' element={<ShoppingCart />} />
           {/* <Route path='login' element={<Login />} /> */}
         </Route>
       </Routes>

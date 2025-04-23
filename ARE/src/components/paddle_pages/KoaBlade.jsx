@@ -39,7 +39,7 @@ const KoaBlade = () => {
           }
 
         const newCartItem = {
-            itemName: 'Disciple',
+            itemName: 'Koa Blade',
             bladeSize: bladeSize,
             bladeConstruction: bladeConstruction,
             bladeLength: bladeLength,
@@ -71,7 +71,7 @@ const KoaBlade = () => {
     return (
         <div id="en">
             <motion.div className="flex flex-col items-center pt-12" initial={{y: 200, opacity: 0}} whileInView={{y: 0, opacity: 1}} transition={{delay: .25}} viewport={{once: true}}>
-                <h1 className="heading text-6xl max-sm:text-2xl sm:max-md:text-4xl grey px-10">Koa Wodd Paddles - <span className="text-[#FF3C00]">Handmade Excellence</span></h1>
+                <h1 className="heading text-6xl max-sm:text-2xl sm:max-md:text-4xl grey px-10">Koa Wood Paddles - <span className="text-[#FF3C00]">Handmade Excellence</span></h1>
             </motion.div>
             <div className="w-full flex max-md:flex-col max-md:items-center px-10 max-sm:px-6 py-4 justify-between">
 
