@@ -23,12 +23,13 @@ import Success from './components/Success'
 import Shop from './components/shopComponents/Shop'
 import AdminMain from './components/AdminMain'
 
-
+//paddle component imports
 import Paddles from './components/Paddles'
 import Liberator from './components/paddle_pages/Liberator'
 import Disciple from './components/paddle_pages/Disciple'
 import Disciplinarian from './components/paddle_pages/Disciplinarian'
 import DBBlades from './components/paddle_pages/DBBlades'
+import KoaBlade from './components/paddle_pages/KoaBlade'
 
 
 function App() {
@@ -56,6 +57,7 @@ function App() {
           <Route path='disciple' element={<Disciple />} />
           <Route path='disciplinarian' element={<Disciplinarian />} />
           <Route path='db-blades' element={<DBBlades />} />
+          <Route path='koa-blade' element={<KoaBlade />} />
 
           <Route path='shop' element={<Shop />} />
           <Route path='admin' element={<AdminMain />} />
