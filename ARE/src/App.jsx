@@ -25,6 +25,10 @@ import AdminMain from './components/AdminMain'
 
 
 import Paddles from './components/Paddles'
+import Liberator from './components/paddle_pages/Liberator'
+import Disciple from './components/paddle_pages/Disciple'
+import Disciplinarian from './components/paddle_pages/Disciplinarian'
+import DBBlades from './components/paddle_pages/DBBlades'
 
 
 function App() {
@@ -48,6 +52,10 @@ function App() {
           <Route path='mako' element={<Mako />} />
 
           <Route path='paddles' element={<Paddles />} />
+          <Route path='liberator' element={<Liberator />} />
+          <Route path='disciple' element={<Disciple />} />
+          <Route path='disciplinarian' element={<Disciplinarian />} />
+          <Route path='db-blades' element={<DBBlades />} />
 
           <Route path='shop' element={<Shop />} />
           <Route path='admin' element={<AdminMain />} />
