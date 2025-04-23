@@ -91,8 +91,7 @@ const Mako = () => {
             </motion.div>
             <div className="flex flex-col items-center mb-16 max-lg:mb-10">
                 <p className="w-10/12 text text-2xl mb-10 max-md:text-lg max-lg:w-9/12 max-sm:text-base">Meet the newest member of the ARE Tahiti family: 
-                the ARE Tahiti Mako V1. The Mako has everything you love about the Marara V1: excellent craftsmanship,
-                responsive steering, pristine glide, and top of the line craftsmanship, but in a more approachable package.
+                the ARE Tahiti Mako V1. The Mako has everything you love about the Marara V1: responsive steering, pristine glide, and top of the line craftsmanship, but in a more approachable package.
                 With a slightly wider hull and a more comfortable cockpit, the Mako is perfect for paddlers who are over 180 pounds, or if you're looking to go on a longer paddling excursion. 
                 </p>
                 <Link to={'/order'} className="orange orange-border rounded-3xl max-md:text-lg max-md:px-10 headings text-3xl px-16 py-2 orange-button transition-color duration-200 ease-in-out">Order Now</Link>

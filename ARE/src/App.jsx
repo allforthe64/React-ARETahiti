@@ -24,6 +24,9 @@ import Shop from './components/shopComponents/Shop'
 import AdminMain from './components/AdminMain'
 
 
+import Paddles from './components/Paddles'
+
+
 function App() {
 
   return (
@@ -43,6 +46,9 @@ function App() {
           <Route path='mana' element={<Mana />} />
           <Route path='marara' element={<Marara />} />
           <Route path='mako' element={<Mako />} />
+
+          <Route path='paddles' element={<Paddles />} />
+
           <Route path='shop' element={<Shop />} />
           <Route path='admin' element={<AdminMain />} />
           {/* <Route path='login' element={<Login />} /> */}

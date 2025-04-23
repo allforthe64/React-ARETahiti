@@ -79,6 +79,9 @@ const Nav = () => {
               <Link to="/canoes">The Canoes</Link>
             </li>
             <li>
+              <Link to="/paddles">Paddles</Link>
+            </li>
+            <li>
               <Link to="/order">Ordering A Canoe</Link>
             </li>
 

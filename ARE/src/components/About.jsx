@@ -74,7 +74,7 @@ const About = () => {
                             outrigger canoes.</p>
                         <Link to={'/canoes'} className="orange orange-border rounded-3xl max-md:text-lg max-md:px-10 headings text-3xl px-16 py-2 orange-button transition-color duration-200 ease-in-out">See the canoes</Link>
                     </motion.div>
-                    <motion.img className="w-[35%] max-lg:w-9/12 max-lg:mb-6" src="./marara_4.JPG" alt="about-img-4" initial={{x: 75, opacity: 0}} whileInView={{x: 0, opacity: 1}} transition={{duration: .25, delay: 1.5}} viewport={{once: true}}/>
+                    <motion.img className="w-[35%] max-lg:w-9/12 max-lg:mb-6" src="./marara_9.JPG" alt="about-img-4" initial={{x: 75, opacity: 0}} whileInView={{x: 0, opacity: 1}} transition={{duration: .25, delay: 1.5}} viewport={{once: true}}/>
                 </div>
             </div>
 

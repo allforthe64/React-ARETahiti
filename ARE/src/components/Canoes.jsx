@@ -62,7 +62,7 @@ const Canoes = () => {
                     </div>
                 </div>
             </motion.div>
-            <motion.div className="flex items-center flex-col py-20 max-lg:py-10" initial={{ opacity: 0, x:50 }} whileInView={{ opacity: 1, x:0 }} transition={{ duration: 1, delay: .25}} viewport={{ amount: .4, once: true}}>
+            {/* <motion.div className="flex items-center flex-col py-20 max-lg:py-10" initial={{ opacity: 0, x:50 }} whileInView={{ opacity: 1, x:0 }} transition={{ duration: 1, delay: .25}} viewport={{ amount: .4, once: true}}>
                 <h2 className="heading text-6xl grey w-8/12 max-sm:text-2xl sm:max-lg:text-4xl">OC1 Mana - <span className="orange">Raising The Standard</span> </h2>
                 <div className="flex py-10 justify-around max-lg:flex-col max-lg:items-center max-lg:py-4">
                     <img src="./mana_1.JPG" alt="Mana OC1" className="w-5/12 max-lg:w-8/12 max-lg:mb-6" />
@@ -77,7 +77,7 @@ const Canoes = () => {
                         </div>
                     </div>
                 </div>
-            </motion.div>
+            </motion.div> */}
             <motion.div className="py-20 flex flex-col items-center max-lg:py-10" initial={{opacity: 0, y: 200}} whileInView={{opacity: 1, y: 0}} transition={{duration: .5, delay:.25, type:'spring'}} viewport={{amount: .4}}>
                 <h1 className="grey text-6xl heading mb-10 max-sm:text-2xl sm:max-lg:text-4xl max-md:mb-4">Next Steps</h1>
                 <p className="text text-2xl w-8/12 mb-10 max-lg:mb-8 max-md:mb-4 max-sm:text-base sm:max-md:text-lg">Now that you've chosen the perfect canoe,
