@@ -27,17 +27,16 @@ const MainStripeComponent = ({ transactionAmount }) => {
 
     useEffect(() => {
         const stripeRoute = async () => {
-            const response = await fetch('https://aitogearserver.vercel.app/api/stripe-checkout', {
+            const response = await fetch('https://aitogearserver.vercel.app/api/embedded-checkout', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    transaction: {
-                        amount: transactionAmount * 100
-                    }
+                    amount: transactionAmount * 100
                 })
             })
+            console.log(response)
             
             const { clientSecret } = await response.json()
             setClientSec(clientSecret)
