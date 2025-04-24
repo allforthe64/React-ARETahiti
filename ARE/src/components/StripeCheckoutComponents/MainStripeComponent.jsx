@@ -27,17 +27,16 @@ const MainStripeComponent = ({ transactionAmount }) => {
 
     useEffect(() => {
         const stripeRoute = async () => {
-            const response = await fetch('https://aitogearserver.vercel.app/api/test-route', {
+            const response = await fetch('https://aitogearserver.vercel.app/api/embedded-checkout', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    transaction: {
-                        amount: transactionAmount * 100
-                    }
+                    amount: transactionAmount * 100
                 })
             })
+            console.log(response)
            /* const response = await axiosPrivate.post('https://aitogearserver.vercel.app/api/embedded-checkout', {
                 amount: transactionAmount * 100
             }); */
