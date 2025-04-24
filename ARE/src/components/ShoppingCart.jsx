@@ -9,6 +9,8 @@ import { faArrowLeft, faMinus, faPlus, faTrash } from "@fortawesome/free-solid-s
 
 import axios, { axiosPrivate } from '../api/axios';
 
+import MainStripeComponent from './StripeCheckoutComponents/MainStripeComponent';
+
 const ShoppingCart = () => {
   
   //initialize state
@@ -38,12 +40,12 @@ const ShoppingCart = () => {
       //send the email
       /* const getResponse = await axios.get('/api/sendOrderConfoEmail')
       console.log(getResponse) */
-      const response = await axiosPrivate.post('https://liv2padlserver.vercel.app/api/sendOrderConfoEmail', {
+      const response = await axiosPrivate.post('https://aitogearserver.vercel.app/api/sendOrderConfoEmail', {
         paymentData: paymentData,
         shoppingCart: shoppingCart,
       });
 
-      const shipperResponse = await axiosPrivate.post('https://liv2padlserver.vercel.app/api/sendShipperConfoEmail', {
+      const shipperResponse = await axiosPrivate.post('https://aitogearserver.vercel.app/api/sendShipperConfoEmail', {
         paymentData: paymentData,
         shoppingCart: shoppingCart,
       });
@@ -268,7 +270,7 @@ const ShoppingCart = () => {
                     </div>
                   </div> */}
                   
-                  {/* <PayPalButton total={`${shoppingCart.reduce((sum, obj) => sum + obj.quantity * obj.price, 0)}.00`} setMode={setMode} sendConfoEmail={sendConfoEmail}/> */}
+                  <MainStripeComponent transactionAmount={shoppingCart.reduce((sum, obj) => sum + obj.quantity * obj.price, 0)}/>
 
                   <p className='heading grey text-3xl max-sm:text-2xl font-semibold w-full text-left px-10 max-sm:px-5 pt-6'>Total: <span className='text-[#FF3C00]'>${shoppingCart.reduce((sum, obj) => sum + obj.quantity * obj.price, 0)}.00</span></p>
                 </div>
