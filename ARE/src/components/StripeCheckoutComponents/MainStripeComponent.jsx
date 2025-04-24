@@ -38,9 +38,6 @@ const MainStripeComponent = ({ transactionAmount }) => {
                     }
                 })
             })
-           /* const response = await axiosPrivate.post('https://aitogearserver.vercel.app/api/embedded-checkout', {
-                amount: transactionAmount * 100
-            }); */
             
             const { clientSecret } = await response.json()
             setClientSec(clientSecret)
