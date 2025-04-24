@@ -27,7 +27,7 @@ const MainStripeComponent = ({ transactionAmount }) => {
 
     useEffect(() => {
         const stripeRoute = async () => {
-            const response = await fetch('https://aitogearserver.vercel.app/api/stripe-checkout', {
+            const response = await fetch('https://aitogearserver.vercel.app/api/test-route', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
