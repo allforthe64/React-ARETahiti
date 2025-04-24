@@ -29,6 +29,9 @@ const MainStripeComponent = ({ transactionAmount }) => {
         const stripeRoute = async () => {
             const response = await fetch('https://aitogearserver.vercel.app/api/embedded-checkout', {
                 method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
                 body: JSON.stringify({
                     transaction: {
                         amount: transactionAmount * 100
