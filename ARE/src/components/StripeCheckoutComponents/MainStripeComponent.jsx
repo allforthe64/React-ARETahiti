@@ -12,7 +12,7 @@ import LoadingIcons from 'react-loading-icons'
 
 import { axiosPrivate } from '../../api/axios'
 
-const MainStripeComponent = ({ transactionAmount }) => {
+const MainStripeComponent = ({ transactionAmount, submitOrder }) => {
 
     //initialize state
     const [stripePromise, setStripePromise] = useState()
@@ -48,14 +48,16 @@ const MainStripeComponent = ({ transactionAmount }) => {
     <>
         {stripePromise && clientSec ?
             <div className='w-10/12 bg-white px-10 py-6 rounded-lg'>
-                <Elements stripe={stripePromise} options={{ clientSecret: clientSec }}>
-                    <CheckoutForm />
-                </Elements>
+                <div className='w-full flex justify-center'>
+                    <Elements stripe={stripePromise} options={{ clientSecret: clientSec }}>
+                        <CheckoutForm submitOrder={submitOrder}/>
+                    </Elements>
+                </div>
             </div>
         :
             <div className='w-full h-full flex justify-center items-center'>
-                <LoadingIcons.TailSpin stroke='#09CAC7' className='w-[15px] h-[15px]'/>
-                <p className='text-[#09CAC7] pl-3 text-sm dosis-heavy'>Loading...</p>
+                <LoadingIcons.TailSpin stroke='#FF3C00' className='w-[15px] h-[15px]'/>
+                <p className='text-[#FF3C00] pl-3 text-sm heading'>Loading...</p>
             </div>
         }
     </>

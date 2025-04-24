@@ -4,7 +4,7 @@ import React, {useEffect, useState} from 'react'
 import { useStripe, useElements } from '@stripe/react-stripe-js'
 import { PaymentElement } from '@stripe/react-stripe-js'
 
-const CheckoutForm = (/* {submitRegistration} */) => {
+const CheckoutForm = ({ submitOrder }) => {
 
     //initialize stripe instance/stripe elements
     const stripe = useStripe()
@@ -16,6 +16,13 @@ const CheckoutForm = (/* {submitRegistration} */) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
+
+        const success = submitOrder()
+
+        if (!success) {
+            setIsProcessing(false)
+            return false
+        }
 
         if (!stripe || !elements) {
             return
@@ -34,20 +41,18 @@ const CheckoutForm = (/* {submitRegistration} */) => {
         if (error) {
             setMessage(error.message)
         }
-
-        /* submitRegistration() */
         setIsProcessing(false)
     }
 
   return (
-    <form id="payment-form" onSubmit={handleSubmit}>
+    <form id="payment-form" onSubmit={handleSubmit} className='w-11/12'>
         {/* Show any error or success messages */}
         {message && <div id="payment-message" className='mb-2'>
             <p className='w-full text-center text-red-500 dosis-heavy'>{message}</p>
         </div>}
         <PaymentElement />
         <div className='w-full flex justify-center'>
-            <button disabled={isProcessing} id="submit" className='text-white bg-[#01354B] border-2 border-transparent text-lg mt-4 dosis-heavy px-4 rounded-full hover:scale-110 hover:bg-transparent hover:border-2 hover:border-[#01354B] hover:text-[#01354B] transition duration-200 ease-in-out ml-[3%]'>
+            <button disabled={isProcessing} id="submit" className='text-white bg-[#FF3C00] border-2 border-transparent text-lg mt-4 dosis-heavy px-4 rounded-full hover:scale-110 hover:bg-transparent hover:border-2 hover:border-[#FF3C00] hover:text-[#FF3C00] transition duration-200 ease-in-out ml-[3%]'>
                 {isProcessing ? "Processing ... " : "Pay now"}
             </button>
         </div>

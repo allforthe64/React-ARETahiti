@@ -4,12 +4,16 @@ import ShoppingCartContext from '../context/ShoppingCartProvider';
 import { Link } from 'react-router-dom'
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeft, faMinus, faPlus, faTrash } from "@fortawesome/free-solid-svg-icons";
+import { faArrowLeft, faLessThan, faMinus, faPlus, faTrash } from "@fortawesome/free-solid-svg-icons";
 /* import PayPalButton from './PayPalButton'; */
 
 import axios, { axiosPrivate } from '../api/axios';
 
 import MainStripeComponent from './StripeCheckoutComponents/MainStripeComponent';
+import { toast } from 'react-toastify';
+
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+const PHONE_REGEX = /^(\+1\s?)?(\(?\d{3}\)?[\s.-]?)?\d{3}[\s.-]?\d{4}$/
 
 const ShoppingCart = () => {
   
@@ -23,6 +27,8 @@ const ShoppingCart = () => {
   const [aptSuite, setAptSuite] = useState('')
   const [province, setProvince] = useState('')
   const [zipCode, setZipCode] = useState('')
+  const [validEmail, setValidEmail] = useState(false)
+  const [validPhone, setValidPhone] = useState(false)
 
   //Consume shopping cart context
   const { shoppingCart, setShoppingCart } = useContext(ShoppingCartContext)
@@ -31,15 +37,58 @@ const ShoppingCart = () => {
     window.scrollTo(0, 0)
   }, [mode])
 
-  const sendConfoEmail = async (paymentData) => {
+  //test if the resetEmail is valid
+  useEffect(() => {
+    if (email !== '') setValidEmail(EMAIL_REGEX.test(email))
+    }, [email])
 
-    /* const keyData = await getResend()
-    const resend = new Resend(keyData) */
+    //test if the resetEmail is valid
+    useEffect(() => {
+        if (phone !== '') setValidPhone(PHONE_REGEX.test(phone))
+    }, [phone])
+
+  const submitOrder = async () => {
+    if (fName === '') {
+        toast.error('Please enter your first name')
+        return false
+    } else if (lName === '') {
+        toast.error('Please enter your last name')
+        return false
+    } else if (email === '' || !EMAIL_REGEX.test(email)) {
+        toast.error('Please enter a valid email address')
+        return false
+        return false
+    } else if (phone === '' || !PHONE_REGEX.test(phone)) {
+        toast.error('Please enter a valid phone number')
+        return false
+    } else if (address === '') {
+        toast.error('Please enter your shipping address')
+        return false
+    } else if (province === '') {
+        toast.error('Please enter your province')
+        return faLessThan
+    } else if (zipCode === '') {
+        toast.error('Please enter a zip code')
+        return false
+    } else {
+        const paymentData = {
+            fName: fName,
+            lName: lName,
+            email: email,
+            phone: phone,
+            addressLine1: address,
+            aptSuite: aptSuite,
+            province: province,
+            zipCode: zipCode
+        }
+        await sendConfoEmail(paymentData)
+    }
+  }
+
+  const sendConfoEmail = async (paymentData) => {
 
     try {
       //send the email
-      /* const getResponse = await axios.get('/api/sendOrderConfoEmail')
-      console.log(getResponse) */
       const response = await axiosPrivate.post('https://aitogearserver.vercel.app/api/sendOrderConfoEmail', {
         paymentData: paymentData,
         shoppingCart: shoppingCart,
@@ -51,20 +100,7 @@ const ShoppingCart = () => {
       });
       
       setShoppingCart([])
-
-      /* const {data, error} = await resend.emails.send({
-        from: 'Liv2Padl <info@liv2padl.com>',
-        to: paymentData.payer.email_address,
-        subject: `Confirmation for order: ${paymentData.id}`,
-        html: <OrderConfirmationEmail paypalOrder={paymentData} shoppingCart={shoppingCart}/>
-      }) */
-  
-      /* const {kevData, kevError} = await resend.emails.send({
-        from: 'Liv2Padl <info@liv2padl.com>',
-        to: 'info@liv2padl.com',
-        subject: 'New Liv2Padl Order for Fulfillment',
-        html: <OrderSummaryEmail paypalOrder={paymentData} shoppingCart={shoppingCart}/>
-      }) */
+      setMode('success')
     } catch (err) {
       console.log('error: ', err)
     }
@@ -205,7 +241,7 @@ const ShoppingCart = () => {
                     </button>
                   </div>
 
-                  {/* <div className='w-full flex justify-around text-xl max-sm:text-base max-[430px]:text-sm max-[376px]:flex-col max-[376px]:space-y-6 max-[376px]:items-center'>
+                  <div className='w-full flex justify-around text-xl max-sm:text-base max-[430px]:text-sm max-[376px]:flex-col max-[376px]:space-y-6 max-[376px]:items-center'>
                     <div className='w-5/12 max-[376px]:w-10/12 space-y-2 flex flex-col items-start'>
                         <label className='heading text-[#212121]'>First name:</label>
                         <input className='w-full border-b-2 border-[#212121] text-[#212121] bg-transparent focus:outline-none heading pl-2' type='text' value={fName} onChange={(e) => setFName(e.target.value)} placeholder='First Name'/>
@@ -268,9 +304,9 @@ const ShoppingCart = () => {
                         <label className='heading text-[#212121]'>Zip code:</label>
                         <input className='w-full border-b-2 border-[#212121] text-[#212121] bg-transparent focus:outline-none heading pl-2' type='text' value={zipCode} onChange={(e) => setZipCode(e.target.value)} placeholder='Zip code'/>
                     </div>
-                  </div> */}
+                  </div>
                   
-                  <MainStripeComponent transactionAmount={shoppingCart.reduce((sum, obj) => sum + obj.quantity * obj.price, 0)}/>
+                  <MainStripeComponent transactionAmount={shoppingCart.reduce((sum, obj) => sum + obj.quantity * obj.price, 0)} submitOrder={submitOrder}/>
 
                   <p className='heading grey text-3xl max-sm:text-2xl font-semibold w-full text-left px-10 max-sm:px-5 pt-6'>Total: <span className='text-[#FF3C00]'>${shoppingCart.reduce((sum, obj) => sum + obj.quantity * obj.price, 0)}.00</span></p>
                 </div>
@@ -278,7 +314,7 @@ const ShoppingCart = () => {
           :
             <div className='w-full h-[60vh] flex flex-col justify-center items-center'>
               <h1 className='heading text-2xl grey'>Order placed!</h1>
-              <p className='heading text-lg grey max-sm:text-base px-5 pt-6'>If necessary, Kevin will reach out to you for shipping payment!</p>
+              <p className='heading text-lg grey max-sm:text-base px-5 pt-6'>If necessary, we will reach out to you for shipping payment!</p>
               <Link to={'/'}>
                 <button className="p-2 rounded-lg bg-[#FF3C00] border-2 border-transparent text-lg heading text-white border-2 border-transparent hover:scale-110 hover:bg-transparent hover:border-[#FF3C00] hover:text-[#FF3C00] transition duration-200 ease-in-out mt-6">
                   Back to homepage
