@@ -16,7 +16,7 @@ const OrderSimple = () => {
             <div className='flex justify-around py-20 max-lg:flex-col-reverse max-lg:items-center max-lg:py-10'>
                 <div className='w-5/12 text-left max-lg:w-10/12 max-lg:text-center'>
                     <p className='heading grey text-4xl mb-6 pt-6 max-md:text-2xl'>The Order Process</p>
-                    <p className='text text-left text-lg max-lg:text-center'>To get your ARE canoe, fill out the order form below and pay the security deposit. Once you have completed these steps, the ARE order rep will contact you with further information on choosing paint color, delivery, and paying off the rest of the canoe.</p>
+                    <p className='text text-left text-lg max-lg:text-center'>Use the widget below to complete the order process. If you're ordering a V1, you can pay your deposit online using the Stripe checkout below. If you're ordering a V6, fill out the contact form below and the order rep will be in touch with instructions for payment and delivery 🤙</p>
                 </div>
                 <div className='w-4/12 max-lg:w-8/12'>
                     <img alt='canoe' src='./matahina_11.jpg' />
