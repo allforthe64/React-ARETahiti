@@ -79,7 +79,8 @@ const ShoppingCart = () => {
             addressLine1: address,
             aptSuite: aptSuite,
             province: province,
-            zipCode: zipCode
+            zipCode: zipCode,
+            id: [...Array(20)].map(() => (Math.random().toString(36)[Math.random() < 0.5 ? 'toUpperCase' : 'toLowerCase']())).join('')
         }
         await sendConfoEmail(paymentData)
     }
@@ -94,10 +95,10 @@ const ShoppingCart = () => {
         shoppingCart: shoppingCart,
       });
 
-      const shipperResponse = await axiosPrivate.post('https://aitogearserver.vercel.app/api/sendShipperConfoEmail', {
+      /* const shipperResponse = await axiosPrivate.post('https://aitogearserver.vercel.app/api/sendShipperConfoEmail', {
         paymentData: paymentData,
         shoppingCart: shoppingCart,
-      });
+      }); */
       
       setShoppingCart([])
       setMode('success')

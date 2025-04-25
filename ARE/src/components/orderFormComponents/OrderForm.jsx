@@ -10,6 +10,8 @@ import MainStripeComponent from '../StripeCheckoutComponents/MainStripeComponent
 const EMAIL_REGEX = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
 const PHONE_REGEX = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/
 
+import { toast } from 'react-toastify';
+
 const OrderForm = () => {
 
     const [fName, setFName] = useState('')
@@ -113,7 +115,11 @@ const OrderForm = () => {
                 {model !== 'V6 - Matahina' ?
                     <MainStripeComponent transactionAmount={200} submitOrder={submitOrder}/>
                 :
-                    <></>
+                    <div className='w-full flex justify-center'>
+                        <button className="p-2 rounded-lg bg-[#FF3C00] border-2 border-transparent text-lg max-[900px]:text-base max-sm:text-sm heading text-white border-2 border-transparent hover:scale-110 hover:bg-transparent hover:border-[#FF3C00] hover:text-[#FF3C00] heading text-white transition ease-in-out duration-200" type="button" onClick={(e) => submitOrder()}>
+                            Submit Order Request
+                        </button>
+                    </div>
                 }
             </>
         }
