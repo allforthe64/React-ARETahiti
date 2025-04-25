@@ -96,7 +96,7 @@ const ShoppingCart = () => {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            amount: transactionAmount * 100
+            amount: 20000
         })
     })
     console.log(response)
