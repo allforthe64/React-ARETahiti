@@ -100,7 +100,19 @@ const ShoppingCart = () => {
           shoppingCart: shoppingCart,
         })
       })
-      console.log(response)
+      
+
+      //send the email
+      const shipperResponse = await fetch('https://aitogearserver.vercel.app/api/sendShipperConfoEmail', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          paymentData: paymentData,
+          shoppingCart: shoppingCart,
+        })
+      })
 
       /* const response = await axiosPrivate.post('https://aitogearserver.vercel.app/api/test-route', {
         
@@ -122,7 +134,7 @@ const ShoppingCart = () => {
   return (
     <div className='w-full py-10'>
       <h1 className='w-full heading text-4xl max-md:text-3xl max-sm:text-2xl font-semibold grey'>Shopping <span className='text-[#FF3C00]'>Cart</span></h1>
-      {shoppingCart.length > 0 ?
+      {shoppingCart.length > 0 && mode !== 'success' ?
         <>
           {mode === 'review' ?
             <>
