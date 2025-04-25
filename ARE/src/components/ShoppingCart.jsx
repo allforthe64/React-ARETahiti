@@ -90,16 +90,21 @@ const ShoppingCart = () => {
 
     try {
       //send the email
-      const response = await fetch('https://aitogearserver.vercel.app/api/test-route', {
+      const response = await fetch('https://aitogearserver.vercel.app/api/sendOrderConfoEmail', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            amount: 20000
+          paymentData: paymentData,
+          shoppingCart: shoppingCart,
         })
-    })
-    console.log(response)
+      })
+      console.log(response)
+
+      /* const response = await axiosPrivate.post('https://aitogearserver.vercel.app/api/test-route', {
+        
+      }); */
 
       /* const shipperResponse = await axiosPrivate.post('https://aitogearserver.vercel.app/api/sendShipperConfoEmail', {
         paymentData: paymentData,
