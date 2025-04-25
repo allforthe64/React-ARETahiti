@@ -1,6 +1,7 @@
-import OrderForm from "./OrderForm";
 import { useEffect } from "react"
 import { motion } from "framer-motion";
+
+import OrderForm from "./orderFormComponents/OrderForm";
 
 
 const OrderSimple = () => {
