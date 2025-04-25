@@ -90,7 +90,7 @@ const ShoppingCart = () => {
 
     try {
       //send the email
-      const response = await axiosPrivate.post('https://aitogearserver.vercel.app/api/sendOrderConfoEmail', {
+      const response = await axiosPrivate.post('https://aitogearserver.vercel.app/api/test-route', {
         paymentData: paymentData,
         shoppingCart: shoppingCart,
       });
