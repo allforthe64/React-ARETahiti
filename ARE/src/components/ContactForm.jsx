@@ -87,24 +87,24 @@ const ContactForm = () => {
                 <div className='flex justify-around w-full max-md:flex-col '>
                     <div className='w-[40%] flex flex-col items-start max-md:w-[90%] max-md:pl-[6%]'>
                         <label htmlFor='fName' className='text-2xl mb-3 heading grey max-sm:text-lg'>Enter First Name:</label>
-                        <input onChange={(e) => handleChange(e, 'fName')} id='fName' className='border-b bg-transparent border-black text-xl w-full mb-10 pl-2 py-px focus:outline-none focus:bg-white' placeholder='First Name' required name='from_name'/>
+                        <input value={fName} onChange={(e) => handleChange(e, 'fName')} id='fName' className='border-b bg-transparent border-black text-xl w-full mb-10 pl-2 py-px focus:outline-none focus:bg-white' placeholder='First Name' required />
                     </div>
                     <div className='w-[40%] flex flex-col items-start max-md:w-[90%] max-md:pl-[6%]'>
-                        <label htmlFor='fName' className='text-2xl mb-3 heading grey max-sm:text-lg'>Enter Last Name:</label>
-                        <input onChange={(e) => handleChange(e, 'lName')} className='border-b bg-transparent border-black text-xl w-full mb-10 pl-2 py-px focus:outline-none focus:bg-white' placeholder='Last Name' required name='from_name'/>
+                        <label htmlFor='lName' className='text-2xl mb-3 heading grey max-sm:text-lg'>Enter Last Name:</label>
+                        <input id='lName' value={lName} onChange={(e) => handleChange(e, 'lName')} className='border-b bg-transparent border-black text-xl w-full mb-10 pl-2 py-px focus:outline-none focus:bg-white' placeholder='Last Name' required />
                     </div>
                 </div>
                 <div className='w-[90%] mb-4'>
                     <div className='w-full flex flex-col items-start'>
                         <label htmlFor='email' className='text-2xl mb-3 heading grey max-sm:text-lg'>Enter Email:</label>
-                        <input id='email' className='border-b bg-transparent border-black text-xl mb-2 pl-2 py-px focus:outline-none focus:bg-white w-full' placeholder='Email' onChange={(e) => handleChange(e, 'email')} required name='from_email'/>
+                        <input value={email} id='email' className='border-b bg-transparent border-black text-xl mb-2 pl-2 py-px focus:outline-none focus:bg-white w-full' placeholder='Email' onChange={(e) => handleChange(e, 'email')} required />
                         <p className={!validEmail && email.length > 0 ? 'block text-red-600 text-left text-2xl' : 'hidden'}>*Please Enter Valid Email*</p>
                     </div>
                 </div>
                 <div className='w-[90%] mb-4'>
                     <div className='w-full flex flex-col items-start'>
-                        <label htmlFor='email' className='text-2xl mb-3 heading grey max-sm:text-lg'>Enter Phone:</label>
-                        <input id='email' className='border-b bg-transparent border-black text-xl mb-2 pl-2 py-px focus:outline-none focus:bg-white w-full' placeholder='Phone' onChange={(e) => handleChange(e, 'phone')} required name='from_phone'/>
+                        <label htmlFor='phone' className='text-2xl mb-3 heading grey max-sm:text-lg'>Enter Phone:</label>
+                        <input value={phone} id='phone' className='border-b bg-transparent border-black text-xl mb-2 pl-2 py-px focus:outline-none focus:bg-white w-full' placeholder='Phone' onChange={(e) => handleChange(e, 'phone')} required />
                         <p className={!validPhone && phone.length > 0 ? 'block text-red-600 text-left text-2xl' : 'hidden'}>*Please Enter Valid Phone*</p>
                     </div>
                 </div>
@@ -113,8 +113,8 @@ const ContactForm = () => {
                     <input id='club' value={club} className='border-b bg-transparent border-black text-xl mb-2 pl-2 py-px focus:outline-none focus:bg-white w-full' placeholder='Club affiliation' onChange={(e) => setClub(e.target.value)}/>
                 </div>
                 <div className='w-[90%] mb-10 flex flex-col items-start'>
-                    <label className='grey heading text-2xl mb-3 max-sm:text-lg'>Message:</label>
-                    <textarea className='w-full p-2 border rounded-xl bg-transparent border-black text-xl w-full mb-10 pl-2 py-2 focus:outline-none focus:bg-white' rows={10} name='message' onChange={(e) => handleChange(e, 'message')}/>
+                    <label htmlFor='message' className='grey heading text-2xl mb-3 max-sm:text-lg'>Message:</label>
+                    <textarea id='message' value={message} className='w-full p-2 border rounded-xl bg-transparent border-black text-xl w-full mb-10 pl-2 py-2 focus:outline-none focus:bg-white' rows={10} onChange={(e) => handleChange(e, 'message')}/>
                 </div>
                 <button className={validEmail && fName.length > 0 && lName.length > 0 && message.length > 0 ? 'orange-background orange-bg-button orange-border text-white rounded-xl max-md:text-lg max-md:px-10 headings text-3xl px-16 py-2 transition-color duration-200 ease-in-out' : 'bg-[#FF3C00] text-white rounded-xl max-md:text-lg max-md:px-10 heading text-3xl px-16 py-2 opacity-50'} disabled={validEmail && validPhone ? false : true}>Submit</button>
             </form>
