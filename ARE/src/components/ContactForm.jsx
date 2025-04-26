@@ -110,7 +110,7 @@ const ContactForm = () => {
                 </div>
                 <div className='w-[90%] flex flex-col items-start mb-4'>
                     <label htmlFor='club' className='text-2xl mb-3 heading grey max-sm:text-lg'>Club affiliation (optional):</label>
-                    <input id='club' value={club} className='border-b bg-transparent border-black text-xl mb-2 pl-2 py-px focus:outline-none focus:bg-white w-full' placeholder='Club affiliation' onChange={(e) => setClub(e.target.value)} required/>
+                    <input id='club' value={club} className='border-b bg-transparent border-black text-xl mb-2 pl-2 py-px focus:outline-none focus:bg-white w-full' placeholder='Club affiliation' onChange={(e) => setClub(e.target.value)}/>
                 </div>
                 <div className='w-[90%] mb-10 flex flex-col items-start'>
                     <label className='grey heading text-2xl mb-3 max-sm:text-lg'>Message:</label>
