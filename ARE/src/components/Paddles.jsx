@@ -11,11 +11,13 @@ const Paddles = () => {
     return (
         <div id="en">
             <div className="flex flex-col items-center py-20 max-lg:py-10">
-                <h1 className="orange heading sm:max-md:mb-8 max-sm:mb-10 mb-20 max-sm:text-4xl sm:max-md:text-6xl text-8xl">Paddles</h1>
-                <p className="text text-lg w-9/12 max-sm:w-11/12">Now that you have your new canoe, you're gonna need something to propel it with. Don't worry, AitoGear has you covered there too. Browse our paddle brands below:
+                <h1 className="orange heading sm:max-md:mb-8 max-sm:mb-10 mb-10 max-sm:text-4xl sm:max-md:text-6xl text-8xl">Paddles</h1>
+                <p className="text text-lg w-9/12 max-sm:w-11/12">Got the canoe — now you need the horsepower.
+                    Don’t worry, AitoGear’s got you covered there too. We’ve lined up the best paddles in the game to keep you flying.
+                    Browse our paddle brands below and level up your ride
                 </p>
             </div>
-            <motion.div className="flex items-center flex-col py-20 max-lg:py-10" initial={{ opacity: 0, x:-50 }} whileInView={{ opacity: 1, x:0 }} transition={{ duration: 1, delay: .25}} viewport={{ amount: .5, once: true}}>
+            <motion.div className="flex items-center flex-col py-10 max-lg:py-10" initial={{ opacity: 0, x:-50 }} whileInView={{ opacity: 1, x:0 }} transition={{ duration: 1, delay: .25}} viewport={{  once: true}}>
                 <h2 className="heading max-sm:text-2xl sm:max-lg:text-4xl text-6xl grey w-8/12">The Liberator - <span className="orange">King of Torque</span> </h2>
                 <div className="flex py-10 justify-around max-lg:flex-col max-lg:items-center max-lg:py-4">
                     <div className="w-5/12 max-lg:w-8/12 h-[50vh] max-lg:mb-6">
@@ -29,7 +31,7 @@ const Paddles = () => {
                     </div>
                 </div>
             </motion.div>
-            <motion.div className="flex items-center flex-col py-20 max-lg:py-10" initial={{ opacity: 0, x:50 }} whileInView={{ opacity: 1, x:0 }} transition={{ duration: 1, delay: .25}} viewport={{ amount: .5, once: true}}>
+            <motion.div className="flex items-center flex-col py-10 max-lg:py-10" initial={{ opacity: 0, x:50 }} whileInView={{ opacity: 1, x:0 }} transition={{ duration: 1, delay: .25}} viewport={{  once: true}}>
                 <h2 className="heading text-6xl grey w-8/12 max-sm:text-2xl sm:max-lg:text-4xl">The Disciple - <span className="orange">Classic design, redifined</span> </h2>
                 <div className="flex py-10 justify-around max-lg:flex-col-reverse max-lg:items-center max-lg:py-4">
                     <div className="w-4/12 flex items-center max-lg:w-[90%]">
@@ -44,7 +46,7 @@ const Paddles = () => {
                     </div>
                 </div>
             </motion.div>
-            <motion.div className="flex items-center flex-col py-20 max-lg:py-10" initial={{ opacity: 0, x:-50 }} whileInView={{ opacity: 1, x:0 }} transition={{ duration: 1, delay: .25}} viewport={{ amount: .5, once: true}}>
+            <motion.div className="flex items-center flex-col py-10 max-lg:py-10" initial={{ opacity: 0, x:-50 }} whileInView={{ opacity: 1, x:0 }} transition={{ duration: 1, delay: .25}} viewport={{  once: true}}>
                 <h2 className="heading max-sm:text-2xl sm:max-lg:text-4xl text-6xl grey w-8/12">The Disciplinarian - <span className="orange">A coach in a paddle</span> </h2>
                 <div className="flex py-10 justify-around max-lg:flex-col max-lg:items-center max-lg:py-4">
                     <div className="w-5/12 max-lg:w-8/12 h-[50vh] max-lg:mb-6">
@@ -58,7 +60,7 @@ const Paddles = () => {
                     </div>
                 </div>
             </motion.div>
-            <motion.div className="flex items-center flex-col py-20 max-lg:py-10" initial={{ opacity: 0, x:50 }} whileInView={{ opacity: 1, x:0 }} transition={{ duration: 1, delay: .25}} viewport={{ amount: .5, once: true}}>
+            <motion.div className="flex items-center flex-col py-10 max-lg:py-10" initial={{ opacity: 0, x:50 }} whileInView={{ opacity: 1, x:0 }} transition={{ duration: 1, delay: .25}} viewport={{  once: true}}>
                 <h2 className="heading text-6xl grey w-8/12 max-sm:text-2xl sm:max-lg:text-4xl">Dragon Boat <span className="orange">Paddles</span> </h2>
                 <div className="flex py-10 justify-around max-lg:flex-col-reverse max-lg:items-center max-lg:py-4">
                     <div className="w-4/12 flex items-center max-lg:w-[90%]">
@@ -73,7 +75,7 @@ const Paddles = () => {
                     </div>
                 </div>
             </motion.div>
-            <motion.div className="flex items-center flex-col py-20 max-lg:py-10" initial={{ opacity: 0, x:-50 }} whileInView={{ opacity: 1, x:0 }} transition={{ duration: 1, delay: .25}} viewport={{ amount: .5, once: true}}>
+            <motion.div className="flex items-center flex-col py-10 max-lg:py-10" initial={{ opacity: 0, x:-50 }} whileInView={{ opacity: 1, x:0 }} transition={{ duration: 1, delay: .25}} viewport={{  once: true}}>
                 <h2 className="heading max-sm:text-2xl sm:max-lg:text-4xl text-6xl grey w-8/12">Koa Wood Paddles - <span className="orange">Handmade excellence</span> </h2>
                 <div className="flex py-10 justify-around max-lg:flex-col max-lg:items-center max-lg:py-4">
                     <div className="w-5/12 max-lg:w-8/12 h-[50vh] max-lg:mb-6">

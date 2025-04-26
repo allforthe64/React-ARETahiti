@@ -11,14 +11,13 @@ const Canoes = () => {
     return (
         <div id="en">
             <div className="flex flex-col items-center py-20 max-lg:py-10">
-                <h1 className="orange heading sm:max-md:mb-8 max-sm:mb-10 mb-20 max-sm:text-4xl sm:max-md:text-6xl text-8xl">Canoes</h1>
-                <p className="text text-lg w-9/12 max-sm:w-11/12">Ready to take the next step on your outrigger journey?
-                    Well, you're in the right place! Athletes from around the world have 
-                    won races in ARE canoes. Now, it's your turn. Check out our three models
-                    below.
+                <h1 className="orange heading sm:max-md:mb-8 max-sm:mb-10 mb-10 max-sm:text-4xl sm:max-md:text-6xl text-8xl">Canoes</h1>
+                <p className="text text-xl w-9/12 max-sm:w-11/12">Ready to take the next step on your outrigger journey?
+                    You're in the right place. AitoGear’s got the canoes that’ll take you further, faster, and keep you stoked every session.
+                    Shop our lineup below — and if you’ve got questions, hit us up. Let’s get you on the water!
                 </p>
             </div>
-            <motion.div className="flex items-center flex-col py-20 max-lg:py-10" initial={{ opacity: 0, x:-50 }} whileInView={{ opacity: 1, x:0 }} transition={{ duration: 1, delay: .25}} viewport={{ amount: .5, once: true}}>
+            <motion.div className="flex items-center flex-col py-10 max-lg:py-10" initial={{ opacity: 0, x:-50 }} whileInView={{ opacity: 1, x:0 }} transition={{ duration: 1, delay: .25}} viewport={{  once: true}}>
                 <h2 className="heading max-sm:text-2xl sm:max-lg:text-4xl text-6xl grey w-8/12">V6 Matahina - <span className="orange">King Of The Waves</span> </h2>
                 <div className="flex py-10 justify-around max-lg:flex-col max-lg:items-center max-lg:py-4">
                     <img src="./matahina_2.jpg" alt="Matahina Canoe" className="w-5/12 max-lg:w-8/12 max-lg:mb-6" />
@@ -33,7 +32,7 @@ const Canoes = () => {
                     </div>
                 </div>
             </motion.div>
-            <motion.div className="flex items-center flex-col py-20 max-lg:py-10" initial={{ opacity: 0, x:50 }} whileInView={{ opacity: 1, x:0 }} transition={{ duration: 1, delay: .25}} viewport={{ amount: .5, once: true}}>
+            <motion.div className="flex items-center flex-col py-10 max-lg:py-10" initial={{ opacity: 0, x:50 }} whileInView={{ opacity: 1, x:0 }} transition={{ duration: 1, delay: .25}} viewport={{  once: true}}>
                 <h2 className="heading text-6xl grey w-8/12 max-sm:text-2xl sm:max-lg:text-4xl">V1 Marara - <span className="orange">Be At 1</span> </h2>
                 <div className="flex py-10 justify-around max-lg:flex-col-reverse max-lg:items-center max-lg:py-4">
                     <div className="w-4/12 flex items-center max-lg:w-[90%]">
@@ -48,7 +47,7 @@ const Canoes = () => {
                     <img src="./marara_1.JPG" alt="Marara Canoe" className="w-5/12 max-lg:w-8/12 max-lg:mb-6" />
                 </div>
             </motion.div>
-            <motion.div className="flex items-center flex-col py-20 max-lg:py-10" initial={{ opacity: 0, x:-50 }} whileInView={{ opacity: 1, x:0 }} transition={{ duration: 1, delay: .25}} viewport={{ amount: .5, once: true}}>
+            <motion.div className="flex items-center flex-col py-10 max-lg:py-10" initial={{ opacity: 0, x:-50 }} whileInView={{ opacity: 1, x:0 }} transition={{ duration: 1, delay: .25}} viewport={{  once: true}}>
                 <h2 className="heading text-6xl grey w-8/12 max-sm:text-2xl sm:max-lg:text-4xl">V1 Mako - <span className="orange">More of the best</span> </h2>
                 <div className="flex py-10 justify-around max-lg:flex-col max-lg:items-center max-lg:py-4">
                     <img src="./mako_2.jpg" alt="Matahina Canoe" className="w-5/12 w-5/12 max-lg:w-8/12 max-lg:mb-6" />

@@ -48,19 +48,31 @@ const Home = () => {
             </div>
             {/*Discover ARE*/}
             <div className="py-32 max-lg:py-14">
-                <motion.h1 className="orange text-8xl max-sm:text-2xl sm:max-lg:text-4xl heading mb-20 max-lg:mb-10" variants={discoverVariant} initial='hidden' whileInView='show' viewport={{amount: .2, once: true}}>Discover ARE</motion.h1>
+                <motion.h1 className="orange text-8xl max-sm:text-2xl sm:max-lg:text-4xl heading mb-20 max-lg:mb-10" variants={discoverVariant} initial='hidden' whileInView='show' viewport={{amount: .2, once: true}}>Explore AitoGear:</motion.h1>
                 <motion.div className="flex justify-around max-lg:flex-col max-lg:items-center max-lg:space-y-10" initial={{y: 200, opacity: 0}} whileInView={{y: 0, opacity: 1}} transition={{delay: 1.25, duration: 1}} viewport={{once: true}}>
-                    <motion.div className="w-3/12 rounded-md bg-neutral-100 shadowed max-lg:w-7/12 px-4 pt-4 pb-8" >
-                        <img src="./mana_8.JPG" alt="outrigger-1" className="h-[85%] w-full"/>
-                        <button type="submit" className="text text-xl py-px font-semibold orange orange-border mt-4 px-6 rounded-md orange-button transition-color ease-in-out duration-200 max-lg:w-7/12 max-sm:text-xs max-sm:w-full" to={'/canoes'}><Link>Get An Outrigger</Link></button>
+                    <motion.div className="w-[28%] h-[55vh] rounded-md bg-neutral-100 shadowed max-lg:w-7/12 max-sm:w-10/12 px-4 pt-4 pb-8" >
+                        <div className="h-[85%] w-full">
+                            <img src="./mana_8.JPG" alt="outrigger-3" className="h-full w-full object-contain" /> 
+                        </div>
+                        <Link to={"/order"}>
+                            <button type="submit" className="text-lg py-px mt-4 px-6 rounded-md border-2 border-transparent hover:scale-110 hover:bg-transparent hover:border-[#FF3C00] hover:text-[#FF3C00] bg-[#FF3C00] heading text-white transition ease-in-out duration-200 max-lg:w-7/12 max-sm:text-xs max-md:text-sm max-sm:w-full">Order a Va'a</button>
+                        </Link>
                     </motion.div>
-                    <motion.div className="w-3/12 rounded-md bg-neutral-100 shadowed max-lg:w-7/12 px-4 pt-4 pb-8" >
-                        <img src="./marara_6.JPG" alt="outrigger-2" className="h-[85%] w-full" />
-                        <button type="submit" className="text text-xl font-semibold py-px orange orange-border mt-4 orange orange-border mt-4 px-6 rounded-md orange-button transition-color ease-in-out duration-200 max-lg:w-7/12 max-sm:text-xs max-sm:w-full"><Link to={"https://www.youtube.com/channel/UCX1yW5NSmLIGCmXhaD4A98Q"} target="_blank">See Them In Action</Link></button>
-                    </motion.div>
-                    <motion.div className="w-3/12 rounded-md bg-neutral-100 px-4 pt-4 pb-8 shadowed max-lg:w-7/12" >
-                        <img src="./matahina_8.jpg" alt="outrigger-3" className="h-[85%] w-full" /> 
-                        <button type="submit" className="text text-xl font-semibold py-px orange orange-border mt-4 px-6 rounded-md orange-button transition-color ease-in-out duration-200 max-lg:w-7/12 max-sm:text-xs max-sm:w-full"><Link to={'/order'}>Ordering A Canoe</Link></button>
+                    <motion.div className="w-[28%] h-[55vh] rounded-md bg-neutral-100 shadowed max-lg:w-7/12 max-sm:w-10/12 px-4 pt-4 pb-8" >
+                        <div className="h-[85%] w-full">
+                            <img src="./marara_6.JPG" alt="outrigger-3" className="h-full w-full object-cover max-xl:object-contain" /> 
+                        </div>
+                        <Link to={"https://www.youtube.com/channel/UCX1yW5NSmLIGCmXhaD4A98Q"} >
+                            <button type="submit" className="text-lg py-px mt-4 px-6 rounded-md border-2 border-transparent hover:scale-110 hover:bg-transparent hover:border-[#FF3C00] hover:text-[#FF3C00] bg-[#FF3C00] heading text-white transition ease-in-out duration-200 max-lg:w-7/12 max-sm:text-xs max-md:text-sm max-sm:w-full">See them in action</button>
+                        </Link>
+                    </motion.div> 
+                    <motion.div className="w-[28%]  h-[55vh] rounded-md bg-neutral-100 px-4 pt-4 pb-8 shadowed max-lg:w-7/12 max-sm:w-10/12" >
+                        <div className="h-[85%] w-full">
+                            <img src="./all_paddles.jpg" alt="outrigger-3" className="h-full w-full object-cover max-xl:object-contain" /> 
+                        </div>
+                        <Link to={'/paddles'}>
+                            <button type="submit" className="text-lg py-px mt-4 px-6 rounded-md border-2 border-transparent hover:scale-110 hover:bg-transparent hover:border-[#FF3C00] hover:text-[#FF3C00] bg-[#FF3C00] heading text-white transition ease-in-out duration-200 max-lg:w-7/12 max-sm:text-xs max-md:text-sm max-sm:w-full">Shop Paddles</button>
+                        </Link>
                     </motion.div>
                 </motion.div>
             </div>
@@ -68,29 +80,26 @@ const Home = () => {
             {/*introduction*/}
 
             <div className="py-32 bg-grad-grey max-lg:py-16">
-                <h1 className="text-8xl max-sm:text-2xl sm:max-lg:text-4xl heading text-white mb-16">ARE Tahiti - Born For The Water</h1>    
+                <h1 className="text-5xl max-sm:text-2xl sm:max-lg:text-4xl heading text-white mb-16 px-4">AitoGear - Your dealer for premium paddle products</h1>    
                 <div className="flex lg:justify-between px-20 max-lg:px-0 max-lg:items-center max-lg:flex-col">
                     <img className="lg:w-[55%] lg:h-[90%] max-lg:w-[90%] max-lg:mb-8" src="./marara_7.JPG" alt='Outrigger Paddler' id="intro-pic" />
                     <div className="w-5/12 max-lg:w-[90%]">
-                        <p className="text-white text text-lg text-left mb-12 max-md:text-base">A lot more goes into an ARE Tahiti va’a, or outrigger, than meets the eye. 
-                            To improve your speed and performance on the water, we take painstaking time and effort to perfect every last detail. 
-                            Our quest for perfection steers everything we do, including refining the design, engineering and construction of our canoes. 
-                            Plus we never lose sight of our customers, building a canoe that’s super-fast and super-fun. </p>
+                        <p className="text-white text text-lg text-left mb-12 max-md:text-base">At AitoGear, we're all about getting you on the water with the best gear out there. Based in Vancouver and serving all of Canada and the Pacific Northwest, we’ve got you covered with ARE Tahiti outrigger canoes, Hypr Nalu Hawaii paddles, and even paddle excursion packages for when you’re ready to get out and explore. Whether you're chasing podiums or just cruising with your crew, AitoGear’s here to help you paddle stronger and have more fun.</p>
 
                         <ul className="text-left list-disc text-white ml-5 text-lg" id="list-2">
                             <li> 
                                 <p className="text-white text mb-8 max-md:text-base">
-                                    Unrelenting R&D – factoring in all the variables of water, wind, weight, and balance
+                                Hand-picked gear – we only carry products we truly believe in and trust on the water
                                 </p>
                             </li>
                             <li>
                                 <p className="text-white text mb-8 max-md:text-base">
-                                    Uncompromising craftsmanship – because every little detail influences speed and performance 
+                                Built for paddlers – whether you're racing, cruising, or chasing your next adventure
                                 </p>
                             </li>
                             <li>
                                 <p className="text-white text mb-8 max-md:text-base">
-                                    Unparalleled performance – exhilarating speed, effortless glide, and pure enjoyment! 
+                                Rooted in community – supporting paddlers across Canada and the Pacific Northwest
                                 </p>
                             </li>
                         </ul> 
@@ -100,11 +109,10 @@ const Home = () => {
                     
             <div className="py-20 flex items-center flex-col">
             
-                <h1 className="text-8xl max-sm:text-2xl sm:max-lg:text-4xl heading mb-16">Get In Touch</h1>
-                <p className="text-xl text w-9/12 mb-10 max-md:text-base">ARE TAHITI designs and builds va’a, or outrigger canoes, for Tahiti and the Pacific islands, Australia, 
-                    Hawaii, the mainland United States and Canada. If you're interested in ordering a canoe, get in touch with the 
-                    nearest ARE representative for more information
-                    on the purchasing, shipping, and pickup process</p>
+                <h1 className="text-5xl max-sm:text-2xl sm:max-lg:text-4xl heading mb-16">Get In Touch</h1>
+                <p className="text-xl text w-9/12 mb-10 max-md:text-base">AitoGear is stoked to bring ARE Tahiti outrigger canoes to paddlers all across Canada and the Pacific Northwest. Whether you're chasing race wins or just looking to level up your time on the water, we've got you covered.
+                Ready to order a canoe? Hit us up — we'll walk you through the whole process, from ordering to shipping to pickup.
+                Got general questions or just wanna talk gear? Don’t be shy — reach out anytime. We're here to help you get dialed in and out on the water.</p>
                 <div className="w-full">
                     <ContactForm />
                 </div>

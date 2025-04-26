@@ -2,7 +2,7 @@ import React from 'react'
 
 const BuyerInfo = ({ fName, setFName, lName, setLName, email, setEmail, validEmail, phone, setPhone, validPhone, address, setAddress, aptSuite, setAptSuite, province, setProvince, zipCode, setZipCode, message, setMessage }) => {
   return (
-    <section className='w-full py-10 space-y-10'>
+    <section className='w-full py-10 space-y-10 max-[376px]:space-y-6'>
         <div className='w-full flex justify-around text-xl max-sm:text-base max-[430px]:text-sm max-[376px]:flex-col max-[376px]:space-y-6 max-[376px]:items-center'>
             <div className='w-5/12 max-[376px]:w-10/12 space-y-2 flex flex-col items-start'>
                 <label className='heading text-[#212121]'>First name:</label>
@@ -67,8 +67,8 @@ const BuyerInfo = ({ fName, setFName, lName, setLName, email, setEmail, validEma
                 <input className='w-full border-b-2 border-[#212121] text-[#212121] bg-transparent focus:outline-none heading pl-2' type='text' value={zipCode} onChange={(e) => setZipCode(e.target.value)} placeholder='Zip code'/>
             </div>
         </div>
-        <div className='w-full flex pl-[4.5%] text-xl max-sm:text-base max-[430px]:text-sm max-[376px]:flex-col max-[376px]:space-y-6 max-[376px]:items-center'>
-            <div className='w-5/12 max-[376px]:w-10/12 space-y-2 flex flex-col items-start'>
+        <div className='w-full flex pl-[4.5%] max-[376px]:pl-0 text-xl max-sm:text-base max-[430px]:text-sm max-[376px]:flex-col max-[376px]:space-y-6 max-[376px]:items-center'>
+            <div className='w-5/12 max-md:w-7/12 max-[376px]:w-10/12 space-y-2 flex flex-col items-start'>
                 <label className='heading text-[#212121]'>Enter a message (optional):</label>
                 <textarea className='w-full h-[30vh] border-2 border-[#212121] rounded-md text-[#212121] bg-transparent focus:outline-none heading pl-2 pt-2' type='text' value={message} onChange={(e) => setMessage(e.target.value)} placeholder='Enter message'/>
             </div>

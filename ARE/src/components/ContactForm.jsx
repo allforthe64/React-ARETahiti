@@ -82,7 +82,7 @@ const ContactForm = () => {
 
   return (
     <div className='flex flex-col items-center py-20 max-lg:py-10'>
-            <p className='heading grey text-6xl mb-14 sm:max-md:text-4xl max-sm:text-3xl max-md:mb-8'>Contact A Rep</p>
+            <p className='heading grey text-5xl mb-14 sm:max-md:text-4xl max-sm:text-3xl max-md:mb-8'>Contact us:</p>
             <form onSubmit={sendEmail} className='bg-neutral-200 border-2 border-black rounded-2xl w-[80%] py-10 flex flex-col items-center px-[2%]' ref={form}>
                 <div className='flex justify-around w-full max-md:flex-col '>
                     <div className='w-[40%] flex flex-col items-start max-md:w-[90%] max-md:pl-[6%]'>
