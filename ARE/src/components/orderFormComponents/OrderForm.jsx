@@ -32,6 +32,8 @@ const OrderForm = () => {
     const [amaConstruction, setAmaConstruction] = useState('')
     const [iakoConstruction, setIakoConstruction] = useState('')
 
+    const [mode, setMode] = useState('')
+
     const navigate = useNavigate()
 
     const axiosPrivate = useAxiosPrivate()
@@ -79,28 +81,83 @@ const OrderForm = () => {
                 province: province,
                 zipCode: zipCode
             }
-            /* await sendConfoEmail(paymentData) */
+            await sendConfoEmail(paymentData)
         }
       }
     
       const sendConfoEmail = async (paymentData) => {
-    
-        try {
-          //send the email
-          const response = await axiosPrivate.post('https://aitogearserver.vercel.app/api/sendOrderConfoEmail', {
-            paymentData: paymentData,
-            shoppingCart: shoppingCart,
-          });
-    
-          const shipperResponse = await axiosPrivate.post('https://aitogearserver.vercel.app/api/sendShipperConfoEmail', {
-            paymentData: paymentData,
-            shoppingCart: shoppingCart,
-          });
+        
+        if (model !== 'V6 - Matahina') {
+            try {
+
+                const canoeObj = {
+                    model: model,
+                    construction: construction,
+                    paintType: paintType,
+                    amaConstruction: construction,
+                    iakoConstruction: 'Carbon'
+                }
+
+                //send the email
+                const response = await fetch('https://aitogearserver.vercel.app/api/sendCanoeConfoEmail', {
+                  method: 'POST',
+                  headers: {
+                      'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify({
+                    paymentData: paymentData,
+                    canoeObj: canoeObj,
+                  })
+                })
           
-          setShoppingCart([])
-          setMode('success')
-        } catch (err) {
-          console.log('error: ', err)
+                /* const shipperResponse = await fetch('https://aitogearserver.vercel.app/api/sendShipperCanoeConfoEmail', {
+                  method: 'POST',
+                  headers: {
+                      'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify({
+                    paymentData: paymentData,
+                    canoeObj: canoeObj,
+                  })
+                }) */
+                
+                setShoppingCart([])
+                setMode('success')
+            } catch (err) {
+            console.log('error: ', err)
+            }
+        } else {
+
+            const canoeObj = {
+                model: model,
+                construction: construction,
+                paintType: paintType,
+                amaConstruction: amaConstruction,
+                iakoConstruction: iakoConstruction
+            }
+
+            //send the email
+            const response = await fetch('https://aitogearserver.vercel.app/api/sendMatahinaConfoEmail', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                  paymentData: paymentData,
+                  canoeObj: canoeObj,
+                })
+            })
+        
+            /* const shipperResponse = await fetch('https://aitogearserver.vercel.app/api/sendShipperMatahinaConfoEmail', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                  paymentData: paymentData,
+                  canoeObj: canoeObj,
+                })
+            }) */
         }
         
       }
