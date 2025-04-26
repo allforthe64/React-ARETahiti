@@ -79,7 +79,8 @@ const OrderForm = () => {
                 addressLine1: address,
                 aptSuite: aptSuite,
                 province: province,
-                zipCode: zipCode
+                zipCode: zipCode,
+                message: message
             }
             await sendConfoEmail(paymentData)
         }
@@ -110,7 +111,7 @@ const OrderForm = () => {
                   })
                 })
           
-                /* const shipperResponse = await fetch('https://aitogearserver.vercel.app/api/sendShipperCanoeConfoEmail', {
+                const shipperResponse = await fetch('https://aitogearserver.vercel.app/api/sendShipperCanoeConfoEmail', {
                   method: 'POST',
                   headers: {
                       'Content-Type': 'application/json'
@@ -119,10 +120,26 @@ const OrderForm = () => {
                     paymentData: paymentData,
                     canoeObj: canoeObj,
                   })
-                }) */
+                })
                 
-                setShoppingCart([])
-                setMode('success')
+                setFName('')
+                setLName('')
+                setEmail('')
+                setPhone('')
+                setMessage('')
+                setValidEmail(false)
+                setValidPhone(false)
+                setAddress('')
+                setAptSuite('')
+                setProvince('')
+                setZipCode('')
+            
+                setModel('')
+                setConstruction('')
+                setPaintType('')
+                setAmaConstruction('')
+                setIakoConstruction('')
+                toast.success('Deposit payment successful ✔')
             } catch (err) {
             console.log('error: ', err)
             }
@@ -158,6 +175,24 @@ const OrderForm = () => {
                   canoeObj: canoeObj,
                 })
             }) */
+
+            setFName('')
+            setLName('')
+            setEmail('')
+            setPhone('')
+            setMessage('')
+            setValidEmail(false)
+            setValidPhone(false)
+            setAddress('')
+            setAptSuite('')
+            setProvince('')
+            setZipCode('')
+        
+            setModel('')
+            setConstruction('')
+            setPaintType('')
+            setAmaConstruction('')
+            setIakoConstruction('')
         }
         
       }
