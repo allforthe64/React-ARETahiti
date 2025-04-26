@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import useAxiosPrivate from '../hooks/useAxiosPrivate'
 import emailjs from '@emailjs/browser';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 
 const EMAIL_REGEX = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
@@ -76,7 +77,7 @@ const ContactForm = () => {
         setValidEmail(null)
         setValidPhone(null)
         
-        navigate('/thank-you')
+        toast.success("Message sent ✉! We'll be in touch shortly 🤙")
 
         e.target.reset()
     }
