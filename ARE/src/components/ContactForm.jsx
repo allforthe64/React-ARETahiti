@@ -78,8 +78,6 @@ const ContactForm = () => {
         setValidPhone(null)
         
         toast.success("Message sent ✉! We'll be in touch shortly 🤙")
-
-        e.target.reset()
     }
 
   return (
