@@ -165,7 +165,7 @@ const OrderForm = () => {
                 })
             })
         
-            /* const shipperResponse = await fetch('https://aitogearserver.vercel.app/api/sendShipperMatahinaConfoEmail', {
+            const shipperResponse = await fetch('https://aitogearserver.vercel.app/api/sendMatahinaShipperConfoEmail', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -174,7 +174,7 @@ const OrderForm = () => {
                   paymentData: paymentData,
                   canoeObj: canoeObj,
                 })
-            }) */
+            })
 
             setFName('')
             setLName('')
