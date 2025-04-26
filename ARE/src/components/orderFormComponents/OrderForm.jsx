@@ -200,7 +200,7 @@ const OrderForm = () => {
   return (
     <div className='flex flex-col items-center py-20 max-lg:py-10'>
         <p className='heading grey text-6xl mb-4 sm:max-md:text-4xl max-sm:text-3xl max-md:mb-8'>Order A Boat</p>
-        <p className='heading grey text-2xl mb-14'>*Note: If you're interested in ordering multiple canoes for your club, please send us a message using the contact form on the homepage 😎🤙</p>
+        <p className='heading grey text-xl mb-14'>*Note: If you're interested in ordering multiple canoes for your club, please send us a message using the contact form on the homepage 😎🤙. Or you can fill this form out multiple times, lol.</p>
         <SelectCanoeWidget model={model} setModel={setModel} construction={construction} setConstruction={setConstruction} paintType={paintType} setPaintType={setPaintType} amaConstruction={amaConstruction} setAmaConstruction={setAmaConstruction} iakoConstruction={iakoConstruction} setIakoConstruction={setIakoConstruction}/>
         <BuyerInfo fName={fName} setFName={setFName} lName={lName} setLName={setLName} email={email} setEmail={setEmail} validEmail={validEmail} phone={phone} setPhone={setPhone} validPhone={validPhone} address={address} setAddress={setAddress} aptSuite={aptSuite} setAptSuite={setAptSuite} province={province} setProvince={setProvince} zipCode={zipCode} setZipCode={setZipCode} message={message} setMessage={setMessage}/>
         {model !== '' &&
